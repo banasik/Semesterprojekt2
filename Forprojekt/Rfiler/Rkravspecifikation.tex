@@ -1,5 +1,8 @@
 \chapter{Kravspecifikation}
 
+\section{Indledning}
+Kravspecifikationen vil beskrive, ud fra en række modeller, hvordan EKG-systemet fungerer. Helt generelt er EKG-måling en simpelt metode, til at måle hjertets elektriske aktivitet via elektroder, som registrerer elektriske impulser, placeret på huden. Ud fra disse impulser dannes en graf, som benyttes til at analysere hjertets funktionalitet ud fra P-, Q-, R-, S- og T-takkerne, og dermed konkludere om den pågældende patient har et raskt eller sygt hjerte, samt hvilken sygdom der er tale om.
+
 \section{Funktionelle krav}
 De funktionelle krav vil nedenstående beskrives ud fra Aktør-kontekstdiagram, aktørbeskrivelse, Use Cases samt Use Case diagram. 
 
@@ -11,6 +14,8 @@ De funktionelle krav vil nedenstående beskrives ud fra Aktør-kontekstdiagram, 
 	\caption{Aktør-kontekstdiagram}
 	\label{fig:aktoerbeskrivelse}
 \end{figure}
+
+Patient kobles op med elektroderne fra EKG-systemet (jf. use case 1). Patientens data bliver opsamlet af EKG-systemet, ud fra disse data danner EKG-systemet en graf. Grafen kan derefter valideres og analyseres af den sundhedsprofessionelle. 
 
 \subsection{Aktørbeskrivelse}
 
@@ -58,7 +63,7 @@ De funktionelle krav vil nedenstående beskrives ud fra Aktør-kontekstdiagram, 
      						   \end{enumerate}
 \\ \midrule 
  	Undtagelser:           & \textit{Extensions:}
-\newline					 2a: Der blev ikke ændret i indstillingerne. 
+\newline					 2a: Der blev ikke ændret i indstillingerne. Målingen foretages med default indstillinger 
 \\ \bottomrule
     \end{tabularx}
     \caption {Fullydressed Use Case beskrivelse af UC1.}
@@ -89,7 +94,7 @@ De funktionelle krav vil nedenstående beskrives ud fra Aktør-kontekstdiagram, 
      						   \end{enumerate}
 \\ \midrule 
  	Undtagelser:           & \textit{Extensions:}
-\newline					 3a: Det er er ikke mulig at analysere HRV ud fra grafen. 
+\newline					 3a: Det er er ikke mulig at analysere HRV ud fra grafen. Use Case 1 gentages, ny graf analyseres.
 \\ \bottomrule
     \end{tabularx}
     \caption {Fullydressed Use Case beskrivelse af UC2.}
@@ -105,6 +110,8 @@ De funktionelle krav vil nedenstående beskrives ud fra Aktør-kontekstdiagram, 
 	\label{fig:Use Cases}
 \end{figure}
 
+Den sekundære aktør, Patienten, er koblet op til elektroderne og EKG-systemet, som på kommando af den primære aktør, den sundhedsprofesionelle, danner en graf (Uc1: Vis EKG). Denne graf kan den sundhedsprofessionelle efterfølgende evaluere (Uc2: Evaluer EKG).
+
 \section{Ikke-funktionelle krav}
 De ikke-funktionelle krav er udarbejdet ved brug af (F)URPS+. De er alle prioriteret ved MuSCoW metoden - Must (skal være med), Should (bør være med, hvis muligt), Could (kunne have med, hvis det ikke influerer på andet), Won't/Would (ikke med nu, men med i fremtidige opdateringer). 
 
@@ -117,6 +124,7 @@ MoSCoW er angivet i parentes med hhv. M, S, C eller W.
 	\item (M) Den sundhedsprofessionelle skal have mulighed for at ændre tidsintervallet før målingerne foretages
 	\item (M) Interfacet skal indeholde en "start"-knap til at igangsætte målingerne
 	\item (M) Programmet stopper automatisk efter det valgte tidsinterval
+	\item (C) Programmet kan indeholde "pause/stop-knap"
 	\item (S) Interfacet bør anvendes på en touch-skærm. Dette gør den nemmere at rengøre og simplere at anvende
 	\item (S) Der bør kræves et login i form af patientens cpr-nummer inden opstart af programmet
 \end{itemize}
@@ -126,7 +134,7 @@ MoSCoW er angivet i parentes med hhv. M, S, C eller W.
 	\item (S) Softwaren skal opdateres to gange årligt
 	\item (M) Systemet skal have en effektiv MTBF (Mean Time Between Failure) på 43.680 timer og en MTTR (Mean Time To Restore) på 48 timer.
 	\item  				\begin{align}
-					Availability = \frac{MTBF}{MTBF+MTTR} = \frac{99}{99+48} = 0,998 = 99,8 \%
+					Availability = \frac{MTBF}{MTBF+MTTR} = \frac{43.680}{43.680+48} = 0,998 = 99,8 \%
 				\end{align}
 
 \end{itemize}
@@ -137,14 +145,13 @@ MoSCoW er angivet i parentes med hhv. M, S, C eller W.
 	\item (M) Grafen skal have major gridlines hver 0,5 mV og minor gridlines hver 0,1 mV på y-aksen og major gridlines hver 200 ms. og minor gridlines hver 40 ms. på x-aksen
 	\item (M) Grafen skal være scrollbar på x-aksen, så den sundhedsprofessionelle selv ved brug af musen kan vælge det udsnit af grafen der skal vises mere detaljeret
 	\item (S) Det er ønskeligt hvis en 1 mV signal-tak kan vises i starten af grafen som reference for det målte EKG-signal
-	\item (M) Skal tage en sample over et brugerbestemt interval, med 1000 Hz
+	\item (M) Skal tage en sample over et brugerbestemt interval, hvor frekvensen  er tilpasset målingerne, således at grafen er analyserbar
 \end{itemize}
 
 \textbf{Supportability}
 \begin{itemize}
 	\item (M) Softwaren udarbejdes i Visual Studio
 	\item (M) Softwaren er opbygget af trelagsmodellen
-	\item (M) Programmet må max fylde 500 MB
 	\item (C) Systemet skal selv kunne søge efter opdateringer. Den skal selv kunne opdateres såfremt det ikke påvirker målingerne
 \end{itemize}
 
