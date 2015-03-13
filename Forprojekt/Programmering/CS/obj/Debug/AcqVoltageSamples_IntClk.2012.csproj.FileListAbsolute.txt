@@ -1,0 +1,36 @@
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\National Instruments\NI-DAQ\Examples\DotNET4.5\Analog In\Measure Voltage\AcqVoltageSamples_IntClk\CS\bin\Debug\AcqVoltageSamples_IntClk.exe
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\National Instruments\NI-DAQ\Examples\DotNET4.5\Analog In\Measure Voltage\AcqVoltageSamples_IntClk\CS\bin\Debug\AcqVoltageSamples_IntClk.pdb
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\National Instruments\NI-DAQ\Examples\DotNET4.5\Analog In\Measure Voltage\AcqVoltageSamples_IntClk\CS\bin\Debug\NationalInstruments.DAQmx.dll
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\National Instruments\NI-DAQ\Examples\DotNET4.5\Analog In\Measure Voltage\AcqVoltageSamples_IntClk\CS\bin\Debug\NationalInstruments.Common.Native.dll
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\National Instruments\NI-DAQ\Examples\DotNET4.5\Analog In\Measure Voltage\AcqVoltageSamples_IntClk\CS\bin\Debug\NationalInstruments.DAQmx.xml
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\National Instruments\NI-DAQ\Examples\DotNET4.5\Analog In\Measure Voltage\AcqVoltageSamples_IntClk\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csprojResolveAssemblyReference.cache
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\National Instruments\NI-DAQ\Examples\DotNET4.5\Analog In\Measure Voltage\AcqVoltageSamples_IntClk\CS\obj\Debug\NationalInstruments.Examples.AcqVoltageSamples_IntClk.MainForm.resources
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\National Instruments\NI-DAQ\Examples\DotNET4.5\Analog In\Measure Voltage\AcqVoltageSamples_IntClk\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csproj.GenerateResource.Cache
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\National Instruments\NI-DAQ\Examples\DotNET4.5\Analog In\Measure Voltage\AcqVoltageSamples_IntClk\CS\obj\Debug\AcqVoltageSamples_IntClk.exe
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\National Instruments\NI-DAQ\Examples\DotNET4.5\Analog In\Measure Voltage\AcqVoltageSamples_IntClk\CS\obj\Debug\AcqVoltageSamples_IntClk.pdb
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\National Instruments\NI-DAQ\Examples\DotNET4.5\Analog In\Measure Voltage\AcqVoltageSamples_IntClk\CS\bin\Debug\ST2Prj2LibNI-DAQ.dll
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\National Instruments\NI-DAQ\Examples\DotNET4.5\Analog In\Measure Voltage\AcqVoltageSamples_IntClk\CS\bin\Debug\ST2Prj2LibNI-DAQ.pdb
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\st2upload\STPRJ2Support\CS\obj\Debug\AcqVoltageSamples_IntClk.exe
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\st2upload\STPRJ2Support\CS\obj\Debug\AcqVoltageSamples_IntClk.pdb
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\st2upload\STPRJ2Support\CS\bin\Debug\AcqVoltageSamples_IntClk.exe
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\st2upload\STPRJ2Support\CS\bin\Debug\AcqVoltageSamples_IntClk.pdb
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\st2upload\STPRJ2Support\CS\bin\Debug\NationalInstruments.DAQmx.dll
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\st2upload\STPRJ2Support\CS\bin\Debug\ST2Prj2LibNI-DAQ.dll
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\st2upload\STPRJ2Support\CS\bin\Debug\NationalInstruments.Common.Native.dll
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\st2upload\STPRJ2Support\CS\bin\Debug\ST2Prj2LibNI-DAQ.pdb
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\st2upload\STPRJ2Support\CS\bin\Debug\NationalInstruments.DAQmx.xml
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\st2upload\STPRJ2Support\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csprojResolveAssemblyReference.cache
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\st2upload\STPRJ2Support\CS\obj\Debug\NationalInstruments.Examples.AcqVoltageSamples_IntClk.MainForm.resources
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\st2upload\STPRJ2Support\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csproj.GenerateResource.Cache
+C:\Users\Bana\Desktop\STPRJ2Support\CS\obj\Debug\AcqVoltageSamples_IntClk.exe
+C:\Users\Bana\Desktop\STPRJ2Support\CS\obj\Debug\AcqVoltageSamples_IntClk.pdb
+C:\Users\Bana\Desktop\STPRJ2Support\CS\bin\Debug\AcqVoltageSamples_IntClk.exe
+C:\Users\Bana\Desktop\STPRJ2Support\CS\bin\Debug\AcqVoltageSamples_IntClk.pdb
+C:\Users\Bana\Desktop\STPRJ2Support\CS\bin\Debug\NationalInstruments.DAQmx.dll
+C:\Users\Bana\Desktop\STPRJ2Support\CS\bin\Debug\ST2Prj2LibNI-DAQ.dll
+C:\Users\Bana\Desktop\STPRJ2Support\CS\bin\Debug\NationalInstruments.Common.Native.dll
+C:\Users\Bana\Desktop\STPRJ2Support\CS\bin\Debug\ST2Prj2LibNI-DAQ.pdb
+C:\Users\Bana\Desktop\STPRJ2Support\CS\bin\Debug\NationalInstruments.DAQmx.xml
+C:\Users\Bana\Desktop\STPRJ2Support\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csprojResolveAssemblyReference.cache
+C:\Users\Bana\Desktop\STPRJ2Support\CS\obj\Debug\NationalInstruments.Examples.AcqVoltageSamples_IntClk.MainForm.resources
+C:\Users\Bana\Desktop\STPRJ2Support\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csproj.GenerateResource.Cache

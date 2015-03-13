@@ -1,0 +1,16 @@
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\ST2PRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\ST2Prj2LibNI-DAQ.dll
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\ST2PRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\ST2Prj2LibNI-DAQ.pdb
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\ST2PRJ2Support\ST2Prj2LibNI-DAQ\obj\Debug\ST2Prj2LibNI-DAQ.csprojResolveAssemblyReference.cache
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\ST2PRJ2Support\ST2Prj2LibNI-DAQ\obj\Debug\ST2Prj2LibNI-DAQ.dll
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\ST2PRJ2Support\ST2Prj2LibNI-DAQ\obj\Debug\ST2Prj2LibNI-DAQ.pdb
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\ST2PRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\NationalInstruments.DAQmx.dll
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\ST2PRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\NationalInstruments.Common.Native.dll
+D:\Brugere\jrt\Dokumenter\Visual Studio 2013\Projects\ST2PRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\NationalInstruments.DAQmx.xml
+C:\Users\Bana\Desktop\STPRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\ST2Prj2LibNI-DAQ.dll
+C:\Users\Bana\Desktop\STPRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\ST2Prj2LibNI-DAQ.pdb
+C:\Users\Bana\Desktop\STPRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\NationalInstruments.DAQmx.dll
+C:\Users\Bana\Desktop\STPRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\NationalInstruments.Common.Native.dll
+C:\Users\Bana\Desktop\STPRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\NationalInstruments.DAQmx.xml
+C:\Users\Bana\Desktop\STPRJ2Support\ST2Prj2LibNI-DAQ\obj\Debug\ST2Prj2LibNI-DAQ.csprojResolveAssemblyReference.cache
+C:\Users\Bana\Desktop\STPRJ2Support\ST2Prj2LibNI-DAQ\obj\Debug\ST2Prj2LibNI-DAQ.dll
+C:\Users\Bana\Desktop\STPRJ2Support\ST2Prj2LibNI-DAQ\obj\Debug\ST2Prj2LibNI-DAQ.pdb
