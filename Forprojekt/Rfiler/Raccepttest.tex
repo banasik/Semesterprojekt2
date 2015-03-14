@@ -5,6 +5,30 @@
 
 %Use case 1 acceptest
 
+\begin{longtabu} to \linewidth{@{} c X[j] X[j] X[j] l@{}}
+    ~ &	Test &    Forventet resultat &		Faktiske observationer &    Godkendt\\[-1ex]
+    \midrule
+    ~ &\textit{Hovedsenarie} & ~ & ~ &
+    \\ \midrule
+    1. &Den sundhedsprofessionelle vælger tidsindstillinger &    Der er blevet valgt tidsindstillinger  &    ~ &		%{\Huge \checkmark}
+    \\
+    2. &Målingen startes ved at trykke på "Start" &    EKG-system indlæser data fra elektroderne  &     ~ &		%{\Huge \checkmark}
+    \\
+   	3. &EKG-dataerne illustreres på en graf  &    En analyserbar graf forekommer &    ~ &		%{\Huge \checkmark}
+	\\ \midrule
+	~ &\textit{Exentions} & ~ & ~ & 
+	\\ \midrule	
+    1a. &	Den sundhedsprofessionelle er tilfreds med default tidsindstillingerne
+ &    Der blev ikke ændret i tidsindstillingerne  &   ~  &		%{\Huge \checkmark}
+ \\ \bottomrule
+ 
+\caption{Accepttest af Use Case X.}\\
+\label{AT_UCX}
+\end{longtabu}
+
+
+
+
 \textbf{Testopstilling for Use Case 1}
 \begin{enumerate}
 	\item DAQ’en har via USB-indgang forbindelse til computeren.
