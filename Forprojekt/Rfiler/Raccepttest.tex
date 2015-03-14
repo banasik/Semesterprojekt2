@@ -4,6 +4,13 @@
 
 
 %Use case 1 acceptest
+\subsection{Use Case 1}
+
+\textbf{Testopstilling for Use Case 1}
+\begin{enumerate}
+	\item DAQ’en har via USB-indgang forbindelse til computeren.
+	\item DAQ’en er tilsluttet EKG-forstærkeren.
+\end{enumerate}
 
 \begin{longtabu} to \linewidth{@{} c X[j] X[j] X[j] l@{}}
     ~ &	Test &    Forventet resultat &		Faktiske observationer &    Godkendt\\[-1ex]
@@ -22,60 +29,9 @@
  &    Der blev ikke ændret i tidsindstillingerne  &   ~  &		%{\Huge \checkmark}
  \\ \bottomrule
  
-\caption{Accepttest af Use Case X.}\\
-\label{AT_UCX}
+\caption{Accepttest af Use Case 1.}\\
+\label{AT_UC1}
 \end{longtabu}
-
-
-
-
-\textbf{Testopstilling for Use Case 1}
-\begin{enumerate}
-	\item DAQ’en har via USB-indgang forbindelse til computeren.
-	\item DAQ’en er tilsluttet EKG-forstærkeren.
-\end{enumerate}
-
-\subsection{Use Case 1}
-
-\begin{table}[H]
-	\begin{tabularx}{\textwidth}{l X X X c}
-	\toprule
-	~ & \begin{large}\textbf{Use Case 1}\end{large} & ~ & ~ & ~\\
-	~ & \begin{large}\textbf{Vis EKG} \end{large}
-	& \begin{large}\textbf{Forventet/visuelt resulatat}\end{large}
-	& \begin{large}\textbf{Faktiske observationer/resultat}\end{large}
-	& \begin{large}\textbf{Godkendt}\end{large}
-	\\			\midrule \addlinespace[3mm]
-					1.	& Den sundhedsprofessionelle vælger tidsindstillinger 
-						& Der er blevet valgt tidsindstillinger 
-						& ~
-						& %{\Huge \checkmark}
-						\\ \midrule
-					2. 	& Målingen startes ved at trykke på "Start"
-						& EKG-system indlæser data fra elektroderne 
-						& ~
-						& %{\Huge \checkmark}
-						\\ \midrule
-					3.	&  EKG-dataerne illustreres på en graf 
-     					&  En analyserbar graf forekommer
-     					& ~
-     					& %{\Huge \checkmark}
-     					\\ \midrule
-     				~	& \textit{Extensions}
-     					&	~
-     					&	~		\\ \midrule
-     				~ 	&	1a: Den sundhedsprofessionelle er tilfreds med 					default-tidsindstillingerne
-     					&  Der blev ikke ændret i tidsindstillingerne 
-     					&  %{\Huge \checkmark} 
-     					    \\ 
-
-		
-	
-	\bottomrule	
-	\end{tabularx}
-	\caption{Accepttest af Use Case 1}
-	\label{tab:AT_UC1}
-\end{table}
 
 %Use Case 2 acceptest
 
@@ -87,6 +43,24 @@
 	\item DAQ’en er tilsluttet EKG-forstærkeren.
 	\item Use case 1 er gennemført og graf forekommer på skærm
 \end{enumerate}
+
+\begin{longtabu} to \linewidth{@{} c X[j] X[j] X[j] l@{}}
+    ~ &	Test &    Forventet resultat &		Faktiske observationer &    Godkendt\\[-1ex]
+    \midrule
+    ~ &\textit{Hovedsenarie} & ~ & ~ &
+    \\ \midrule
+    1. &Sundhedsprofessionelle observerer grafen &    Det er muligt at se forskelle i RR-intervallerne, samt takke og puls  &    ~ &		%{\Huge \checkmark}
+    \\
+    2. &Den sundhedsprofessionelle analyserer grafen ud fra 		  HRV	 &    HRV er synligt og grafen er fuldendt  &     ~ &		%{\Huge \checkmark}
+	\\ \midrule
+	~ &\textit{Exentions} & ~ & ~ & 
+	\\ \midrule	
+    2a. &	Det er ikke muligt at aflæse HRV på graf &    Der blev ikke evalueret på EKG  &   ~  &		%{\Huge \checkmark}
+ \\ \bottomrule
+ 
+\caption{Accepttest af Use Case 2.}\\
+\label{AT_UC2}
+\end{longtabu}
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{l X X X c}
