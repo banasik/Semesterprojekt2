@@ -82,6 +82,7 @@
     <Reference Include="NationalInstruments.Common">
       <Name>NationalInstruments.Common</Name>
       <HintPath />
+      <Private>True</Private>
     </Reference>
     <Reference Include="NationalInstruments.DAQmx, Version=9.9.45.39, Culture=neutral, PublicKeyToken=4febd62461bf11a4">
       <Name>NationalInstruments.DAQmx</Name>

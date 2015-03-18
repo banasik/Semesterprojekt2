@@ -45,3 +45,17 @@ D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\Nati
 D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csprojResolveAssemblyReference.cache
 D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\NationalInstruments.Examples.AcqVoltageSamples_IntClk.MainForm.resources
 D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csproj.GenerateResource.Cache
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\AcqVoltageSamples_IntClk.exe
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\AcqVoltageSamples_IntClk.pdb
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\NationalInstruments.DAQmx.dll
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\ST2Prj2LibNI-DAQ.dll
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\NationalInstruments.Common.Native.dll
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\ST2Prj2LibNI-DAQ.pdb
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\NationalInstruments.DAQmx.xml
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csprojResolveAssemblyReference.cache
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\NationalInstruments.Examples.AcqVoltageSamples_IntClk.MainForm.resources
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csproj.GenerateResource.Cache
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.exe
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.pdb
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\NationalInstruments.Common.dll
+C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\NationalInstruments.Common.xml
