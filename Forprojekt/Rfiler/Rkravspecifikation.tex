@@ -34,71 +34,51 @@ Patient kobles op med elektroderne fra EKG-systemet (jf. use case 1). Patientens
 
 \subsection{Use Cases}
 
-\begin{table}[H] % UC1 % 
-    \begin{tabularx}{\textwidth}{l X}
-    \toprule 
-    \multicolumn{2}{c}{\begin{large}\textbf{Use Case 1}\end{large}}
- \\ \midrule \addlinespace[1mm]                                                                                                                                                        
-     Navn:                  &  Vis EKG \\ \addlinespace[1mm]                                                                                                                                                       
-     Use Case ID:           & 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \\ \addlinespace[1mm]                                                                                                                                                       
-     Samtidige forekomster: & 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \\ \addlinespace[1mm]                                                                                                                                                       
-     Primær aktør:          &	Sundhedsprofessionelle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \addlinespace[1mm] 
-     Sekundær aktør:        &	Patienten                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \addlinespace[1mm]  		                                                                                                                                                      
-     Initialisere:          & 	Den sundhedsprofessionelle ønsker at få vist et EKG-signal over patienten
-		 \\ \addlinespace[1mm]                                                                                                                                                                                                                                                                                                             
-     Forudsætninger:        & 	EKG-elektroder er koblet rigtigt op på patienten ud fra afledning II :
+\begin{longtabu} to \linewidth{@{}l r X[j]@{}} %UC1%
+    {\large \textbf{Use Case 1}} && \\
+    \toprule
+    Navn &&    Vis EKG\\
+    Use case ID &&    1\\
+    Samtidige forløb &&    1\\
+    Primær aktør &&    Den sundhedsprofessionelle\\
+    Sekundær aktør &&	Patienten\\
+    Initialisere &&    Den sundhedsprofessionelle ønsker at få vist et EKG-signal over patienten\\
+    Forudsætninger &&    EKG-elektroder er koblet rigtigt op på patienten ud fra afledning II :
      \begin{itemize}
      	\item Rød(+) på venstre ben
      	\item Sort(-) på højre arm
      	\item Grøn på venstre arm
      \end{itemize}
-		Samt EKG-systemet er tændt og klar til måling                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           \\ \addlinespace[1mm]                                                                                                                                                       
-     Resultat:              & 	Den sundhedsprofessionelle kan ud fra EKG-dataerne se en graf                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \\ \midrule \addlinespace[1mm]                                                                                                                                                       
-     Hovedforløb:           &  \begin{enumerate}
-     						   \item Den sundhedsprofessionelle vælger indstillinger
-\newline						[Extension 1a: Den sundhedsprofessionelle er tilfreds med default-indstillingerne]
-     						   \item Målingen startes ved at trykke på "Start"
-		   				   	   \item EKG-dataerne illustreres på en graf
-     						   \end{enumerate}
-\\ \midrule 
- 	Undtagelser:           & \textit{Extensions:}
-\newline					 1a: Der blev ikke ændret i indstillingerne. Der fortsættes ved punkt 2 i hovedforløbet med default indstillingerne 
-\\ \bottomrule
-    \end{tabularx}
-    \caption {Fully dressed Use Case beskrivelse af UC1.}
-    \label{tab:UC1}
-\end{table}
+		Samt EKG-systemet er tændt og klar til måling\\
+    Resultat &&    Den sundhedsprofessionelle kan ud fra EKG-dataerne se en graf                     \\ \midrule
+    Hovedforløb &    1. &    Den sundhedsprofessionelle vælger indstillinger\newline
+    						 [1.a \textit{Den sundhedsprofessionelle er tilfreds med default-indstillingerne}]\\[-1ex]	
+                &    2. &    Målingen startes ved at trykke på "Start"\\[-1ex]
+                &    3. &    EKG-dataerne illustreres på en graf\\ \midrule
+                
+    Undtagelser &    1a. &    Der blev ikke ændret i indstillingerne. Der fortsættes ved punkt 2 i hovedforløbet med default indstillingerne \\
+\caption{Fully dressed Use Case 1.}
+\label{UC1}
+\end{longtabu}
 
-
-
-
-\begin{table}[H] % UC2 % 
-    \begin{tabularx}{\textwidth}{l X}
-    \toprule 
-    \multicolumn{2}{c}{\begin{large}\textbf{Use Case 2}\end{large}}
- \\ \midrule \addlinespace[1mm]                                                                                                                                                        
-     Navn:                  &  Evaluer EKG i forhold til HRV \\ \addlinespace[1mm]                                                                                                                                                       
-     Use Case ID:           & 2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \\ \addlinespace[1mm]                                                                                                                                                       
-     Samtidige forekomster: & 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \\ \addlinespace[1mm]                                                                                                                                                       
-     Primær aktør:          &	Sundhedsprofessionelle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \addlinespace[1mm] 	                                                                                                                                                      
-     Initialisere:          & 	At kunne evaluere variationen i længden af RR-intervaller
-		 \\ \addlinespace[1mm]                                                                                                                                                                                                                                                                                                             
-     Forudsætninger:        & 	Use Case 1 er gennemført                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           \\ \addlinespace[1mm]                                                                                                                                                       
-     Resultat:              & 	HRV kan ses ud fra grafen                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \\ \midrule \addlinespace[1mm]                                                                                                                                                       
-     Hovedforløb:           &  \begin{enumerate}
-     						   \item Den sundhedsprofessionelle måler længden på RR-intervallerne
-     						   \item Den sundhedsprofessionelle analyserer målingerne
-     						   \item HRV er identificeret
-\newline						[Extensions 3a: HRV er ikke identificerbart]
-     						   \end{enumerate}
-\\ \midrule 
- 	Undtagelser:           & \textit{Extensions:}
-\newline					 3a: Det er ikke muligt at analysere HRV ud fra grafen. Use case 2 afsluttes og Use case 1 gentages med evt. nye tidsindstillinger
-\\ \bottomrule
-    \end{tabularx}
-    \caption {Fully dressed Use Case beskrivelse af UC2.}
-    \label{tab:UC2}
-\end{table}
+\begin{longtabu} to \linewidth{@{}l r X[j]@{}} %UC2%
+    {\large \textbf{Use Case 2}} && \\
+    \toprule
+    Navn &&    Evaluer EKG i forhold til HRV\\
+    Use case ID &&    2\\
+    Samtidige forløb &&    1\\
+    Primær aktør &&    Den sundhedsprofessionelle\\
+    Initialisere &&    Use Case 1 er gennemført   \\
+    Resultat &&   HRV kan ses ud fra grafen \\ \midrule
+    Hovedforløb &    1. &    Den sundhedsprofessionelle måler længden på RR intervallerne\\[-1ex]	
+                &    2. &    Den sundhedsprofessionelle analyserer målingerne\\[-1ex]
+                &    3. &    HRV er identificeret\newline
+                			 [3.a \textit{HRV er ikke identificerbart}]\\ \midrule
+                
+    Undtagelser &    3a. &    Det er ikke muligt at analysere HRV ud fra grafen. Use case 2 afsluttes og Use case 1 gentages med evt. nye tidsindstillinger \\
+\caption{Fully dressed Use Case 2.}
+\label{UC2}
+\end{longtabu}
 
 \subsection{Use case-diagram}
 
