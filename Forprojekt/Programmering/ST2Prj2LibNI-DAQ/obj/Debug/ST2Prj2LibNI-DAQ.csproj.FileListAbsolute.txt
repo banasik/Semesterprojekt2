@@ -14,3 +14,10 @@ C:\Users\Bana\Desktop\STPRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\NationalInstrumen
 C:\Users\Bana\Desktop\STPRJ2Support\ST2Prj2LibNI-DAQ\obj\Debug\ST2Prj2LibNI-DAQ.csprojResolveAssemblyReference.cache
 C:\Users\Bana\Desktop\STPRJ2Support\ST2Prj2LibNI-DAQ\obj\Debug\ST2Prj2LibNI-DAQ.dll
 C:\Users\Bana\Desktop\STPRJ2Support\ST2Prj2LibNI-DAQ\obj\Debug\ST2Prj2LibNI-DAQ.pdb
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\ST2Prj2LibNI-DAQ\bin\Debug\ST2Prj2LibNI-DAQ.dll
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\ST2Prj2LibNI-DAQ\bin\Debug\ST2Prj2LibNI-DAQ.pdb
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\ST2Prj2LibNI-DAQ\bin\Debug\NationalInstruments.Common.Native.dll
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\ST2Prj2LibNI-DAQ\bin\Debug\NationalInstruments.DAQmx.xml
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\ST2Prj2LibNI-DAQ\obj\Debug\ST2Prj2LibNI-DAQ.csprojResolveAssemblyReference.cache
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\ST2Prj2LibNI-DAQ\obj\Debug\ST2Prj2LibNI-DAQ.dll
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\ST2Prj2LibNI-DAQ\obj\Debug\ST2Prj2LibNI-DAQ.pdb

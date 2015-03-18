@@ -34,3 +34,14 @@ C:\Users\Bana\Desktop\STPRJ2Support\CS\bin\Debug\NationalInstruments.DAQmx.xml
 C:\Users\Bana\Desktop\STPRJ2Support\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csprojResolveAssemblyReference.cache
 C:\Users\Bana\Desktop\STPRJ2Support\CS\obj\Debug\NationalInstruments.Examples.AcqVoltageSamples_IntClk.MainForm.resources
 C:\Users\Bana\Desktop\STPRJ2Support\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csproj.GenerateResource.Cache
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.exe
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.pdb
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\AcqVoltageSamples_IntClk.exe
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\AcqVoltageSamples_IntClk.pdb
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\ST2Prj2LibNI-DAQ.dll
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\NationalInstruments.Common.Native.dll
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\ST2Prj2LibNI-DAQ.pdb
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\NationalInstruments.DAQmx.xml
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csprojResolveAssemblyReference.cache
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\NationalInstruments.Examples.AcqVoltageSamples_IntClk.MainForm.resources
+D:\Dokumenter\Github\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.2012.csproj.GenerateResource.Cache
