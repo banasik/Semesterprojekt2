@@ -457,27 +457,18 @@ namespace NationalInstruments.Examples.AcqVoltageSamples_IntClk
             acquisitionDataGrid.DataSource = dataTable;
             startButton.Enabled = true;
 
-            //for (double sample = 0; sample < datacollector.currentVoltageSeqArray.Length; sample++)
-            //{
-                
-            //}
 
-            foreach (var sample in datacollector.currentVoltageSeqArray)
-            {
-                if (sample >= 0.2)
-                {
-                    puls++;
-                    
-                }
-            }
-            label1.Text = puls.ToString();
-
-
-
-                chart1.Series["Series1"].Points.DataBindY(datacollector.currentVoltageSeq);
+          //  chart1.ChartAreas[0].AxisY.MaximumAutoSize = 100;
+            chart1.Series["Series1"].Points.DataBindY(datacollector.currentVoltageSeq);
             
 
-           //test test test
+            label1.Text = Convert.ToString(datacollector.AntalRtakker());
+
+
+
+               
+
+           
 
             return;
            

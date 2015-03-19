@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NationalInstruments.DAQmx;
-using System.Text;
+
 
 namespace ST2Prj2LibNI_DAQ
 {
@@ -14,6 +14,9 @@ namespace ST2Prj2LibNI_DAQ
         private int totalSamples = 2500;       //Global container for the number of samples to acquire
         private NationalInstruments.AnalogWaveform<double>[] data; //NI DAQ internal datamodel
 
+        private List<double> EKGDataList = new List<double>();
+        private List<double> RtakListe = new List<double>();
+        private List<double> HjertefrekvensListe = new List<double>();
 
         private List<double> currentVoltageSeqPrivate; //Last voltage seqeunce collected, numbers according til value of totalSamples
         /// <summary>
@@ -71,8 +74,8 @@ namespace ST2Prj2LibNI_DAQ
         {
             // Initialize local variables
             sampleRateInHz = 250;
-            rangeMinimumVolt = -1;
-            rangeMaximumVolt = 1;
+            rangeMinimumVolt = -5;
+            rangeMaximumVolt = 5;
             samplesPerChannel = 3600;
             deviceName = "Dev1/ai0";
             seqTimeOut = -1; 
@@ -145,5 +148,46 @@ namespace ST2Prj2LibNI_DAQ
                 currentLineIndex++;
             }
         }
+        
+        public int AntalRtakker()
+        {
+            int Rtakkerdata = new int();
+            
+            double tærskel = 0.9 * currentVoltageSeq.Max();
+            
+            double værdi = 0;
+            double rTakVærdi = 0;
+            int index = 0;
+
+            for (int i = 0; i < currentVoltageSeq.Count; i++)
+            {
+                //if(rTakVærdi > tærskel && currentVoltageSeq[i] < tærskel)
+                //{
+
+
+                //}
+                if (currentVoltageSeq[i] >= tærskel)
+                {
+                    rTakVærdi = currentVoltageSeq[i];
+                    Rtakkerdata++;
+                }
+
+                //if (currentVoltageSeq[i] < tærskel && værdi != 0.0)
+                //{
+                //    RtakListe.Add(currentVoltageSeq[index]);
+                //    værdi = 0;
+                //    index = 0;
+                //}
+            }
+
+            return Rtakkerdata;
+        }
+
+        public void pulsfrekvens()
+        {
+
+        }
+
+        
     }
 }
