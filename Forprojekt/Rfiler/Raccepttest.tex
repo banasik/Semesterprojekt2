@@ -64,71 +64,16 @@
 \label{AT_UC2}
 \end{longtabu}
 
-
 \subsection{Ikke-funktionelle krav}
 
-\begin{longtabu} to \linewidth{@{} X[j] X[j] X[j] l@{}}
-    Ikke-funktionelt krav &    Test/Handling & Forventet resultat &		Faktiske observationer\\[-1ex]
-    \midrule
-    \textit{Usability} & ~ & ~ & ~ 
-    \\ \midrule
-    	Den sundhedsprofessionelle skal kunne starte en default-måling maksimalt 20 sek. efter opstart af programmet &
-        Trykker start hvorefter der vha. Stopur tages tid  &    
-        At programmet er startet op inden 20 sekunder &	
-        ~ 	%{\Huge \checkmark}
-    \\
-    	Den sundhedsprofessionelle skal have mulighed for at ændre tidsintervallet før målingerne foretages &
-        Starter programmet og ændrer indstillinger i toolbar  &    
-        At det er muligt at ændre indstillinger &	
-        ~ 		%{\Huge \checkmark}
-    \\
-		Interfacet skal indeholde en "start-knap til at igangsætte målingerne &
-		Startknappen kan ses i GUI, og ved klik startes måling &
-		Der er en start knap, som starter måling når der trykkes &
-		~ 		%{\Huge \checkmark}
-	\\
-		Interfacet skal indeholde en "stop-knap til at afslutte målingerne før den valgte tid
-		Stopknappen kan ses i GUI, og ved klik stoppes igangværende måling &
-		Der er en stopknap, som stopper igangværende måling når der trykkes &
-		~ 		%{\Huge \checkmark}
-	\\
-		Programmet stopper automatisk efter det valgte tidsinterval &
-		Der er valgt et tidsinterval - programmet kører tidsintervallet ud &
-		Når tidsintervallet er gået stopper programmet &
-		~ 	%{\Huge \checkmark}
-		\\ \midrule	
-    \textit{Reliability} & ~ & ~ & ~ 
-    \\ \midrule
-    	Systemet skal have en effektiv MTBF (Mean Time Between Failure) på 20 minutter og en MTTR (Mean Time To Restore) på 1 minut &
-    	Programmet kører i 20 min - herefter genstartes, hvor der tages tid &
-    	At availability er < 95,2 \%, som følge af availability formlen (reference?) &
-    		%{\Huge \checkmark}
-    \\ \midrule	
-  	\textit{Performance} & ~ & ~ & ~
-    \\ \midrule
-    	Der skal vises en EKG-graf i interfacet, hvor spænding vises op af y-aksen (-1V til 1V) og tiden på x-aksen &
-    	Der gennemføres en måling &
-    	At spændingen for ekg-signalet er op ad y-aksen, samt tiden hen af x-aksen &
-    		%{\Huge \checkmark}
-    \\
-    	Grafen skal have major gridlines hver 0,5 mV og minor gridlines hver 0,1 mV på y-aksen og major gridlines hver 200 ms. og minor gridlines hver 40 ms. på x-aksen &
-    	Der gennemføres en måling &
-    	Grafen har major (på 0,5 mV) og minor gridlines (på 0,1 mV) på y-aksen , samt major (på 200 ms) og minor (på 40 ms) gridlines på x-aksen &
-    		%{\Huge \checkmark}
-    \\
-    	Grafen skal være scrollbar på x-aksen, så den sundhedsprofessionelle selv ved brug af musen kan vælge det udsnit af grafen der skal vises mere detaljeret &
-    	Der gennemføres en måling, hvorefter bruger scroller hen ad x-aksen &
-    	At der ved scrolling kan ses forskellige dele af EKG-signalet hen ad x-aksen &
-    		%{\Huge \checkmark}
-    \\
-    	Skal tage en sample over et brugerbestemt interval, hvor frekvensen er tilpasset målingerne, således at grafen er analyserbar &
-    	Der foretages en måling, hvor et bestemt interval hen ad x-aksen  vælges. &
-    	At det valgte interval synliggøres
-    		%{\Huge \checkmark}
- \\ \bottomrule
- 
-\caption{Accepttest af Ikke-funktionelle krav}
-\label{AT_Ikke-funktionelle krav}
+\begin{longtabu} to \linewidth{@{} c X[j] X[j] X[j] X[j] l@{}}
+	& Ikke-funktionelt krav & Test/Handling & Forventet Resultat & Faktisk Resultat & Godkendt
+	\\[-1ex] \midrule
+	& \textit{Usability}  &  &  &  & \\ \midrule
+	& Den sundhedsprofessionelle skal kunne starte en default-måling maximalt 20 sekunder efter opstart af program & Trykker start hvorefter der vha. stopur tages tid & At programmet er startet op indenfor 20 sekunder & & \\ \midrule
+	
+	& & & & &
+	
 \end{longtabu}
 
 
