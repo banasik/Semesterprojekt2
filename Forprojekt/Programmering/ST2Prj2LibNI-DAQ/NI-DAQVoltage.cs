@@ -74,8 +74,8 @@ namespace ST2Prj2LibNI_DAQ
         {
             // Initialize local variables
             sampleRateInHz = 250;
-            rangeMinimumVolt = -5;
-            rangeMaximumVolt = 5;
+            rangeMinimumVolt = -1;
+            rangeMaximumVolt = 1;
             samplesPerChannel = 3600;
             deviceName = "Dev1/ai0";
             seqTimeOut = -1; 
@@ -152,8 +152,9 @@ namespace ST2Prj2LibNI_DAQ
         public int AntalRtakker()
         {
             int Rtakkerdata = new int();
-            
-            double tærskel = 0.9 * currentVoltageSeq.Max();
+
+            double tærskel = 0.8 ;
+            //double tærskel = 0.8 * currentVoltageSeq.Max();
             
             double værdi = 0;
             double rTakVærdi = 0;
@@ -168,7 +169,7 @@ namespace ST2Prj2LibNI_DAQ
                 //}
                 if (currentVoltageSeq[i] >= tærskel)
                 {
-                    rTakVærdi = currentVoltageSeq[i];
+                    currentVoltageSeq.Max();
                     Rtakkerdata++;
                 }
 
@@ -181,8 +182,9 @@ namespace ST2Prj2LibNI_DAQ
             }
 
             return Rtakkerdata;
+            
         }
-
+        
         public void pulsfrekvens()
         {
 

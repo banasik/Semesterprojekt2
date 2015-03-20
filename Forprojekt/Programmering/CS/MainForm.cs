@@ -462,8 +462,8 @@ namespace NationalInstruments.Examples.AcqVoltageSamples_IntClk
             chart1.Series["Series1"].Points.DataBindY(datacollector.currentVoltageSeq);
             
 
-            label1.Text = Convert.ToString(datacollector.AntalRtakker());
-
+            //label1.Text = Convert.ToString(datacollector.AntalRtakker());
+            label1.Text = Convert.ToString(datacollector.);
 
 
                
