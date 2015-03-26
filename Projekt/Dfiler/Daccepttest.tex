@@ -8,18 +8,22 @@
 	& Ikke-funktionelt krav & Test/handling & Forventet resultat & Faktiske observationer & Godkendt
 	\\[-1ex] \midrule
 	&  \textit{Usability} &  &  & & \\ \midrule
-	& Den sundhedsprofessionelle skal kunne starte en default-måling maksimalt 20 sekunder efter opstart af program & Den sundhedsprofessionelle starter program, hvorefter der vha. stopur måles opstartstid & At programmet er startet op indenfor 20 sekunder & & \\ \midrule
-	& Den sundhedsprofessionelle skal have mulighed for at ændre tidsintervallet før målingerne foretages & Den sundhedsprofessionelle starter programmet og ændrer indstillingerne i toolbar & At der er mulighed for at ændre indstillinger & & \\ \midrule
-	& Interfacet skal indeholde en "start-knap" til at igangsætte målingerne & Startknappen er synlig i GUI, og ved tryk på knap igangsættes måling & At målingen igangsættes når knap er trykket & & \\ \midrule
-	& Interfacet skal indeholde en "stop-knap" til at afslutte målingerne & Stopknappen er synlig i GUI, og ved tryk på knap afsluttes måling & At målingen afsluttes når knap er trykket & & \\ \midrule
+	& Brugeren skal kunne starte en default-måling maksimalt 20 sekunder efter opstart af program & Brugeren starter program, hvorefter der vha. stopur måles opstartstid & At programmet er startet op indenfor 20 sekunder & & \\ \midrule
+	& Brugeren skal have mulighed for at ændre tidsintervallet før målingerne foretages & Brugeren starter programmet og ændrer indstillingerne i toolbar & At der er mulighed for at ændre indstillinger & & \\ \midrule
+	& Login-vinduet skal indholde en "login"-knap til at logge på og få vist EKG-vinduet & "login"-knappen er synlig i GUI, og ved tryk på knap vises EKG-vinduet & At EKG-vinduet vises & & \\ \midrule 
+	& EKG-vinduet skal indeholde en "start-knap" til at igangsætte målingerne & Startknappen er synlig i GUI, og ved tryk på knap igangsættes måling & At målingen igangsættes når knap er trykket & & \\ \midrule
+	& EKG-vinduet skal indeholde en "stop-knap" til at afslutte målingerne & Stopknappen er synlig i GUI, og ved tryk på knap afsluttes måling & At målingen afsluttes når knap er trykket & & \\ \midrule
+	& EKG-vinduet skal indeholde en "gem-knap" til at gemme målingerne & Gemknappen er synlig i GUI, og ved tryk på knap gemmes måling i database & Messageboks vises på skærmen med teksten "Måling er gemt" og kan findes i databasen & & \\ \midrule
+	& EKG-vinduet skal indeholde en "log ud"-kanp til at logge ud & "log ud"-knappen er synlig i GUI, og ved tryk på knap lukkes EKG-vinduet og login-vinduet vises & Login-vinduet vises & & \\ \midrule
 	& Programmet stopper automatisk efter det valgte tidsinterval & Der vælges et tidsinterval - programmet kører tidsintervallet ud & Når tidsintervallet er gået stopper programmet automatisk & & \\ \midrule
 	& \textit{Reliability} & & & & \\ \midrule
 	& Systemet skal have en effektiv MTBF (Mean Time Between Failure) på 20 minutter og MTTR (Mean Time To Restore) på 1 minut & Programmet kører i 20 minutter - herefter genstartes programmet, hvor der tages tid & At availability er < 95,2 \%, som følge af availability formelen (reference???) & & \\ \midrule
 	& \textit{Performance} & & & & \\ \midrule
 	& Der skal vises en EKG-graf i interfacet, hvor spænding vises op ad y-aksen (-1V til 1V) og tiden på x-aksen & Der gennemføres en måling & At spændingen for EKG-signalet er op ad y-aksen, samt tiden hen ad x-aksen & & \\ \midrule
-	& Grafen skal have major gridline  hver 0,5 mV og minor gridlines hver 0,1 mV på y-aksen. Derudover skal grafen have major gridlines 200ms og minor gridlines hver 40ms på x-aksen & Der gennemføres en måling & Grafen har major gridlines (y-akse: 0,5 mV og x-akse: 200 ms) og minor gridlines (y-akse: 0,1 mV og x-akse: 40 ms) & & \\ \midrule
 	& Det skal være muligt at kunne "scrolle" igennem målingerne hen ad x-aksen & Der gennemføres en måling hvorefter brugeren "scroller" hen ad x-aksen & At der ved "scrolling" kan ses forskellige dele af EKG-signalet hen ad x-aksen & & \\ \midrule
-	& Der skal kunne tages et sample over et brugerbestemt interval, hvor frekvensen er tilpasses målingerne, således at grafen er analyserbar & Der gennemføres en måling, hvor et bestemt interval hen ad x-aksen vælges & At det valgte interval synliggøres & & \\ \bottomrule
+	& Der skal kunne tages et sample over et brugerbestemt interval, hvor frekvensen er tilpasses målingerne, således at grafen er analyserbar & Der gennemføres en måling, hvor et bestemt interval hen ad x-aksen vælges & At det valgte interval synliggøres & & \\ \midrule
+	& \textit{Supportability} & & & & \\ \midrule
+	& Softwaren er opbygget af trelagsmodellen & Kig i koden efter data-lag, logik-lag og GUI-lag & At koden indeholder et data-lag, et logik-lag og et GUI-lag & & \\ \bottomrule
 \caption{Accepttest af Ikke-funktionelle krav}
 \end{longtabu}
 
