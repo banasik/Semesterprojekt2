@@ -2,6 +2,131 @@
 
 \section{Acceptest af ikke-fukntionelle krav}
 
+\section{Accepttest af Use Cases}
+
+
+%Use case 1 acceptest
+\subsection{Use Case 1}
+
+\begin{longtabu} to \linewidth{@{} c X[j] X[j] X[j] l@{}}
+    ~ &	Test &    Forventet resultat &		Faktiske observationer &    Godkendt\\[-1ex]
+    \midrule
+    ~ &\textit{Hovedscenarie} & ~ & ~ &
+    \\ \midrule
+    1. &Brugeren indtaster username samt password &   Username- og passwordboks bliver udfyldt  &    ~ &		%{\Huge \checkmark}
+    \\
+    2. &Brugeren trykker på "Login"-knappen. Login-vinduet lukkes ned mens EKG-vinduet åbnes &    Login bliver godkendt. Login-vinduet lukkes ned mens EKG-vinduet åbnes  &     ~ &		%{\Huge \checkmark}
+	\\ \midrule
+	~ &\textit{Exentions} & ~ & ~ & 
+	\\ \midrule	
+    2a. &	Username eller password er forkert &    Messageboks vises på skærmen med teksten "Username eller password er forkert - prøv igen"  &   ~  &		%{\Huge \checkmark}
+ \\ \bottomrule
+ 
+\caption{Accepttest af Use Case 1.}\\
+\label{AT_UC1}
+\end{longtabu}
+
+%Use case 2 acceptest 
+\subsection{Use Case 2}
+
+\begin{longtabu} to \linewidth{@{} c X[j] X[j] X[j] l@{}}
+	& Test	& Forventet resultat		& Faktiske observationer		& Godkendt\\[-1ex] 
+	\midrule
+	&\textit{Hovedscenarie} & & & 
+	\\ \midrule
+	1. & Brugeren vælger indstillinger & Indstillinger bliver valgt & & %{\Huge \checkmark}
+	\\
+	2. & Målingen startes ved at trykke på "Start" & Målingen startes i EKG-vinduet & & %{\Huge \checkmark}
+	\\
+	3. & EKG-data illustreres på en graf & En analyserebar graf fremvises i EKG-vinduet & & %{\Huge \checkmark}
+	\\ \midrule
+	1.a & Brugeren er tilfreds med default-indstillingerne  & Målingen foretages uden ændring af default-indstillingerne & & %{\Huge \checkmark}
+	\\ \bottomrule
+
+\caption{Accepttest af Use Case 2.}\\
+\label{AT_UC2}	
+\end{longtabu}
+
+%Use Case 3 acceptest
+
+\subsection{Use Case 3}
+
+\begin{longtabu} to \linewidth{@{} c X[j] X[j] X[j] l@{}}
+    ~ &	Test &    Forventet resultat &		Faktiske observationer &    Godkendt\\[-1ex]
+    \midrule
+    ~ &\textit{Hovedscenarie} & ~ & ~ &
+    \\ \midrule
+    1. &Brugeren aflæser, hvor mange små fluktuationer, der forekommer på baselinen &    Det er muligt at se små fluktuationer, som brugeren kan aflæse på EKG-grafen  &    ~ &		%{\Huge \checkmark}
+    \\
+    2. &Brugeren stiller diagnosen atrieflimmer	 &    Atrieflimmer kan aflæses ud fra EKG-grafen  &     ~ &		%{\Huge \checkmark}
+	\\ \midrule
+	~ &\textit{Exentions} & ~ & ~ & 
+	\\ \midrule	
+    2a. &	Atriefrekvensen er ikke i intervallet 220-300 pr. minut &    Det er ikke muligt at diagnosticere atrieflimmer ud fra EKG-grafen   &   ~  &		%{\Huge \checkmark}
+ \\ \bottomrule
+ 
+\caption{Accepttest af Use Case 3.}\\
+\label{AT_UC3}
+\end{longtabu}
+
+%Use Case 4 acceptest
+
+\subsection{Use Case 4}
+
+\begin{longtabu} to \linewidth{@{} c X[j] X[j] X[j] l@{}}
+    ~ &	Test &    Forventet resultat &		Faktiske observationer &    Godkendt\\[-1ex]
+    \midrule
+    ~ &\textit{Hovedscenarie} & ~ & ~ &
+    \\ \midrule
+    1. &Brugeren trykker på "Gem"-knappen. Et nyt vindue kommer frem, hvor brugeren kan indtaste information om målingen &    Vinduet kommer frem, og brugeren har mulighed for at indtaste information om målingen  &    ~ &		%{\Huge \checkmark}
+    \\
+    2. &Brugeren indtaster CRP-nummer, dato og diagnose for den givende måling	 &   CPR-nummer-, dato- og diagnoseboks bliver udfyldt &     ~ &		%{\Huge \checkmark}
+    \\
+    3. &Messageboks viser på skærmen med teksten "Målingen er gemt" & Messageboks kommer frem med teksten "Målingen er gemt" & & %{\Huge \checkmark}
+	\\ \midrule
+	~ &\textit{Exentions} & ~ & ~ & 
+	\\ \midrule	
+    2a. &	Messageboks vises på skærmen med teksten "CPR-nummer er ikke gyldig" &    Messageboks vises med teksten "CPR-nummer er ikke gyldig". CPR-nummerboks cleares   &   ~  &		%{\Huge \checkmark}
+ \\ \bottomrule
+ 
+\caption{Accepttest af Use Case 4.}\\
+\label{AT_UC4}
+\end{longtabu}
+
+%Use Case 5 acceptest
+
+\subsection{Use Case 5}
+
+\begin{longtabu} to \linewidth{@{} c X[j] X[j] X[j] l@{}}
+    ~ &	Test &    Forventet resultat &		Faktiske observationer &    Godkendt\\[-1ex]
+    \midrule
+    ~ &\textit{Hovedscenarie} & ~ & ~ &
+    \\ \midrule
+    1. & Brugeren trykker på "log ud"-knappen og EKG-vinduet lukkes, mens login-vinduet fremkommer &    login-vinduet fremkommer og brugeren er blevet logget ud  &    ~ &		%{\Huge \checkmark}
+   	\\ \midrule
+	~ &\textit{Exentions} & ~ & ~ & 
+	\\ \midrule	
+ \\ \bottomrule
+ 
+\caption{Accepttest af Use Case 5.}\\
+\label{AT_UC5}
+\end{longtabu}
+
+
+
+\subsection{Ikke-funktionelle krav}
+
+\begin{longtabu} to \linewidth{@{} c X[j] X[j] X[j] X[j] l@{}}
+	& Ikke-funktionelt krav & Test/Handling & Forventet Resultat & Faktisk Resultat & Godkendt
+	\\[-1ex] \midrule
+	& \textit{Usability}  &  &  &  & \\ \midrule
+	& Den sundhedsprofessionelle skal kunne starte en default-måling maximalt 20 sekunder efter opstart af program & Trykker start hvorefter der vha. stopur tages tid & At programmet er startet op indenfor 20 sekunder & & \\ \midrule
+	
+	& & & & &
+	
+\end{longtabu}
+
+
 \subsection{Ikke-funktionelle krav}
 
 \begin{longtabu} to \linewidth{@{} c X[j] X[j] X[j] X[j] l@{}}
