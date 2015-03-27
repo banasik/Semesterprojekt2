@@ -1,7 +1,7 @@
 \chapter{Kravspecifikation}
 
 \section{Indledning}
-Kravspecifikationen vil beskrive, ud fra en række modeller, hvordan EKG-systemet fungerer. Helt generelt er EKG-måling en simpel metode, til at måle hjertets elektriske aktivitet via elektroder, som registrerer elektriske impulser, placeret på huden. Ud fra disse impulser dannes en graf, som benyttes til at analysere hjertets funktionalitet ud fra P-, Q-, R-, S- og T-takkerne, og dermed konkludere om den pågældende patient har et raskt eller sygt hjerte, samt hvilken sygdom der er tale om. Helt specifikt for denne opgave er formålet, at identificere sygdommen artrieflimmer via et virtuelt EKG-signal. 
+Kravspecifikationen vil beskrive, ud fra en række modeller, hvordan EKG-systemet fungerer. Helt generelt er EKG-måling en simpel metode, til at måle hjertets elektriske aktivitet via elektroder, som registrerer elektriske impulser, placeret på huden. Ud fra disse impulser dannes en graf, som benyttes til at analysere hjertets funktionalitet ud fra P-, Q-, R-, S- og T-takkerne, og dermed konkludere om den pågældende patient har et raskt eller sygt hjerte, samt hvilken sygdom der er tale om. Helt specifikt for denne opgave er formålet, at identificere sygdommen atrieflimmer via et virtuelt EKG-signal. 
 
 \section{Funktionelle krav}
 De funktionelle krav vil nedenstående beskrives ud fra Aktør-kontekstdiagram, aktørbeskrivelse, Use Cases samt Use Case diagram. 
@@ -10,7 +10,7 @@ De funktionelle krav vil nedenstående beskrives ud fra Aktør-kontekstdiagram, 
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=1\textwidth]{Figurer/Snip20150320_4}
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150327_25}
 	\caption{Aktør-kontekstdiagram}
 	\label{fig:aktoerbeskrivelse}
 \end{figure}
@@ -23,9 +23,11 @@ Data hentes ned fra den ekstern aktør, physionet, og via Analog-discovery omdan
 \begin{tabularx}{\textwidth}{l l X}
      Aktørnavn  & Type      & Beskrivelse \\ \midrule
      Bruger   & Primær    & Brugeren er den aktør, der ønsker at foretage målingerne, som omfatter EKG samt diagnosticering af artieflimmer.\\ 						  									  \addlinespace[2mm]
-     Analog & Sekundær  & Analog omdanner data fra den eksterne aktør, physionet, til et analog-signal \\ 
+     Analog & Sekundær  & Analog omdanner data fra den eksterne aktør, physionet, til et analog signal \\ 
      	\addlinespace[2mm]
-     Physionet & Ekstern 	& Physionet er en database, hvor der ligger mange forskellige EKG-signaler.  \\	                                                                                                                                                                           
+     DAQ & Sekundær  & DAQ'en omdanner det analoge signal fra Analogen til et digitalt signal, som EKG-systemet kan generere en graf ud fra  \\ 
+     	\addlinespace[2mm]
+     Physionet & Ekstern 	& Physionet er en database, hvor der ligger mange forskellige EKG-signaler  \\	                                                                                                                                                                           
    
      \bottomrule                                                                                                                   
     \end{tabularx}
@@ -64,16 +66,17 @@ Data hentes ned fra den ekstern aktør, physionet, og via Analog-discovery omdan
     Samtidige forløb &&    1\\
     Primær aktør &&    Brugeren\\
     Sekundær aktør &&	Analog\\
+    Sekunær aktør &&	DAQ\\
     Ekstern aktør &&	Physionet\\
     Initialisere &&    Brugeren ønsker at foretage en EKG-måling\\
-    Forudsætninger &&    Brugeren er logget ind og EKG-vinduet er vist samt analog og DAQ'en er koblet til og data er hentet ned\\
+    Forudsætninger &&    Brugeren er logget ind og EKG-vinduet er vist samt Analog og DAQ'en er koblet til og data er hentet ned\\
     Resultat &&    EKG-graf bliver vist           \\ \midrule
     Hovedforløb &    1. &    Brugeren vælger indstillinger\newline
     						 [1.a \textit{Brugeren er tilfreds med default-indstillingerne}]\\[-1ex]	
                 &    2. &    Målingen startes ved at trykke på "Start"\\[-1ex]
                 &    3. &    EKG-data illustreres på en graf\\ \midrule
                 
-    Undtagelser &    1a. &    Der blev ikke ændret i indstillingerne. Der fortsættes ved punkt 2 i hovedforløbet med default indstillingerne \\ \bottomrule
+    Undtagelser &    1a. &    Der blev ikke ændret i default-indstillingerne. Der fortsættes ved punkt 2 i hovedforløbet med default indstillingerne \\ \bottomrule
 \caption{Fully dressed Use Case 2.}
 \label{UC2}
 \end{longtabu}
@@ -139,12 +142,12 @@ Data hentes ned fra den ekstern aktør, physionet, og via Analog-discovery omdan
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=1\textwidth]{Figurer/Snip20150326_22}
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150327_24}
 	\caption{Use case-diagram}
 	\label{fig:Use Cases}
 \end{figure}
 
-Brugeren, den primære aktør bliver bedt om sit log ind, inden EKG-vinduet vises. Brugeren vælger indstillinger og trykker på "start"-knappen. EKG-dataerne fra den eksterne aktør, Physionet, behandles i Analog, den sekundære aktør, hvor efter data vises som en EKG-graf i EKG-vinduet. Brugeren kan ud fra denne graf evaluere EKG-signalet i forhold til at diagnosticere atrieflimmer. Brugeren gemmer EKG-målingen i databasen og logger ud.  
+Brugeren, den primære aktør bliver bedt om sit log ind, inden EKG-vinduet vises. Brugeren vælger indstillinger og trykker på "start"-knappen. EKG-dataerne fra den eksterne aktør, Physionet, behandles i Analog samt i DAQ'en, de sekundære aktør, hvor efter data vises som en EKG-graf i EKG-vinduet. Brugeren kan ud fra denne graf evaluere EKG-signalet i forhold til at diagnosticere atrieflimmer. Brugeren gemmer EKG-målingen i databasen og logger ud.  
 
 \section{Ikke-funktionelle krav}
 De ikke-funktionelle krav er udarbejdet ved brug af (F)URPS+. De er alle prioriteret ved MoSCoW metoden - Must (skal være med), Should (bør være med, hvis muligt), Could (kunne have med, hvis det ikke influerer på andet), Won't/Would (ikke med nu, men med i fremtidige opdateringer). 
