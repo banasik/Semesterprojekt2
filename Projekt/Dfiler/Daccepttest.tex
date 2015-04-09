@@ -12,9 +12,9 @@
     \midrule
     ~ &\textit{Hovedscenarie} & ~ & ~ &
     \\ \midrule
-    1. &Brugeren indtaster username samt password &   Username- og passwordboks bliver udfyldt  &    ~ &		%{\Huge \checkmark}
+    1. &Indtast username samt password &   Username- og passwordboks bliver udfyldt  &    ~ &		%{\Huge \checkmark}
     \\
-    2. &Brugeren trykker på "Login"-knappen. Login-vinduet lukkes ned mens EKG-vinduet åbnes &    Login bliver godkendt. Login-vinduet lukkes ned mens EKG-vinduet åbnes  &     ~ &		%{\Huge \checkmark}
+    2. &Tryk på "Login"-knappen.  &    Login bliver godkendt. Login-vinduet lukkes ned mens EKG-vinduet åbnes  &     ~ &		%{\Huge \checkmark}
 	\\ \midrule
 	~ &\textit{Exentions} & ~ & ~ & 
 	\\ \midrule	
@@ -34,13 +34,13 @@
 	\midrule
 	&\textit{Hovedscenarie} & & & 
 	\\ \midrule
-	1. & Brugeren vælger indstillinger & Indstillinger bliver valgt & & %{\Huge \checkmark}
+	1. &Vælg indstillinger & Indstillinger bliver valgt & & %{\Huge \checkmark}
 	\\
-	2. & Målingen startes ved at trykke på "Start" & Målingen startes i EKG-vinduet & & %{\Huge \checkmark}
+	2. & Tryk på "Start" & Målingen startes i EKG-vinduet & & %{\Huge \checkmark}
 	\\
 	3. & EKG-data illustreres på en graf & En analyserebar graf fremvises i EKG-vinduet & & %{\Huge \checkmark}
 	\\ \midrule
-	1.a & Brugeren er tilfreds med default-indstillingerne  & Målingen foretages uden ændring af default-indstillingerne & & %{\Huge \checkmark}
+	1.a & Ingen ændring i indstillinger  & Målingen foretages med default-indstillingerne & & %{\Huge \checkmark}
 	\\ \bottomrule
 
 \caption{Accepttest af Use Case 2.}\\
@@ -57,9 +57,9 @@
     \midrule
     ~ &\textit{Hovedscenarie} & ~ & ~ &
     \\ \midrule
-    1. &Brugeren aflæser, hvor mange små fluktuationer, der forekommer på baselinen &    Det er muligt at se små fluktuationer, som brugeren kan aflæse på EKG-grafen  &    ~ &		%{\Huge \checkmark}
+    1. & Validere programmets analyse af EKG-signalet &    Det er muligt at se små fluktuationer, som kan aflæses på EKG-grafen  &    ~ &		%{\Huge \checkmark}
     \\
-    2. &Brugeren stiller diagnosen atrieflimmer	 &    Atrieflimmer kan aflæses ud fra EKG-grafen  &     ~ &		%{\Huge \checkmark}
+    2. &Stil diagnosen atrieflimmer	 &    Atrieflimmer kan aflæses ud fra EKG-grafen  &     ~ &		%{\Huge \checkmark}
 	\\ \midrule
 	~ &\textit{Exentions} & ~ & ~ & 
 	\\ \midrule	
@@ -80,15 +80,15 @@
     \midrule
     ~ &\textit{Hovedscenarie} & ~ & ~ &
     \\ \midrule
-    1. &Brugeren trykker på "Gem"-knappen. Et nyt vindue kommer frem, hvor brugeren kan indtaste information om målingen &    Vinduet kommer frem, og brugeren har mulighed for at indtaste information om målingen  &    ~ &		%{\Huge \checkmark}
+    1. &Tryk på "Gem"-knappen. &    Information-vinduet kommer frem, og der er mulighed for at indtaste information om målingen  &    ~ &		%{\Huge \checkmark}
     \\
-    2. &Brugeren indtaster CRP-nummer, dato og diagnose for den givende måling	 &   CPR-nummer-, dato- og diagnoseboks bliver udfyldt &     ~ &		%{\Huge \checkmark}
+    2. &Indtaster dens fiktive persons CPR-nummer, dato og diagnose for den givende måling	 &   CPR-nummer-, dato- og diagnoseboks bliver udfyldt &     ~ &		%{\Huge \checkmark}
     \\
-    3. &Messageboks viser på skærmen med teksten "Målingen er gemt" & Messageboks kommer frem med teksten "Målingen er gemt" & & %{\Huge \checkmark}
+    3.	&Tryk på "Gem"-knappen i informaiton-vinduet 	&	Messageboks kommer frem med teksten "Målingen er gemt" & & %{\Huge \checkmark}
 	\\ \midrule
 	~ &\textit{Exentions} & ~ & ~ & 
 	\\ \midrule	
-    2a. &	Messageboks vises på skærmen med teksten "CPR-nummer er ikke gyldig" &    Messageboks vises med teksten "CPR-nummer er ikke gyldig". CPR-nummerboks cleares   &   ~  &		%{\Huge \checkmark}
+    2a. &	CPR-nummer er ikke gyldigt &    Messageboks vises med teksten "CPR-nummer er ikke gyldig". CPR-nummerboks cleares   &   ~  &		%{\Huge \checkmark}
  \\ \bottomrule
  
 \caption{Accepttest af Use Case 4.}\\
@@ -105,7 +105,7 @@
     \midrule
     ~ &\textit{Hovedscenarie} & ~ & ~ &
     \\ \midrule
-    1. & Brugeren trykker på "log ud"-knappen og EKG-vinduet lukkes, mens login-vinduet fremkommer &    login-vinduet fremkommer og brugeren er blevet logget ud  &    ~ &		%{\Huge \checkmark}
+    1. & Tryk på "log ud"-knappen &    EKG-vinduet lukkes ned, mens login-vinduet fremkommer &    ~ &		%{\Huge \checkmark}
    	\\ \midrule
 	~ &\textit{Exentions} & ~ & ~ & 
 	\\ \midrule	
@@ -121,20 +121,20 @@
 	& Ikke-funktionelt krav & Test/handling & Forventet resultat & Faktiske observationer & Godkendt
 	\\[-1ex] \midrule
 	&  \textit{Usability} &  &  & & \\ \midrule
-	& Brugeren skal kunne starte en default-måling maksimalt 20 sekunder efter opstart af program & Brugeren starter program, hvorefter der vha. stopur måles opstartstid & At programmet er startet op indenfor 20 sekunder & & \\ \midrule
-	& Brugeren skal have mulighed for at ændre tidsintervallet før målingerne foretages & Brugeren starter programmet og ændrer indstillingerne i toolbar & At der er mulighed for at ændre indstillinger & & \\ \midrule
-	& Login-vinduet skal indholde en "login"-knap til at logge på og få vist EKG-vinduet & "login"-knappen er synlig i GUI, og ved tryk på knap vises EKG-vinduet & At EKG-vinduet vises & & \\ \midrule 
-	& EKG-vinduet skal indeholde en "start-knap" til at igangsætte målingerne & Startknappen er synlig i GUI, og ved tryk på knap igangsættes måling & At målingen igangsættes når knap er trykket & & \\ \midrule
-	& EKG-vinduet skal indeholde en "stop-knap" til at afslutte målingerne & Stopknappen er synlig i GUI, og ved tryk på knap afsluttes måling & At målingen afsluttes når knap er trykket & & \\ \midrule
-	& EKG-vinduet skal indeholde en "gem-knap" til at gemme målingerne & Gemknappen er synlig i GUI, og ved tryk på knap gemmes måling i database & Messageboks vises på skærmen med teksten "Måling er gemt" og kan findes i databasen & & \\ \midrule
+	& Brugeren skal kunne starte en default-måling maksimalt 20 sekunder efter opstart af program & Start programmet, hvorefter der vha. stopur måles opstartstiden & At programmet er startet op indenfor 20 sekunder & & \\ \midrule
+	& Brugeren skal have mulighed for at ændre tidsintervallet før målingerne foretages & Start programmet og ændrer indstillingerne i toolbar & At der er mulighed for at ændre indstillinger & & \\ \midrule
+	& Login-vinduet skal indholde en login-knap til at logge på og få vist EKG-vinduet & login-knappen er synlig i GUI, og ved tryk på knappen vises EKG-vinduet & At EKG-vinduet vises & & \\ \midrule 
+	& EKG-vinduet skal indeholde en "start-knap" til at igangsætte målingerne & Startknappen er synlig i GUI, og ved tryk på knappen igangsættes måling & At målingen igangsættes & & \\ \midrule
+	& EKG-vinduet skal indeholde en "stop-knap" til at afslutte målingerne & Stopknappen er synlig i GUI, og ved tryk på knappen afsluttes måling & At målingen afsluttes  & & \\ \midrule
+	& EKG-vinduet skal indeholde en "gem-knap" til at gemme målingerne & Gem-knappen er synlig i GUI, og ved tryk på knappen gemmes måling i database & Messageboks vises på skærmen med teksten "Måling er gemt" og kan findes i databasen & & \\ \midrule
 	& EKG-vinduet skal indeholde en "log ud"-kanp til at logge ud & "log ud"-knappen er synlig i GUI, og ved tryk på knap lukkes EKG-vinduet og login-vinduet vises & Login-vinduet vises & & \\ \midrule
-	& Programmet stopper automatisk efter det valgte tidsinterval & Der vælges et tidsinterval - programmet kører tidsintervallet ud & Når tidsintervallet er gået stopper programmet automatisk & & \\ \midrule
+	& Målingen stopper automatisk efter det valgte tidsinterval & Der vælges et tidsinterval. Måling startes & Målingen stopper efter det valgte tidsinterval & & \\ \midrule
 	& \textit{Reliability} & & & & \\ \midrule
-	& Systemet skal have en effektiv MTBF (Mean Time Between Failure) på 20 minutter og MTTR (Mean Time To Restore) på 1 minut & Programmet kører i 20 minutter - herefter genstartes programmet, hvor der tages tid & At availability er < 95,2 \%, som følge af availability formelen (reference???) & & \\ \midrule
+	& Systemet skal have en effektiv MTBF (Mean Time Between Failure) på 20 minutter og MTTR (Mean Time To Restore) på 1 minut & Køre programmet i 20 minutter. Genstart derefter programmet, hvor der tages tid med et stopur & Programmet har kørt i 20 minutter og genstartes indenfor 1 minut  & & \\ \midrule
 	& \textit{Performance} & & & & \\ \midrule
-	& Der skal vises en EKG-graf i interfacet, hvor spænding vises op ad y-aksen (-1V til 1V) og tiden på x-aksen & Der gennemføres en måling & At spændingen for EKG-signalet er op ad y-aksen, samt tiden hen ad x-aksen & & \\ \midrule
-	& Det skal være muligt at kunne "scrolle" igennem målingerne hen ad x-aksen & Der gennemføres en måling hvorefter brugeren "scroller" hen ad x-aksen & At der ved "scrolling" kan ses forskellige dele af EKG-signalet hen ad x-aksen & & \\ \midrule
-	& Der skal kunne tages et sample over et brugerbestemt interval, hvor frekvensen er tilpasses målingerne, således at grafen er analyserbar & Der gennemføres en måling, hvor et bestemt interval hen ad x-aksen vælges & At det valgte interval synliggøres & & \\ \midrule
+	& Der skal vises en EKG-graf i interfacet, hvor spænding vises op ad y-aksen (-1V til 1V) og tiden på x-aksen & Gennemfør en måling & At spændingen for EKG-signalet er op ad y-aksen, samt tiden hen ad x-aksen & & \\ \midrule
+	& Det skal være muligt at kunne scrolle igennem målingerne hen ad x-aksen & Der gennemføres en måling hvorefter der scrolles hen ad x-aksen & At der ved scrolling kan ses forskellige dele af EKG-signalet hen ad x-aksen & & \\ \midrule
+	& Der skal kunne tages et sample over et brugerbestemt interval, hvor frekvensen er tilpasses målingerne, således at grafen er analyserbar & Gennemfør en måling, hvor et bestemt interval hen ad x-aksen er valgt & At det valgte interval synliggøres & & \\ \midrule
 	& \textit{Supportability} & & & & \\ \midrule
 	& Softwaren er opbygget af trelagsmodellen & Kig i koden efter data-lag, logik-lag og GUI-lag & At koden indeholder et data-lag, et logik-lag og et GUI-lag & & \\ \bottomrule
 \caption{Accepttest af Ikke-funktionelle krav}
