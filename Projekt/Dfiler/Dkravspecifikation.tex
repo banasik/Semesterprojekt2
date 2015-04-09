@@ -23,11 +23,11 @@ Data hentes ned fra den ekstern aktør, physionet, og via Analog-discovery omdan
 \begin{tabularx}{\textwidth}{l l X}
      Aktørnavn  & Type      & Beskrivelse \\ \midrule
      Bruger   & Primær    & Brugeren er den aktør, der ønsker at foretage målingerne, som omfatter EKG samt diagnosticering af artieflimmer. Brugeren er en person, der har kendskab til EKG-systemet. \\ 						  									  \addlinespace[2mm]
-     Analog-discovery & Sekundær  & Analog omdanner data fra den eksterne aktør, physionet, til et analog signal \\ 
+     Analog-discovery & Sekundær  & Analog-discovery omdanner data fra den eksterne aktør, physionet, til et analog signal \\ 
      	\addlinespace[2mm]
-     DAQ & Sekundær  & DAQ'en omdanner det analoge signal fra Analogen til et digitalt signal, som EKG-systemet kan generere en graf ud fra  \\ 
+     DAQ & Sekundær  & DAQ'en omdanner det analoge signal fra analog-discovery til et digitalt signal, som EKG-systemet kan generere en graf ud fra  \\ 
      	\addlinespace[2mm]
-     Physionet & Ekstern 	& Physionet er en database, hvor der ligger mange forskellige EKG-signaler. Det er ud fra disse EKG-signaler, fiktive personer skabes.\\	                                                                                                                                                                           
+     Physionet & Ekstern 	& Physionet er en database, hvor der ligger mange forskellige EKG-signaler. Det er ud fra disse EKG-signaler, virtuelle patienter skabes.\\	                                                                                                                                                                           
    
      \bottomrule                                                                                                                   
     \end{tabularx}
@@ -121,7 +121,7 @@ Brugeren, den primære aktør bliver bedt om sit log ind, inden EKG-vinduet vise
     Forudsætninger &&  Use case 3 er gennemført\\
     Resultat &&    EKG er gemt i databasen                    \\ \midrule
     Hovedforløb &    1. &    Brugeren trykker på "Gem-knappen". Et nyt vindue kommer frem, hvor brugeren kan indtaste information om målingen\\[-1ex]   						 	
-                &    2. &	Brugeren indtaster den fiktive persons CPR-nummer, dato og diagnose for den givende måling\newline
+                &    2. &	Brugeren indtaster den virtuelle patients CPR-nummer, dato og diagnose for den givende måling\newline
                 	[2.a \textit{CPR-nummer er ikke gyldigt}]\\[-1ex]  
                 
                 &	3.	&	Brugeren trykker på "Gem"-knappen i det vindue, hvor informationerne om målingen er indskrevet\\[-1ex]	
