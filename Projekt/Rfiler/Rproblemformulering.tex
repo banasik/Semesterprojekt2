@@ -1,1 +1,14 @@
-\chapter{Problemformulering}
+\chapter{Projektformulering}
+\section{Problemformulering}
+ I dette projekt vil vi udvikle en software, som ud fra en virtuel patients EKG-målinger kan detektere atrieflimmer. 
+\section{Indledning}
+Via kendskabet til raske EGK-signaler, ved vi hvordan forholdet mellem P-, Q-, R-, S- og T-takkerne normalt er. Ud fra dette kan vi programmere et system, som kan analysere et givet abnormalt EKG-signal, og dermed informere brugeren fx i form af sundhedsfagligt personale om eventuelle forekomster af atrieflimmer.\\
+Udover at detektere og informere om atrieflimmer kan softwaren også danne en graf og gemme de givne data i en SQL-database. Softwaren er opbygget via trelagsmodellen, som består af et data-, logik- og GUI-lag.
+\\
+Det abnormale EKG-signal hentes ned i form af en csv-fil fra den eksterne EKG-database, Physionet (lav reference eller ordliste). Csv-filens data omdannes via Analog-discovery til et analogt signal. Det analoge signal omdannes via DAQ'en til et digitalt signal. Det er dette digitale signal softwaren behandler, og er dermed det signal, der dannes en graf ud fra. Softwaren detekterer atrieflimmer og informerer brugeren herom.     
+
+
+1. rask hjerte\\
+2. EKG-signaler generelt inkl. beskrivelse af takker\\
+3. patofysiologi - atrieflimmer inkl. detektion via EKG\\
+4. Software og hardware beskrivelse
