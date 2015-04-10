@@ -18,3 +18,7 @@ D:\Dokumenter\Github\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt
 C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\SemesterProjekt2.exe.config
 C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.exe
 C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.pdb
+C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.CRP_nummer.resources
+C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.EKG.resources
+C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.Gamle_målinger.resources
+C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.Login.resources
