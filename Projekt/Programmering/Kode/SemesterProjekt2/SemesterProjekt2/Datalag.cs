@@ -16,7 +16,13 @@ namespace SemesterProjekt2
 
        // private List<BS_DTO> bsList;
        // private List<BT_DTO> btList;
-       
+
+        public Datalag()
+        {
+            // Opsætning af DB forbindelsen til SQL Server webhotel10.iha.dk og valgt database (db)
+            conn = new SqlConnection("Data Source=webhotel10.iha.dk;Initial Catalog=" + db + ";Persist Security Info=True;User ID=" + db + ";Password=" + db + "");
+        }
+
        public int getKode(string navn)
        {
           int resultat = 0;

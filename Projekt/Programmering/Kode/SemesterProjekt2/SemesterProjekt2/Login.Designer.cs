@@ -83,15 +83,14 @@
          this.label3.AutoSize = true;
          this.label3.Location = new System.Drawing.Point(50, 141);
          this.label3.Name = "label3";
-         this.label3.Size = new System.Drawing.Size(35, 13);
+         this.label3.Size = new System.Drawing.Size(0, 13);
          this.label3.TabIndex = 5;
-         this.label3.Text = "label3";
          // 
          // Login
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(277, 205);
+         this.ClientSize = new System.Drawing.Size(293, 205);
          this.Controls.Add(this.label3);
          this.Controls.Add(this.label2);
          this.Controls.Add(this.label1);
@@ -100,6 +99,7 @@
          this.Controls.Add(this.button1);
          this.Name = "Login";
          this.Text = "Login";
+         this.Load += new System.EventHandler(this.Login_Load);
          this.ResumeLayout(false);
          this.PerformLayout();
 

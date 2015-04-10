@@ -48,5 +48,10 @@ namespace SemesterProjekt2
       {
          tjekLogin(textBox1.Text, Convert.ToInt32(textBox2.Text));
       }
+
+      private void Login_Load(object sender, EventArgs e)
+      {
+
+      }
    }
 }

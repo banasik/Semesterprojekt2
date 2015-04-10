@@ -22,3 +22,15 @@ C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProj
 C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.EKG.resources
 C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.Gamle_målinger.resources
 C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.Login.resources
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\SemesterProjekt2.exe
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\SemesterProjekt2.pdb
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\NationalInstruments.DAQmx.dll
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\ST2Prj2LibNI-DAQ.pdb
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\NationalInstruments.DAQmx.xml
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.csprojResolveAssemblyReference.cache
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.CRP_nummer.resources
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.EKG.resources
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.Gamle_målinger.resources
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.Login.resources
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.Properties.Resources.resources
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.csproj.GenerateResource.Cache
