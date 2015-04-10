@@ -8,9 +8,13 @@ namespace SemesterProjekt2
 {
     class Logiklag
     {
+        private Datalag data;
 
-<<<<<<< HEAD
-=======
+        public Logiklag()
+        {
+            data = new Datalag();
+        }
+
         //public double AntalRtakker()
         //{
         //    int Rtakkerdata = 0;
@@ -53,6 +57,11 @@ namespace SemesterProjekt2
 
         //    return tid;
         //    //return Rtakkerdata;
->>>>>>> origin/Programmering
+
+       public bool getKode(string navn, int kode)
+       {
+          return (kode.Equals(data.getKode(navn)));
+       }
+
     }
 }
