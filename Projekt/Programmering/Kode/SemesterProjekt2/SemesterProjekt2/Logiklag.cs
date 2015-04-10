@@ -9,6 +9,5 @@ namespace SemesterProjekt2
     class Logiklag
     {
 
-        //test
     }
 }
