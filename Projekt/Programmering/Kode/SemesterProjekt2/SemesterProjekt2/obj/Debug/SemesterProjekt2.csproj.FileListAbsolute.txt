@@ -15,3 +15,6 @@ C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProj
 =======
 D:\Dokumenter\Github\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\SemesterProjekt2.exe.config
 >>>>>>> 8566c099b8110e99d772fbfac3270f91ae883c79
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\SemesterProjekt2.exe.config
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.exe
+C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.pdb
