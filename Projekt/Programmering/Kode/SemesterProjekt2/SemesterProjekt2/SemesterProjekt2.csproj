@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CRP-nummer.cs">
+    <Compile Include="CPR-nummer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CRP-nummer.Designer.cs">
-      <DependentUpon>CRP-nummer.cs</DependentUpon>
+    <Compile Include="CPR-nummer.Designer.cs">
+      <DependentUpon>CPR-nummer.cs</DependentUpon>
     </Compile>
     <Compile Include="Datalag.cs" />
     <Compile Include="EKG.cs">
@@ -83,8 +83,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CRP-nummer.resx">
-      <DependentUpon>CRP-nummer.cs</DependentUpon>
+    <EmbeddedResource Include="CPR-nummer.resx">
+      <DependentUpon>CPR-nummer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EKG.resx">
       <DependentUpon>EKG.cs</DependentUpon>

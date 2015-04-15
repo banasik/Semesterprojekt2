@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace SemesterProjekt2
 {
    public partial class Login : Form
    {
 
       private Logiklag logik;
-      private Form CPR_GUI;
+      private CPR_nummer CPR_GUI;
 
       public Login()
       {
@@ -32,9 +34,10 @@ namespace SemesterProjekt2
 
          if (logik.getKode(navn, kode))
          {
-            CPR_GUI = new Form();
-            CPR_GUI.Show();
-            this.Hide();
+            CPR_GUI = new CPR_nummer();
+            Hide();
+            CPR_GUI.ShowDialog();
+            //CPR_GUI.Show();
          }
 
          else
@@ -46,12 +49,17 @@ namespace SemesterProjekt2
 
       private void button1_Click(object sender, EventArgs e)
       {
-         tjekLogin(textBox1.Text, Convert.ToInt32(textBox2.Text));
+         //tjekLogin(textBox1.Text, Convert.ToInt32(textBox2.Text));
       }
 
       private void Login_Load(object sender, EventArgs e)
       {
 
+      }
+
+      private void button1_Click_1(object sender, EventArgs e)
+      {
+          tjekLogin(textBox1.Text, Convert.ToInt32(textBox2.Text));
       }
    }
 }

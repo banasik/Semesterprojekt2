@@ -12,9 +12,17 @@ namespace SemesterProjekt2
 {
    public partial class EKG : Form
    {
+       private Login Login;
       public EKG()
       {
          InitializeComponent();
+      }
+
+      private void button4_Click(object sender, EventArgs e)
+      {
+          Login = new Login();
+          Hide();
+          Login.ShowDialog();
       }
    }
 }

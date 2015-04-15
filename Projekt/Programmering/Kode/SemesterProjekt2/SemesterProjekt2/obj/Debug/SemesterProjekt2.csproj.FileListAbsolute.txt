@@ -34,3 +34,4 @@ C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\K
 C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.Login.resources
 C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.Properties.Resources.resources
 C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.csproj.GenerateResource.Cache
+C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.CPR_nummer.resources

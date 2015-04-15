@@ -9,10 +9,12 @@ namespace SemesterProjekt2
     class Logiklag
     {
         private Datalag data;
+        private List<string> lliste;
 
         public Logiklag()
         {
             data = new Datalag();
+
         }
 
         //public double AntalRtakker()
@@ -63,5 +65,21 @@ namespace SemesterProjekt2
           return (kode.Equals(data.getKode(navn)));
        }
 
+
+        public bool checkCPR(string CPR)
+       {
+           lliste = data.GetCPR();
+
+           foreach (var item in lliste)
+           {
+
+               if (CPR == item)
+               {
+                   return true;
+               }
+           }
+
+           return false;             
+       }
     }
 }
