@@ -13,9 +13,11 @@ namespace SemesterProjekt2
    public partial class EKG : Form
    {
        private Login Login;
+       private Logiklag logik;
       public EKG()
       {
          InitializeComponent();
+         logik = new Logiklag(); 
       }
 
       private void button4_Click(object sender, EventArgs e)
@@ -23,6 +25,11 @@ namespace SemesterProjekt2
           Login = new Login();
           Hide();
           Login.ShowDialog();
+      }
+
+      private void button3_Click(object sender, EventArgs e)
+      {
+          chart1.Series["EKG"].Points.DataBindY(logik.kørEKG());
       }
    }
 }

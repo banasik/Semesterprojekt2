@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ST2Prj2LibNI_DAQ;
+
 
 namespace SemesterProjekt2
 {
@@ -10,11 +12,14 @@ namespace SemesterProjekt2
     {
         private Datalag data;
         private List<string> lliste;
+        //private List<double> EKGliste;
+        public NI_DAQVoltage datacollector; 
+
 
         public Logiklag()
         {
             data = new Datalag();
-
+            datacollector = new NI_DAQVoltage();
         }
 
         //public double AntalRtakker()
@@ -81,5 +86,15 @@ namespace SemesterProjekt2
 
            return false;             
        }
+
+
+        public List<double> kørEKG()
+        {
+            datacollector = new NI_DAQVoltage();
+            datacollector.deviceName = "Dev1/ai0";
+            datacollector.getVoltageSeqBlocking();
+            return datacollector.currentVoltageSeq;
+            
+        }
     }
 }

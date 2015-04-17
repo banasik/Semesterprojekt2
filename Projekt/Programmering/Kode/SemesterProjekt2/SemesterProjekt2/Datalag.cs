@@ -13,10 +13,10 @@ namespace SemesterProjekt2
         private SqlDataReader rdr;
         private SqlCommand cmd;
         private const String db = "F15ST2ITS2201405722";
-        private List<string> CPRliste; 
+        private List<string> CPRliste;
 
 
-
+        
         // private List<BS_DTO> bsList;
         // private List<BT_DTO> btList;
 
