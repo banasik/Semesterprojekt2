@@ -34,7 +34,7 @@ namespace SemesterProjekt2
 
           else
           {
-              label2.Text = "Fejl i personnummer og/eller kode.";
+              label2.Text = "Ugyldigt CPR-nummer - indtast nyt";
           }
       }
 

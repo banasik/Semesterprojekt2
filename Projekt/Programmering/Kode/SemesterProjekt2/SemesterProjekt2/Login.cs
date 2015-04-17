@@ -42,7 +42,7 @@ namespace SemesterProjekt2
 
          else
          {
-            label3.Text = "Fejl i personnummer og/eller kode.";
+            label3.Text = "Fejl i username og/eller password";
          }
 
       }
