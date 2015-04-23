@@ -18,7 +18,7 @@
 	\\ \midrule
 	~ &\textit{Exentions} & ~ & ~ & 
 	\\ \midrule	
-    2a. &	Username eller password er forkert &    Messageboks vises på skærmen med tekst der informerer om, at brugernavn eller password er forkert  &   ~  &		%{\Huge \checkmark}
+    2a. &	Username eller password er forkert &    Besked vises på skærmen med tekst, der informerer om, at brugernavn eller password er forkert  &   ~  &		%{\Huge \checkmark}
  \\ \bottomrule
  
 \caption{Accepttest af Use Case 1.}\\
@@ -34,14 +34,16 @@
 	\midrule
 	&\textit{Hovedscenarie} & & & 
 	\\ \midrule
-	1. &Indtast virtuelt patients CPR-nummer & Indstillinger bliver valgt & & %{\Huge \checkmark}
+	1. &Indtast virtuel patients CPR-nummer & CPR-nummerboks bliver udfyldt & & %{\Huge \checkmark}
 	\\
 	2. &Vælg indstillinger & Indstillinger bliver valgt & & %{\Huge \checkmark}
 	\\
-	3. & Tryk på "Start" & Målingen startes i EKG-vinduet & & %{\Huge \checkmark}
+	3. & Tryk på "Start ny måling" & Målingen startes i EKG-vinduet & & %{\Huge \checkmark}
 	\\
 	4. & EKG-data illustreres på en graf & En analyserebar graf fremvises i EKG-vinduet & & %{\Huge \checkmark}
 	\\ \midrule
+	1.a & CPR-nummeret findes ikke. Besked vises med tekst, der informerer om, at CPR-nummeret ikke er gyldigt & Nyt CPR-nummer indtastes 
+	\\
 	2.a & Ingen ændring i indstillinger  & Målingen foretages med default-indstillingerne & & %{\Huge \checkmark}
 	\\ \bottomrule
 
@@ -82,15 +84,13 @@
     \midrule
     ~ &\textit{Hovedscenarie} & ~ & ~ &
     \\ \midrule
-    1. &Tryk på "Gem"-knappen. &    Information-vinduet kommer frem, og der er mulighed for at indtaste information om målingen  &    ~ &		%{\Huge \checkmark}
+    1. &Tryk på "Gem"-knappen. &    Messagebox kommer frem med besked om at målingen er gemt  &    ~ &		%{\Huge \checkmark}
     \\
-    2. &Indtaster den virtuelle patientens CPR-nummer, dato og diagnose for den givne måling	 &   CPR-nummer-, dato- og diagnoseboks bliver udfyldt &     ~ &		%{\Huge \checkmark}
+    2. & Tryk på "Ok"-knappen	 &   Målingen er gemt, vinduet lukkes og EKG-vinduet vises igen &     ~ &		%{\Huge \checkmark}
     \\
-    3.	&Tryk på "Gem"-knappen i informaiton-vinduet 	&	Messageboks kommer frem med teksten "Målingen er gemt" & & %{\Huge \checkmark}
 	\\ \midrule
 	~ &\textit{Exentions} & ~ & ~ & 
 	\\ \midrule	
-    2a. &	CPR-nummer er ikke gyldigt &    Messageboks vises med teksten "CPR-nummer er ikke gyldig". CPR-nummerboks cleares   &   ~  &		%{\Huge \checkmark}
  \\ \bottomrule
  
 \caption{Accepttest af Use Case 4.}\\
