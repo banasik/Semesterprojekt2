@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ST2Prj2LibNI_DAQ;
+using ST2Prj2LibNI_DAQ;  //udleveret class (forbindelse til DAQ)
 
 
 namespace SemesterProjekt2
@@ -67,11 +67,11 @@ namespace SemesterProjekt2
 
        public bool getKode(string navn, int kode)
        {
-          return (kode.Equals(data.getKode(navn)));
+          return (kode.Equals(data.getKode(navn))); //checker om indtastet password passer med username i db.
        }
 
 
-        public bool checkCPR(string CPR)
+       public bool checkCPR(string CPR) //checker om indtastet CPR passer med CPR i db.
        {
            lliste = data.GetCPR();
 
@@ -91,9 +91,9 @@ namespace SemesterProjekt2
         public List<double> kørEKG()
         {
             datacollector = new NI_DAQVoltage();
-            datacollector.deviceName = "Dev1/ai0";
+            datacollector.deviceName = "Dev1/ai0";  //device1/indgang på DAQ som kommer fra AD
             datacollector.getVoltageSeqBlocking();
-            return datacollector.currentVoltageSeq;
+            return datacollector.currentVoltageSeq; //liste fra DAQ. 
             
         }
     }

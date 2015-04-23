@@ -27,7 +27,7 @@ namespace SemesterProjekt2
           Login.ShowDialog();
       }
 
-      private void button3_Click(object sender, EventArgs e)
+      private void button3_Click(object sender, EventArgs e) //"Start ny måling"
       {
           chart1.Series["EKG"].Points.DataBindY(logik.kørEKG());
       }

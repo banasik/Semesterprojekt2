@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+using System.Data.SqlClient;   //SQL forbindelse
 
 namespace SemesterProjekt2
 {
@@ -16,9 +16,7 @@ namespace SemesterProjekt2
         private List<string> CPRliste;
 
 
-        
-        // private List<BS_DTO> bsList;
-        // private List<BT_DTO> btList;
+               
 
         public Datalag()
         {
