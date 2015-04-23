@@ -13,7 +13,9 @@ namespace SemesterProjekt2
    public partial class EKG : Form
    {
        private Login Login;
+       private Gem_måling gem;
        private Logiklag logik;
+       private List<double> liste;
       public EKG()
       {
          InitializeComponent();
@@ -29,7 +31,15 @@ namespace SemesterProjekt2
 
       private void button3_Click(object sender, EventArgs e) //"Start ny måling"
       {
-          chart1.Series["EKG"].Points.DataBindY(logik.kørEKG());
+         liste = logik.kørEKG();
+          chart1.Series["EKG"].Points.DataBindY(liste);
+      }
+
+      private void button1_Click(object sender, EventArgs e)
+      {
+         logik.gemData(liste);
+         gem = new Gem_måling();
+         gem.ShowDialog();
       }
    }
 }

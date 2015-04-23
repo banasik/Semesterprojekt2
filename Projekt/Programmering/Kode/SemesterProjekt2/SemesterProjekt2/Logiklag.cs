@@ -96,5 +96,12 @@ namespace SemesterProjekt2
             return datacollector.currentVoltageSeq; //liste fra DAQ. 
             
         }
+
+       public bool gemData()
+       {
+          return (data.FlytTilSQL());
+       }
+
+
     }
 }

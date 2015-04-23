@@ -13,9 +13,7 @@ namespace SemesterProjekt2
         private SqlDataReader rdr;
         private SqlCommand cmd;
         private const String db = "F15ST2ITS2201405722";
-        private List<string> CPRliste;
-
-
+        private List<string> CPRliste;  
                
 
         public Datalag()
@@ -41,6 +39,7 @@ namespace SemesterProjekt2
             return resultat;
         }
 
+
         public List<string> GetCPR()
         {
             string CPR = "00";
@@ -57,5 +56,22 @@ namespace SemesterProjekt2
             conn.Close();
             return CPRliste;
         }
+
+       public bool FlytTilSQL()
+       {
+          using (SqlConnection connection = new SqlConnection("ConnectionString")) 
+               { 
+                     connection.Open(); 
+                     using(SqlCommand cmd = new SqlCommand("INSERT INTO Patient(CPR, Måling, Navn, Dato) VALUES (@CPR, @Måling, @Navn, @Dato)", conn)) 
+                { 
+
+                     cmd.Parameters.Add("@CPR", sqlDbType.string) Value =; 
+                     cmd.Parameters.Add("@Måling", SqlDbType.VarBinary).Value = ByteArray; 
+                     cmd.Parameters.Add("@Navn", SqlDbType.NVarchar).Value = "Any text Description"; 
+                     cmd.ExecuteNonQuery();
+    } 
+}   
+       }
+
     }
 }
