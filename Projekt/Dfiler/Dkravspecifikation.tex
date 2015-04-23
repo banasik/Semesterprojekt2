@@ -60,11 +60,11 @@ Brugeren, den primære aktør bliver bedt om sit log ind, inden EKG-vinduet vise
     Forudsætninger &&  At der er logget ud efter en tidligere måling\\
     Resultat &&    Brugeren bliver logget på og kan foretage en måling                     \\ \midrule
     Hovedforløb &    1. &    Brugeren indtaster username samt password\\[-1ex]   						 	
-                &    2. &    Brugeren trykker på "Login-knappen". Login-vinduet lukkes ned mens EKG-vinduet åbnes\newline
+                &    2. &    Brugeren trykker på "Login-knappen". Login-vinduet lukkes ned mens CPR-vinduet åbnes\newline
                 	[2.a \textit{Username eller password er forkert}]\\[-1ex]
                 &    \\ \midrule
                 
-    Undtagelser &    2a. & Messageboks vises på skærmen med teksten "Username eller password er forkert - prøv igen". Username- og passwordboks cleares og der forsættes i UC1 ved punkt 1     \\ \bottomrule
+    Undtagelser &    2a. & Besked vises på skærmen med tekst, der informerer om, at username eller password er forkert. Der forsættes i UC1 ved punkt 1     \\ \bottomrule
 \caption{Fully dressed Use Case 1.}
 \label{UC1}
 \end{longtabu}
@@ -82,12 +82,16 @@ Brugeren, den primære aktør bliver bedt om sit log ind, inden EKG-vinduet vise
     Initialisere &&    Brugeren ønsker at foretage en EKG-måling\\
     Forudsætninger &&    Brugeren er logget ind og EKG-vinduet er vist samt Analog og DAQ'en er koblet til og data er hentet ned\\
     Resultat &&    EKG-graf bliver vist           \\ \midrule
-    Hovedforløb &    1. &    Brugeren vælger indstillinger\newline
-    						 [1.a \textit{Brugeren er tilfreds med default-indstillingerne}]\\[-1ex]	
-                &    2. &    Målingen startes ved at trykke på "Start"\\[-1ex]
-                &    3. &    EKG-data illustreres på en graf\\ \midrule
+    Hovedforløb &    1. &    Brugeren indtaster virtuel patients CPR-nummer\newline
+    						 [1.a \textit{CPR-nummeret findes ikke}]\\[-1ex]
+    			&    2. &    Brugeren vælger indstillinger\newline
+    						 [2.a \textit{Brugeren er tilfreds med default-indstillingerne}]\\[-1ex]	
+                &    3. &    Målingen startes ved at trykke på "Start"\\[-1ex]
+                &    4. &    EKG-data illustreres på en graf\\ \midrule
                 
-    Undtagelser &    1a. &    Der blev ikke ændret i default-indstillingerne. Der fortsættes ved punkt 2 i hovedforløbet med default indstillingerne \\ \bottomrule
+    Undtagelser &    1a. &    CPR-nummeret findes ikke. Besked vises på 								skærmen med tekst, der informerer om, at CPR-						nummeret ikke er gyldigt. UC2 startes forfra 						med nyt CPR-nummer\\
+    			&    2a. &    Der blev ikke ændret i default-indstillingerne. 				Der fortsættes ved punkt 2 i hovedforløbet med 				default indstillingerne
+     \\ \bottomrule
 \caption{Fully dressed Use Case 2.}
 \label{UC2}
 \end{longtabu}
@@ -120,15 +124,11 @@ Brugeren, den primære aktør bliver bedt om sit log ind, inden EKG-vinduet vise
     Initialisere &&    Brugeren ønsker at gemme EKG i databasen\\
     Forudsætninger &&  Use case 3 er gennemført\\
     Resultat &&    EKG er gemt i databasen                    \\ \midrule
-    Hovedforløb &    1. &    Brugeren trykker på "Gem-knappen". Et nyt vindue kommer frem, hvor brugeren kan indtaste information om målingen\\[-1ex]   						 	
-                &    2. &	Brugeren indtaster den virtuelle patients CPR-nummer, dato og diagnose for den givende måling\newline
-                	[2.a \textit{CPR-nummer er ikke gyldigt}]\\[-1ex]  
+    Hovedforløb &    1. &    Brugeren trykker på "Gem-knappen". En messagebox kommer frem med besked om at data er gemt\\[-1ex]   						 	
+                &    2. &	Brugeren trykker på "Ok" knappen for at lukke messageboxen og EKG-vinduet vises igen
+                	\\ \midrule
                 
-                &	3.	&	Brugeren trykker på "Gem"-knappen i det vindue, hvor informationerne om målingen er indskrevet\\[-1ex]	
-                	              	
-                &	4. &		Messageboks viser på skærmen med teksten "Målingen er gemt" \\ \midrule
-                
-    Undtagelser &    2a. & Messageboks vises på skærmen med teksten "CPR-nummer er ikke gyldig". CPR-nummerboks cleares og der forsættes i UC4 ved punkt 2     \\ \bottomrule
+    Undtagelser &       \\ \bottomrule
 \caption{Fully dressed Use Case 4.}
 \label{UC4}
 \end{longtabu}
