@@ -16,10 +16,16 @@ namespace SemesterProjekt2
        private Gem_måling gem;
        private Logiklag logik;
        private List<double> liste;
-      public EKG()
+      public EKG(string cprNummer)
       {
          InitializeComponent();
-         logik = new Logiklag(); 
+         logik = new Logiklag();
+
+         if (cprNummer != "")
+         {
+            textBox4.Text = cprNummer;
+         }
+ 
       }
 
       private void button4_Click(object sender, EventArgs e)
@@ -27,6 +33,7 @@ namespace SemesterProjekt2
           Login = new Login();
           Hide();
           Login.ShowDialog();
+         
       }
 
       private void button3_Click(object sender, EventArgs e) //"Start ny måling"
@@ -40,6 +47,11 @@ namespace SemesterProjekt2
          logik.gemData(liste);
          gem = new Gem_måling();
          gem.ShowDialog();
+      }
+
+      private void textBox4_TextChanged(object sender, EventArgs e)
+      {
+
       }
    }
 }

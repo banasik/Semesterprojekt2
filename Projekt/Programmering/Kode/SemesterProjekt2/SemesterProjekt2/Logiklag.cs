@@ -20,6 +20,7 @@ namespace SemesterProjekt2
         {
             data = new Datalag();
             datacollector = new NI_DAQVoltage();
+            
         }
 
         //public double AntalRtakker()
@@ -69,6 +70,7 @@ namespace SemesterProjekt2
        {
           return (kode.Equals(data.getKode(navn))); //checker om indtastet password passer med username i db.
        }
+
 
 
        public bool checkCPR(string CPR) //checker om indtastet CPR passer med CPR i db.

@@ -59,13 +59,28 @@ namespace SemesterProjekt2
 
        public bool FlytTilSQL()
        {
+          byte[] målinger = new byte[3000];
           using (SqlConnection connection = new SqlConnection("ConnectionString")) 
                { 
+             SqlParameter param;
+                        
                      connection.Open(); 
                      using(SqlCommand cmd = new SqlCommand("INSERT INTO Patient(CPR, Måling, Navn, Dato) VALUES (@CPR, @Måling, @Navn, @Dato)", conn)) 
                 { 
+                        
+                        param = new SqlParameter();
+                        param.DbType = System.Data.DbType.String;
+                        param.ParameterName = "@CPR";
+                        param.Value = "1111111-1111";
+                        cmd.Parameters.Add(param);
 
-                     cmd.Parameters.Add("@CPR", sqlDbType.string) Value =; 
+                       param = new SqlParameter();
+                        param.DbType = System.Data.DbType.;
+                        param.ParameterName = "@Måling";
+                        param.Value = målinger;
+                        cmd.Parameters = målinger;
+
+                     cmd.Parameters.Add("@CPR", sqlDbType.Nvarvhar) Value =; 
                      cmd.Parameters.Add("@Måling", SqlDbType.VarBinary).Value = ByteArray; 
                      cmd.Parameters.Add("@Navn", SqlDbType.NVarchar).Value = "Any text Description"; 
                      cmd.ExecuteNonQuery();

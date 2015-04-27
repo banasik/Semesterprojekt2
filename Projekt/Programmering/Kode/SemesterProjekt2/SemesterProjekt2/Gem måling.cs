@@ -25,7 +25,7 @@ namespace SemesterProjekt2
 
       private void button1_Click(object sender, EventArgs e)
       {
-         ekg = new EKG();
+         ekg = new EKG("");
          Hide();
          ekg.ShowDialog();
       }
