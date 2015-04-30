@@ -1,16 +1,21 @@
 \chapter{Design}
 
-\section{Systemarkitektur}
-En lille indledende tekst om hele systemet!!! Hvad er formålet med Design-afsnittet! Hvordan vil vi i afsnittet beskrive systemet (via diagrammer). 
-
+\section{Indledning}
+Formålet med design afsnittet er at beskrive hardwaren og softwaren for EKG-systemet. Det beskrives med samtlige diagrammer og skitser for, at de forskellige klassers funktionalitet, og hvordan de snakker sammen klargøres.
+  
 \section{Hardware arkitektur}
-Kort indledning 
+I dette projekt er hardwaren, blevet udleveret, så beskrivelsen af dette bliver, derfor ikke beskrevet i yderste detalje. Hardwaren for systemet består af en National Instruments DAQ og en signalgenerator fra Analog Discovery. Disse er begge forbundet til en computer via USB-porte.
+\\ I dette projekt bliver EKG-signalet ikke fysisk målt fra en patient, men simuleret fra et signal, som er hentet ned fra websiden PhysioNet \footnote{http://www.physionet.org}. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Figurer/Snip20150427_1}
+	\includegraphics[width=0.6\textwidth]{Figurer/Snip20150427_1}
 	\caption{Grafisk illustration af hardware opsætning}
 \end{figure}
+
+Som det ses på det overstående figur, er denne opstilling meget simpelt. Figur 2.1 viser, hvordan de forskellige komponenter relaterer til hinanden. Display hardwaren vil i dette projekt være en computer, da det kræver softwaren for at kunne vise EKG-signalet i form af en graf.
+\\
+\\  Som beskrevet ovenfor er det Analog Discovery sammen med information for et EKG-signal fra PhysioNet, der skaber vores fiktive patient. Før EKG-signalet vises på computerens skærm skal det igennem de forskellige komponenter i opstillingen. Analog Discovery modtager EKG-signals  information som en CSV-fil, denne omdanner Analog Discovery til et analogt signal, som sendes videre til DAQ’en. DAQ’en digitaliserer det analoge signal, og tilpasser det, så det kan vises på computer skærmen. 
 
 \subsection{Græseflader}
 Grænseflader af forbindelserne imellem de forskellige dele af hardwaren. 
@@ -33,9 +38,46 @@ Grænseflader af forbindelserne imellem de forskellige dele af hardwaren.
 
 
 \section{Software arkitektur}
-Kort indledning
+I dette projekt arbejdes der med objektorienteret programmering i programmeringssproget C\#. Dette er opbygget i henhold til trelagsmodellen, som er beskrevet i Rapporten under afsnittet Baggrund. Grafiklaget består af 4 GUI’er, logiklaget af en enkelt klasse, og datalaget består af 3 klasser, hvoraf den ene er en blackbox.
 
 \subsection{GUI}
+I dette afsnit vil GUI’erne nærmere beskrives. Grafiklaget består i alt af 4 GUI’er eller vinduer - Login-vindue, CPR-vindue, EKG-vindue og Gem\_måling-vindue.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figurer/Snip20150430_38}
+	\caption{Login-vindue}
+\end{figure}
+
+Når programmet startes op, vil et Login-vindue fremkomme på skærmen. Her skal brugeren logge ind for at få adgang til programmet. Hvis password og username ikke bliver godkendt, returnerer vinduet en fejl, i form af en linje tekst nedenunder indtast-felterne. Bliver login godkendt åbner CPR-vinduet.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Figurer/Snip20150430_39}
+	\caption{CPR-vindue}
+\end{figure} 
+
+Her bliver brugeren bedt om at indskrive CPR-nummeret på den fiktive patient. CPR-nummeret bruges til at identificere personen i forbindelse med fremtidig måling samt gemme målingerne. Hvis CPR-nummeret ikke bliver godkendt, vil brugerne blive gjort opmærksom på dette via en fejlmelding. 
+\\
+\\
+Når CPR-nummeret bliver godkendt, åbner det primære vindue, EKG-vinduet. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150430_40}
+	\caption{EKG-vindue}
+\end{figure}
+
+EKG-vinduet er, hvor man kan køre og se målinger fra. Der er knapper til at vælge, hvor lang tid man ønsker en måling skal køre over. Til højre kan grafen for EKG-signalet ses, efter der er trykket ”Start ny måling”. Yderligere til højre kan der ses puls og HVR for den pågældende graf. Nederst er der knapper til at gemme målingerne, samt at logge ud fra programmet. Hvis man logger ud, kommer man tilbage til Login-vinduet. 
+\\
+\\
+Det sidste vindue der er, forekommer når man trykker på ”Gem ny måling”. Her kommer der et pop-up vindue op, som bekræfter, at EKG-målingen er gemt. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figurer/Snip20150430_41}
+	\caption{Gem\_måling-vindue}
+\end{figure}
 
 \subsection{UML klassediagram}
 
