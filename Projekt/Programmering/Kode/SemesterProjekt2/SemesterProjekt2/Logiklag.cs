@@ -103,7 +103,17 @@ namespace SemesterProjekt2
        {
           return (data.FlytTilSQL());
        }
+       public bool gemMålingPåPerson(int patientID, List<double> måling, DateTime tidForMåling)
+       {
+          return (data.GemMålingPåPerson(patientID, GetBytes(måling), tidForMåling));
+       }
 
+       //Konverterer List<Double> til byte[] (Som skal bruges for at gemme i sql-db). Bliver brugt ovenfor
+       // google-link: http://stackoverflow.com/questions/6952923/conversion-double-array-to-byte-array
+       static byte[] GetBytes(List<double> values)
+       {
+          return values.ToArray().SelectMany(value => BitConverter.GetBytes(value)).ToArray();
+       }
 
     }
 }

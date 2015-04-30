@@ -42,10 +42,20 @@ namespace SemesterProjekt2
           chart1.Series["EKG"].Points.DataBindY(liste);
       }
 
+
       private void button1_Click(object sender, EventArgs e)
       {
-         logik.gemData(liste);
+         liste = new List<double>();
+
+         for (int i = 0; i < 3000; i++)
+         {
+            liste.Add(3.01);
+         }
+
+         logik.gemMålingPåPerson(2, liste, DateTime.Now);
+         
          gem = new Gem_måling();
+         
          gem.ShowDialog();
       }
 

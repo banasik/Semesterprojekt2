@@ -45,7 +45,7 @@ namespace SemesterProjekt2
             string CPR = "00";
             conn.Open();
 
-            cmd = new SqlCommand("select * From CPR", conn);
+            cmd = new SqlCommand("select CPR From Patient", conn);
             rdr = cmd.ExecuteReader();
 
             if (rdr.Read())
@@ -57,36 +57,103 @@ namespace SemesterProjekt2
             return CPRliste;
         }
 
-       public bool FlytTilSQL()
+        public Person GetPersonMedCPR(string Cprnummer)
+        {
+           Person p = new Person();
+            //Validering om CPRnummer er korrekt?
+            
+            conn.Open();
+
+            cmd = new SqlCommand("select Navn,CPR, PatientID From Patient where CPR = @cprNummer_in", conn);
+           
+            SqlParameter param = new SqlParameter();
+            param.ParameterName = "@cprNummer_in";
+            param.Value = Cprnummer;
+
+
+            rdr = cmd.ExecuteReader();
+
+            if (rdr.Read())
+            {
+               p.navn = rdr.GetString(0);
+               p.CPR = rdr.GetString(1);
+               p.ID = Convert.ToInt32(rdr.GetValue(2));
+
+               //p.PatientsMålinger = HentMålingerFraPatientID(p.ID);
+            }
+
+            conn.Close();
+            return p;
+        }
+
+        public bool GemMålingPåPerson(int patientID, byte[] måling, DateTime tidForMåling)
+        {
+           conn.Open();
+
+           cmd = new SqlCommand("insert into måling(Målinger, PatientId, Dato) values (@Måling_in, @PatientID_in, @Dato_in)", conn);
+
+           SqlParameter param1 = new SqlParameter(); //Pakker ind og gemmer blok, uden at pakke ud.
+           param1.ParameterName = "@Måling_in";
+           param1.Value = måling;
+           cmd.Parameters.Add(param1);
+
+           SqlParameter param2 = new SqlParameter();
+           param2.ParameterName = "@PatientID_in";
+           param2.Value = patientID;
+           cmd.Parameters.Add(param2);
+
+           SqlParameter param3 = new SqlParameter();
+           param3.ParameterName = "@Dato_in";
+           param3.Value = tidForMåling;
+           cmd.Parameters.Add(param3);
+
+           int antalRækkerSatInd = cmd.ExecuteNonQuery();
+           
+           conn.Close();
+
+           if (antalRækkerSatInd > 0)
+           { return true; }
+           else
+           { return false; }
+        }
+
+       /*public Målinger HentMålingerFraPatientID(int ID_in)
+       {
+          //
+       }*/
+
+       /*public bool FlytTilSQL()
        {
           byte[] målinger = new byte[3000];
           using (SqlConnection connection = new SqlConnection("ConnectionString")) 
-               { 
+          { 
              SqlParameter param;
                         
-                     connection.Open(); 
-                     using(SqlCommand cmd = new SqlCommand("INSERT INTO Patient(CPR, Måling, Navn, Dato) VALUES (@CPR, @Måling, @Navn, @Dato)", conn)) 
+                connection.Open(); 
+                using(SqlCommand cmd = new SqlCommand("INSERT INTO Patient(CPR, Måling, Navn, Dato) VALUES (@CPR, @Måling, @Navn, @Dato)", conn)) 
                 { 
                         
-                        param = new SqlParameter();
-                        param.DbType = System.Data.DbType.String;
-                        param.ParameterName = "@CPR";
-                        param.Value = "1111111-1111";
-                        cmd.Parameters.Add(param);
+                     param = new SqlParameter();
+                     param.DbType = System.Data.DbType.String;
+                     param.ParameterName = "@CPR";
+                     param.Value = "1111111-1111";
+                     cmd.Parameters.Add(param);
 
-                       param = new SqlParameter();
-                        param.DbType = System.Data.DbType.;
-                        param.ParameterName = "@Måling";
-                        param.Value = målinger;
-                        cmd.Parameters = målinger;
+                     param = new SqlParameter();
+                     param.DbType = System.Data.DbType.Byte;
+                     param.ParameterName = "@Måling";
+                     param.Value = målinger;
+                     cmd.Parameters.Add(param);
 
-                     cmd.Parameters.Add("@CPR", sqlDbType.Nvarvhar) Value =; 
-                     cmd.Parameters.Add("@Måling", SqlDbType.VarBinary).Value = ByteArray; 
-                     cmd.Parameters.Add("@Navn", SqlDbType.NVarchar).Value = "Any text Description"; 
+                     //cmd.Parameters.Add("@CPR", sqlDbType.Nvarvhar) Value =; 
+                     //cmd.Parameters.Add("@Måling", SqlDbType.VarBinary).Value = ByteArray; 
+                     //cmd.Parameters.Add("@Navn", SqlDbType.NVarchar).Value = "Any text Description"; 
                      cmd.ExecuteNonQuery();
-    } 
-}   
-       }
+               } 
+         }
+
+          return true;
+      }*/
 
     }
 }
