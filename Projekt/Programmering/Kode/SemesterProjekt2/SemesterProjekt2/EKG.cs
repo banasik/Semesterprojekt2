@@ -13,19 +13,11 @@ namespace SemesterProjekt2
    public partial class EKG : Form
    {
        private Login Login;
-       private Gem_måling gem;
        private Logiklag logik;
-       private List<double> liste;
-      public EKG(string cprNummer)
+      public EKG()
       {
          InitializeComponent();
-         logik = new Logiklag();
-
-         if (cprNummer != "")
-         {
-            textBox4.Text = cprNummer;
-         }
- 
+         logik = new Logiklag(); 
       }
 
       private void button4_Click(object sender, EventArgs e)
@@ -33,11 +25,11 @@ namespace SemesterProjekt2
           Login = new Login();
           Hide();
           Login.ShowDialog();
-         
       }
 
       private void button3_Click(object sender, EventArgs e) //"Start ny måling"
       {
+<<<<<<< HEAD
          liste = logik.kørEKG();
           chart1.Series["EKG"].Points.DataBindY(liste);
       }
@@ -62,6 +54,9 @@ namespace SemesterProjekt2
       private void textBox4_TextChanged(object sender, EventArgs e)
       {
 
+=======
+          chart1.Series["EKG"].Points.DataBindY(logik.kørEKG());
+>>>>>>> origin/Programmering
       }
    }
 }

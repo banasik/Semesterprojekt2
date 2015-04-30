@@ -13,7 +13,9 @@ namespace SemesterProjekt2
         private SqlDataReader rdr;
         private SqlCommand cmd;
         private const String db = "F15ST2ITS2201405722";
-        private List<string> CPRliste;  
+        private List<string> CPRliste;
+
+
                
 
         public Datalag()
@@ -39,7 +41,6 @@ namespace SemesterProjekt2
             return resultat;
         }
 
-
         public List<string> GetCPR()
         {
             string CPR = "00";
@@ -56,6 +57,7 @@ namespace SemesterProjekt2
             conn.Close();
             return CPRliste;
         }
+<<<<<<< HEAD
 
         public Person GetPersonMedCPR(string Cprnummer)
         {
@@ -155,5 +157,7 @@ namespace SemesterProjekt2
           return true;
       }*/
 
+=======
+>>>>>>> origin/Programmering
     }
 }
