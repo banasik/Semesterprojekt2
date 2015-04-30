@@ -4,7 +4,7 @@
 Formålet med design afsnittet er at beskrive hardwaren og softwaren for EKG-systemet. Det beskrives med samtlige diagrammer og skitser for, at de forskellige klassers funktionalitet, og hvordan de snakker sammen klargøres.
   
 \section{Hardware arkitektur}
-I dette projekt er hardwaren, blevet udleveret, så beskrivelsen af dette bliver, derfor ikke beskrevet i yderste detalje. Hardwaren for systemet består af en National Instruments DAQ og en signalgenerator fra Analog Discovery. Disse er begge forbundet til en computer via USB-porte.
+I dette projekt er hardwaren blevet udleveret, så beskrivelsen af dette vil ikke  bliver beskrevet i yderste detalje. Hardwaren for systemet består af en National Instruments DAQ og en signalgenerator fra Analog Discovery. Disse er begge forbundet til en computer via USB-porte.
 \\ I dette projekt bliver EKG-signalet ikke fysisk målt fra en patient, men simuleret fra et signal, som er hentet ned fra websiden PhysioNet \footnote{http://www.physionet.org}. 
 
 \begin{figure}[H]
@@ -13,7 +13,7 @@ I dette projekt er hardwaren, blevet udleveret, så beskrivelsen af dette bliver
 	\caption{Grafisk illustration af hardware opsætning}
 \end{figure}
 
-Som det ses på det overstående figur, er denne opstilling meget simpelt. Figur 2.1 viser, hvordan de forskellige komponenter relaterer til hinanden. Display hardwaren vil i dette projekt være en computer, da det kræver softwaren for at kunne vise EKG-signalet i form af en graf.
+Som det ses på den overstående figur, er denne opstilling meget simpelt. Figur 2.1 viser, hvordan de forskellige komponenter relaterer til hinanden. Display hardwaren vil i dette projekt være en computer, da det kræver softwaren for at kunne vise EKG-signalet i form af en graf.
 \\
 \\  Som beskrevet ovenfor er det Analog Discovery sammen med information for et EKG-signal fra PhysioNet, der skaber vores fiktive patient. Før EKG-signalet vises på computerens skærm skal det igennem de forskellige komponenter i opstillingen. Analog Discovery modtager EKG-signals  information som en CSV-fil, denne omdanner Analog Discovery til et analogt signal, som sendes videre til DAQ’en. DAQ’en digitaliserer det analoge signal, og tilpasser det, så det kan vises på computer skærmen. 
 
@@ -68,7 +68,7 @@ Når CPR-nummeret bliver godkendt, åbner det primære vindue, EKG-vinduet.
 	\caption{EKG-vindue}
 \end{figure}
 
-EKG-vinduet er, hvor man kan køre og se målinger fra. Der er knapper til at vælge, hvor lang tid man ønsker en måling skal køre over. Til højre kan grafen for EKG-signalet ses, efter der er trykket ”Start ny måling”. Yderligere til højre kan der ses puls og HVR for den pågældende graf. Nederst er der knapper til at gemme målingerne, samt at logge ud fra programmet. Hvis man logger ud, kommer man tilbage til Login-vinduet. 
+EKG-vinduet er, hvor man kan køre og se målinger fra. Der er knapper til at vælge, hvor lang tid man ønsker en måling skal køre over. Til højre kan grafen for EKG-signalet ses, efter der er trykket ”Start ny måling”. Yderligere til højre kan der ses puls og HVR for den pågældende graf. Til venstre under knappen "Start ny måling" ses et tom tekstfelt. I dette tekstfelt vil diagnosen for EKG-signalet udskrives. Nederst er der knapper til at gemme målingerne, samt at logge ud fra programmet. Hvis man logger ud, kommer man tilbage til Login-vinduet. 
 \\
 \\
 Det sidste vindue der er, forekommer når man trykker på ”Gem ny måling”. Her kommer der et pop-up vindue op, som bekræfter, at EKG-målingen er gemt. 
