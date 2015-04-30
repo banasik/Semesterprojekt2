@@ -1,11 +1,11 @@
 \chapter{Design}
 
 \section{Indledning}
-Formålet med design afsnittet er at beskrive hardwaren og softwaren for EKG-systemet. Det beskrives med samtlige diagrammer og skitser for, at de forskellige klassers funktionalitet, og hvordan de snakker sammen klargøres.
+Formålet med design afsnittet er at beskrive hardwaren og softwaren for EKG-systemet. Det beskrives vha.  diagrammer og skitser som tydeligør, hvordan de forskellige klassers funktionalitet er, og hvordan klasserne snakker sammen.
   
 \section{Hardware arkitektur}
-I dette projekt er hardwaren blevet udleveret, så beskrivelsen af dette vil ikke  bliver beskrevet i yderste detalje. Hardwaren for systemet består af en National Instruments DAQ og en signalgenerator fra Analog Discovery. Disse er begge forbundet til en computer via USB-porte.
-\\ I dette projekt bliver EKG-signalet ikke fysisk målt fra en patient, men simuleret fra et signal, som er hentet ned fra websiden PhysioNet \footnote{http://www.physionet.org}. 
+I dette projekt er hardwaren blevet udleveret, derfor vil hardware arkitekturen ikke blive beskrevet ned i mindste detalje, men derimod kun hardwarens overordnede funktion. Hardwaren for systemet består af en National Instruments DAQ og en signalgenerator fra Analog Discovery. Disse er begge forbundet til en computer via USB-porte.
+\\ I dette projekt bliver EKG-signalet ikke målt fysisk via en patient, men simuleret via et signal, som er hentet ned fra websiden PhysioNet \footnote{http://www.physionet.org}. 
 
 \begin{figure}[H]
 	\centering
@@ -13,9 +13,9 @@ I dette projekt er hardwaren blevet udleveret, så beskrivelsen af dette vil ikk
 	\caption{Grafisk illustration af hardware opsætning}
 \end{figure}
 
-Som det ses på den overstående figur, er denne opstilling meget simpelt. Figur 2.1 viser, hvordan de forskellige komponenter relaterer til hinanden. Display hardwaren vil i dette projekt være en computer, da det kræver softwaren for at kunne vise EKG-signalet i form af en graf.
+Som det ses på den overstående figur, er denne opstilling meget simpel. Figur 2.1 viser, hvordan de forskellige komponenter relaterer til hinanden. Display hardwaren vil i dette projekt være en computer, hvilket er et krav fra softwarens side, således at der kan vises et EKG-signal i form af en graf.
 \\
-\\  Som beskrevet ovenfor er det Analog Discovery sammen med information for et EKG-signal fra PhysioNet, der skaber vores fiktive patient. Før EKG-signalet vises på computerens skærm skal det igennem de forskellige komponenter i opstillingen. Analog Discovery modtager EKG-signals  information som en CSV-fil, denne omdanner Analog Discovery til et analogt signal, som sendes videre til DAQ’en. DAQ’en digitaliserer det analoge signal, og tilpasser det, så det kan vises på computer skærmen. 
+\\  Som beskrevet ovenfor er det Analog Discovery, som sammen med EKG-signalets informationer fra PhysioNet, skaber vores fiktive patient. Før EKG-signalet vises på computerens skærm, skal det igennem de forskellige komponenter i opstillingen. Analog Discovery modtager EKG-signalets  information som en CSV-fil, denne fil omdanner Analog Discovery til et analogt signal, som herefter sendes videre til DAQ’en. I DAQ’en digitaliseres det analoge signal, og tilpasses, så det efterfølgende kan udskrives på computer skærmen, i form af en EKG graf. 
 
 \subsection{Græseflader}
 Grænseflader af forbindelserne imellem de forskellige dele af hardwaren. 
@@ -38,10 +38,10 @@ Grænseflader af forbindelserne imellem de forskellige dele af hardwaren.
 
 
 \section{Software arkitektur}
-I dette projekt arbejdes der med objektorienteret programmering i programmeringssproget C\#. Dette er opbygget i henhold til trelagsmodellen, som er beskrevet i Rapporten under afsnittet Baggrund. Grafiklaget består af 4 GUI’er, logiklaget af en enkelt klasse, og datalaget består af 3 klasser, hvoraf den ene er en blackbox.
+I dette projekt arbejdes der med objektorienteret programmering i programmeringssproget C\#. Projektet er opbygget i henhold til trelagsmodellen, som er beskrevet i Rapporten under afsnittet Baggrund. Præsentationslaget består af 4 GUI’er, logiklaget af en enkelt klasse, og datalaget består af 3 klasser, hvoraf den ene er en blackbox.
 
 \subsection{GUI}
-I dette afsnit vil GUI’erne nærmere beskrives. Grafiklaget består i alt af 4 GUI’er eller vinduer - Login-vindue, CPR-vindue, EKG-vindue og Gem\_måling-vindue.
+I dette afsnit vil GUI’erne beskrives nærmere. Grafiklaget består i alt af 4 GUI’er eller vinduer - Login-vindue, CPR-vindue, EKG-vindue og Gem\_måling-vindue.
 
 \begin{figure}[H]
 	\centering
@@ -49,7 +49,7 @@ I dette afsnit vil GUI’erne nærmere beskrives. Grafiklaget består i alt af 4
 	\caption{Login-vindue}
 \end{figure}
 
-Når programmet startes op, vil et Login-vindue fremkomme på skærmen. Her skal brugeren logge ind for at få adgang til programmet. Hvis password og username ikke bliver godkendt, returnerer vinduet en fejl, i form af en linje tekst nedenunder indtast-felterne. Bliver login godkendt åbner CPR-vinduet.
+Når programmet startes op, vil et Login-vindue fremkomme på skærmen. Her skal brugeren logge ind for at få adgang til programmet, ved at indtaste sit personlige username og password. Bliver enten username eller password ikke godkendt, returneres en fejlmeddelelse, i form af en linje tekst nedenfor login-felterne. Bliver login godkendt åbnes CPR-vinduet.
 
 \begin{figure}[H]
 	\centering
@@ -57,7 +57,7 @@ Når programmet startes op, vil et Login-vindue fremkomme på skærmen. Her skal
 	\caption{CPR-vindue}
 \end{figure} 
 
-Her bliver brugeren bedt om at indskrive CPR-nummeret på den fiktive patient. CPR-nummeret bruges til at identificere personen i forbindelse med fremtidig måling samt gemme målingerne. Hvis CPR-nummeret ikke bliver godkendt, vil brugerne blive gjort opmærksom på dette via en fejlmelding. 
+Her bliver brugeren bedt om at indskrive CPR-nummeret på den fiktive patient. CPR-nummeret bruges til at identificere personen i forbindelse med fremtidige målinger, samt til gemme målingerne i hvad der svarer til den fiktive persons journal. Hvis CPR-nummeret ikke bliver godkendt, vil brugerne blive gjort opmærksom på dette via en fejlmelding. 
 \\
 \\
 Når CPR-nummeret bliver godkendt, åbner det primære vindue, EKG-vinduet. 
