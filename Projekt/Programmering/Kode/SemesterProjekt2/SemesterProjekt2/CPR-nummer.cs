@@ -26,7 +26,7 @@ namespace SemesterProjekt2
       {
           if (logik.checkCPR(CPR))
           {
-              EKG = new EKG();
+              EKG = new EKG(CPR);
               Hide();
               EKG.ShowDialog();
               Show();
