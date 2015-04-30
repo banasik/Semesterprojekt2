@@ -87,6 +87,8 @@ Det sidste vindue der er, forekommer når man trykker på ”Gem ny måling”. 
 	\caption{UML-klassediagram over softwaren}
 \end{figure}
 
+På gruppens UML diagram, er det lettere at få en forståelse, for selve koden. Her er det meget tydeligt, at koden er opbygget efter trelagsmodellen. Grafiklaget er bygget op af GUI’er, som bliver interfacen for selve bruger-interaktionen. I dette lag sker der som udgangspunkt intet behandlingsarbejde. Der kan læses mere om opsætningen, og funktionerne af grafiklaget under ’GUI’.\\ \\Logiklaget består af en enkelt klasse, som fungerer som programmets primære styring. Logiklaget er til for, at grafiklaget ikke har direkte adgang til datalaget. Det er altså i dette lag alt programmets data bliver behandlet.  Her bliver EKG’et f.eks. analyseret og login, samt CPR, bliver valideret i forhold til det data, der ligger i datalaget. \\ \\Datalaget består af to klasser, og en blackbox. I dette lag bliver der primært sørget for forbindelsen til databasen. Klassen ”Datalag” er kernen i dette lag. Her bliver der sørget for at gemme og hente informationer fra databasen. Det er i dette lag, hvor data’en som logiklaget arbejder med, kommer fra. Klassen ”Person”, er til for at binde alle person-informationer sammen, sådan at vi i stedet for at kalde 4 attributter, kan nøjes med at kalde et enkelt objekt. 
+
 \subsection{Appliktationsmodel}
 Applikationsmodel vil i almindelig forstand indeholde en overordnet domænemodel, herefter klassediagram samt sekvensdiagram og tilsidst et opdateret klassediagram, hvor metoderne fra sekvensdiagram er inkluderet. 
 
