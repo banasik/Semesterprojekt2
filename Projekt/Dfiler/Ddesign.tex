@@ -83,19 +83,19 @@ Det sidste vindue der er valgbart, frembringes når der trykkes på ”Gem ny m�
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{Figurer/Snip20150430_42}
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150430_UML}
 	\caption{UML-klassediagram over softwaren}
 \end{figure}
 
-Det ovenstående UML diagram over projektets software, giver en bedre og lettere forståelse for selve koden. Her er det meget tydeligt, at koden er opbygget efter trelagsmodellen. Præsentationslaget er bygget op af de førnævnte GUI’er, som bliver interfacen for selve bruger-interaktionen. I dette lag sker der som udgangspunkt intet behandlingsarbejde. Opsætningen og funktionerne af grafiklaget er yderligere beskrevet under afsnittet ’GUI’.\\ \\Logiklaget består af en enkelt klasse, der fungerer som programmets primære styring. Logiklaget er til for, at grafiklaget ikke har direkte adgang til datalaget. Det er altså i dette lag alt programmets data bliver behandlet.  Her bliver EKG’et f.eks. analyseret og login, samt CPR, bliver valideret i forhold til det data, der ligger i datalaget. \\ \\Datalaget består af to klasser, og en blackbox. I dette lag bliver der primært sørget for forbindelsen til databasen. Klassen ”Datalag” er kernen i dette lag. Her bliver der sørget for at gemme og hente informationer fra databasen. Det er i dette lag, hvor data’en som logiklaget arbejder med, kommer fra. Klassen ”Person”, er til for at binde alle person-informationer sammen, sådan at vi i stedet for at kalde 4 attributter, kan nøjes med at kalde et enkelt objekt. 
+Det ovenstående UML diagram over projektets software, giver en bedre og lettere forståelse for selve koden. Her er det meget tydeligt, at koden er opbygget efter trelagsmodellen. Præsentationslaget er bygget op af de førnævnte GUI’er, som bliver interfacen for selve bruger-interaktionen. I dette lag sker der som udgangspunkt intet behandlingsarbejde. Opsætningen og funktionerne af grafiklaget er yderligere beskrevet under afsnittet ’GUI’.\\ \\Logiklaget består af en enkelt klasse, der fungerer som programmets primære styring. Logiklaget er til for, at grafiklaget ikke har direkte adgang til datalaget. Det er altså i dette lag, hvor alt programmets data bliver behandlet.  Her bliver EKG’et f.eks. analyseret og login, samt CPR, bliver valideret i forhold til det data, der befinder sig i datalaget. \\ \\Datalaget består af to klasser, og en tilhørende blackbox. I dette lag bliver der primært sørget for forbindelsen til databasen. Klassen ”Datalag” er kernen i dette lag. Her bliver der sørget for at gemme og hente informationer fra databasen. Det er i dette lag, hvor dataen som logiklaget arbejder med, kommer fra. Klassen ”Person”, er til for at binde alle person-informationer sammen, som medfører at det kun er nødvendigt at kalde et enkelt objekt, frem for 4 attributter.
 
 \subsection{Appliktationsmodel}
-Applikationsmodel vil i almindelig forstand indeholde en overordnet domænemodel, herefter klassediagram samt sekvensdiagram og tilsidst et opdateret klassediagram, hvor metoderne fra sekvensdiagram er inkluderet. 
+En standard applikationsmodel vil i almindelig forstand indeholde en overordnet domænemodel, herefter klassediagram samt sekvensdiagram og tilsidst et opdateret klassediagram, hvor metoderne fra sekvensdiagram er inkluderet. 
 
-Applikationsmodellen for dette projekt består af en overordnet domænemodel, herefter sekvensdiagram for de forskellige Use Cases med tilhørende opdateret klassediagram, som beskriver metodekald og kommunikation mellem klasserne. Klassediagrammerne er undladt, da de er irrevalt for dokumentationen for projektet. Applikationsmodellen er udarbejdet udfra Use Cases, hvilket medfører at metoderne er fiktive, altså ikke hentet direkte fra softwaren.  
+Applikationsmodellen for dette projekt består af en overordnet domænemodel, herefter sekvensdiagram for de forskellige Use Cases med tilhørende opdateret klassediagram, som beskriver metodekald og kommunikation mellem klasserne. Klassediagrammerne er her undladt, da de er irrelevante for dokumentationen af projektet. Applikationsmodellen er udarbejdet ud fra Use Cases, hvilket medfører, at metoderne er fiktive, altså ikke hentet direkte fra softwaren.  
 
 \subsubsection{Domænemodel}
-Domænemodellen er skabt på baggrund af de fem Use Cases. Gennem navneordanalyse af Use Casene er de konceptuelle klasser fundet. I modellen beskrives, hvordan de konceptuelle klasser interagerer med hinanden. Controlleren er ikke en konceptuelle klasse, men er den, der sørger for at systemet fungerer optimalt.
+Domænemodellen er skabt på baggrund af de fem Use Cases. Gennem navneordsanalyse af Use Casene er de konceptuelle klasser fundet. I modellen beskrives, hvordan de konceptuelle klasser interagerer med hinanden. Controlleren er ikke en konceptuelle klasse, men er den, der sørger for at systemet fungerer optimalt.
 \\
 Der er ingen multiplicity indsat i modellen, da der kun arbejdes med et scenarie af gangen. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! spørg Lars 
 
@@ -106,7 +106,7 @@ Der er ingen multiplicity indsat i modellen, da der kun arbejdes med et scenarie
 \end{figure}
 
 \subsubsection{Sekvensdiagram}
-Sekvensdiagrammerne beskriver step-by-step via fiktive metoder forløbet i de forskellige Use Cases. Der er lavet et sekvensdiagram for hver Use Cases for at gøre systemet mere overskueligt. Et sekvensdiagram består af boundary-klasser og domain-klasser fra domænemodellen, samt en controller-klasse, som har navn efter den specifikke Use Case.  
+Sekvensdiagrammerne beskriver step-by-step, via fiktive metoder, forløbet i de forskellige Use Cases. Der er lavet et sekvensdiagram for hver Use Case, for at gøre systemet mere overskueligt. Et sekvensdiagram består af boundary-klasserne og domain-klasserne fra domænemodellen, samt en controller-klasse, med navn efter den specifikke Use Case.  
 
 \begin{figure}[H]
 	\centering
