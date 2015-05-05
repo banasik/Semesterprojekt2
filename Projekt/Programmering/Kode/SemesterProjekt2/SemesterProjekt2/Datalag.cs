@@ -57,8 +57,6 @@ namespace SemesterProjekt2
             conn.Close();
             return CPRliste;
         }
-<<<<<<< HEAD
-
         public Person GetPersonMedCPR(string Cprnummer)
         {
            Person p = new Person();
@@ -157,7 +155,5 @@ namespace SemesterProjekt2
           return true;
       }*/
 
-=======
->>>>>>> origin/Programmering
     }
 }

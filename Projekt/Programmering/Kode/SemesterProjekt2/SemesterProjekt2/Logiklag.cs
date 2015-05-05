@@ -13,15 +13,18 @@ namespace SemesterProjekt2
         private Datalag data;
         private List<string> lliste;
         public NI_DAQVoltage datacollector;
-        public double baseline; 
+        public double baseline;
+        public int sample;
+        public double hz; 
+
 
 
         public Logiklag()
         {
             data = new Datalag();
             datacollector = new NI_DAQVoltage();
-            sample = //samples
-            Hz = //metoden til hertz
+            sample = datacollector.samplesPerChannel;  //samples                                          Mangler reference
+            hz = datacollector.sampleRateInHz;//metoden til hertz                                    Mangler reference
 
         }
 
@@ -59,7 +62,6 @@ namespace SemesterProjekt2
 
         public int getPuls()
         {
-            int sample;
             int puls;
             sample = 
             puls = sample * AntalRtakker(); 
@@ -72,6 +74,7 @@ namespace SemesterProjekt2
         public bool analyseSig()
         {
             double minValue = datacollector.currentVoltageSeq.Min();
+            double thresh = minValue * 0.7;
             int stakker = 0;
             int rTakker;
             rTakker = AntalRtakker(); 
