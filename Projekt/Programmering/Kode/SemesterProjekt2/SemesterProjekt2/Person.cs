@@ -8,8 +8,14 @@ namespace SemesterProjekt2
 {
    class Person
    {
-      string navn;
-      string CPR;
+      public string navn;
+      public string CPR;
+      public int ID;
+      public List<Målinger> PatientsMålinger;
+
+      public Person()
+      { }
+      
       public Person(string navn_input, string cprInput)
       {
          navn = navn_input;

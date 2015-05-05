@@ -29,7 +29,34 @@ namespace SemesterProjekt2
 
       private void button3_Click(object sender, EventArgs e) //"Start ny måling"
       {
+<<<<<<< HEAD
+         liste = logik.kørEKG();
+          chart1.Series["EKG"].Points.DataBindY(liste);
+      }
+
+
+      private void button1_Click(object sender, EventArgs e)
+      {
+         liste = new List<double>();
+
+         for (int i = 0; i < 3000; i++)
+         {
+            liste.Add(3.01);
+         }
+
+         logik.gemMålingPåPerson(2, liste, DateTime.Now);
+         
+         gem = new Gem_måling();
+         
+         gem.ShowDialog();
+      }
+
+      private void textBox4_TextChanged(object sender, EventArgs e)
+      {
+
+=======
           chart1.Series["EKG"].Points.DataBindY(logik.kørEKG());
+>>>>>>> origin/Programmering
       }
    }
 }
