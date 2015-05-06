@@ -11,11 +11,15 @@ namespace SemesterProjekt2
       public string navn;
       public string CPR;
       public int ID;
-      public List<Målinger> PatientsMålinger;
+      //public List<Målinger> PatientsMålinger;
 
       public Person()
       { }
       
+       public int getID()
+      {
+          return ID; 
+      }
       public Person(string navn_input, string cprInput)
       {
          navn = navn_input;

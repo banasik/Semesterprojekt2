@@ -15,15 +15,15 @@ namespace SemesterProjekt2
         public NI_DAQVoltage datacollector;
         public double baseline;
         public int sample;
-        public double hz; 
-
-
+        public double hz;
+        public string CPR;
+        public int ID; 
 
         public Logiklag()
         {
             data = new Datalag();
             datacollector = new NI_DAQVoltage();
-            sample = datacollector.samplesPerChannel;  //samples                                          Mangler reference
+            sample = datacollector.samplesPerChannel;  //samples                                     Mangler reference
             hz = datacollector.sampleRateInHz;//metoden til hertz                                    Mangler reference
 
         }
@@ -77,10 +77,26 @@ namespace SemesterProjekt2
             double thresh = minValue * 0.7;
             int stakker = 0;
             int rTakker;
-            rTakker = AntalRtakker(); 
+            rTakker = AntalRtakker();
+            bool pause = false; 
 
             foreach (double i in datacollector.currentVoltageSeq)
             {
+                if (!pause)                                              
+                {
+                    if (i > thresh)                             //Kommer spiksne ned under fores tærskel? 
+                    {
+                        stakker++;
+                        pause = true;                           //Hvis ja, så adder vi til antallet af stakkerne. Herefter bliver der igangsat en pause, ligesom ved puls. 
+                    }
+                }
+                else                                                    
+                {
+                    if (i < thresh)                             //B
+                    {
+                        pause = false;
+                    }
+                }
 
             }
 
@@ -125,13 +141,19 @@ namespace SemesterProjekt2
             
         }
 
-       public bool gemData()
-       {
-          return (data.FlytTilSQL());
-       }
+       //public bool gemData()
+       //{
+       //   return (data.FlytTilSQL());
+       //}
        public bool gemMålingPåPerson(int patientID, List<double> måling, DateTime tidForMåling)
        {
           return (data.GemMålingPåPerson(patientID, GetBytes(måling), tidForMåling));
+       }
+
+
+       public Person HentPersonMedCPR(string CPR)
+       {
+           return data.GetPersonMedCPR(CPR);
        }
 
        //Konverterer List<Double> til byte[] (Som skal bruges for at gemme i sql-db). Bliver brugt ovenfor

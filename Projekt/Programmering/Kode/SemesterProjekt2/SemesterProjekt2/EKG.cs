@@ -14,10 +14,26 @@ namespace SemesterProjekt2
    {
        private Login Login;
        private Logiklag logik;
-      public EKG()
+       private List<double> liste;
+       private Gem_måling gem;
+       
+       //"Datamodel"
+       private Person p;
+
+      public EKG(string CPR)
       {
          InitializeComponent();
-         logik = new Logiklag(); 
+         logik = new Logiklag();
+       
+          if(CPR =="")
+          {
+              //CPR er tom, skal måske tilbage til "angiv CPR"-skærm
+              p = new Person();
+          }
+          else
+          {
+              p = logik.HentPersonMedCPR(CPR);
+          }
       }
 
       private void button4_Click(object sender, EventArgs e)
@@ -29,22 +45,17 @@ namespace SemesterProjekt2
 
       private void button3_Click(object sender, EventArgs e) //"Start ny måling"
       {
-<<<<<<< HEAD
          liste = logik.kørEKG();
-          chart1.Series["EKG"].Points.DataBindY(liste);
+         chart1.Series["EKG"].Points.DataBindY(liste);
       }
 
 
       private void button1_Click(object sender, EventArgs e)
       {
-         liste = new List<double>();
+         liste = logik.datacollector.currentVoltageSeq;
+         //patientID = 
 
-         for (int i = 0; i < 3000; i++)
-         {
-            liste.Add(3.01);
-         }
-
-         logik.gemMålingPåPerson(2, liste, DateTime.Now);
+         logik.gemMålingPåPerson(p.ID, liste, DateTime.Now);
          
          gem = new Gem_måling();
          
@@ -54,9 +65,7 @@ namespace SemesterProjekt2
       private void textBox4_TextChanged(object sender, EventArgs e)
       {
 
-=======
           chart1.Series["EKG"].Points.DataBindY(logik.kørEKG());
->>>>>>> origin/Programmering
       }
    }
 }
