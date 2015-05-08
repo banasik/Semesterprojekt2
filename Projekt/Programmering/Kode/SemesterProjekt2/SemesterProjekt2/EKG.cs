@@ -16,15 +16,22 @@ namespace SemesterProjekt2
        private Logiklag logik;
        private List<double> liste;
        private Gem_måling gem;
-       
+
+              
        //"Datamodel"
        private Person p;
+       
+       
 
       public EKG(string CPR)
       {
          InitializeComponent();
          logik = new Logiklag();
-       
+         
+
+         textBox4.Text = CPR;    //Viser CPR nummer i EKG vinduet
+         
+
           if(CPR =="")
           {
               //CPR er tom, skal måske tilbage til "angiv CPR"-skærm
@@ -57,7 +64,7 @@ namespace SemesterProjekt2
 
       private void textBox4_TextChanged(object sender, EventArgs e)
       {
-
+          
           chart1.Series["EKG"].Points.DataBindY(logik.kørEKG());
       }
 
