@@ -46,3 +46,5 @@ C:\Users\Sara\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjek
 C:\Users\Sara\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\NationalInstruments.Common.Native.dll
 C:\Users\Sara\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\ST2Prj2LibNI-DAQ.pdb
 C:\Users\Sara\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\NationalInstruments.DAQmx.xml
+C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.Gem_måling.resources

@@ -49,7 +49,7 @@ namespace SemesterProjekt2
             cmd = new SqlCommand("select CPR From Patient", conn);
             rdr = cmd.ExecuteReader();
 
-            if (rdr.Read())
+            while (rdr.Read())
             { 
                CPR = rdr.GetString(0);
                CPRliste.Add(CPR); 
@@ -64,11 +64,11 @@ namespace SemesterProjekt2
             
             conn.Open();
 
-            cmd = new SqlCommand("select Navn,CPR, PatientID From Patient where CPR = @cprNummer_in", conn);
+            cmd = new SqlCommand("select Navn, CPR, PatientID From Patient where CPR = '"+Cprnummer+"'", conn);
            
-            SqlParameter param = new SqlParameter();
-            param.ParameterName = "@cprNummer_in";
-            param.Value = Cprnummer;
+            //SqlParameter param = new SqlParameter();
+            //param.ParameterName = "@cprNummer_in";
+            //param.Value = Cprnummer;
 
 
             rdr = cmd.ExecuteReader();
