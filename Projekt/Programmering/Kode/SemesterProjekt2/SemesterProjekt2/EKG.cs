@@ -52,20 +52,45 @@ namespace SemesterProjekt2
 
       private void button1_Click(object sender, EventArgs e)
       {
-         liste = logik.datacollector.currentVoltageSeq;
-         //patientID = 
-
-         logik.gemMålingPåPerson(p.ID, liste, DateTime.Now);
          
-         gem = new Gem_måling();
-         
-         gem.ShowDialog();
       }
 
       private void textBox4_TextChanged(object sender, EventArgs e)
       {
 
           chart1.Series["EKG"].Points.DataBindY(logik.kørEKG());
+      }
+
+      private void button1_Click_1(object sender, EventArgs e)
+      {
+          liste = logik.datacollector.currentVoltageSeq;
+          //patientID = 
+
+          logik.gemMålingPåPerson(p.ID, liste, DateTime.Now);
+
+          gem = new Gem_måling();
+
+          gem.ShowDialog();
+      }
+
+      private void button2_Click(object sender, EventArgs e)
+      {
+
+      }
+
+      private void textBox4_TextChanged_1(object sender, EventArgs e)
+      {
+
+      }
+
+      private void chart1_Click(object sender, EventArgs e)
+      {
+
+      }
+
+      private void textBox3_TextChanged(object sender, EventArgs e)
+      {
+
       }
    }
 }
