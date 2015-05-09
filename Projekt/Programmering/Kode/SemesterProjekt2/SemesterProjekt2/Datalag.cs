@@ -60,7 +60,6 @@ namespace SemesterProjekt2
         public Person GetPersonMedCPR(string Cprnummer)
         {
            Person p = new Person();
-            //Validering om CPRnummer er korrekt?
             
             conn.Open();
 

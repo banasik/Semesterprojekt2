@@ -68,12 +68,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gamle målinger.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gamle målinger.Designer.cs">
-      <DependentUpon>Gamle målinger.cs</DependentUpon>
-    </Compile>
     <Compile Include="Gem måling.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,9 +89,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EKG.resx">
       <DependentUpon>EKG.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gamle målinger.resx">
-      <DependentUpon>Gamle målinger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gem måling.resx">
       <DependentUpon>Gem måling.cs</DependentUpon>

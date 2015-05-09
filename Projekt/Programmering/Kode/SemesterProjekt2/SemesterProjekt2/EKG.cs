@@ -30,17 +30,18 @@ namespace SemesterProjekt2
          
 
          textBox4.Text = CPR;    //Viser CPR nummer i EKG vinduet
-         
 
-          if(CPR =="")
-          {
-              //CPR er tom, skal måske tilbage til "angiv CPR"-skærm
-              p = new Person();
-          }
-          else
-          {
-              p = logik.HentPersonMedCPR(CPR);
-          }
+
+         if (CPR == "")
+         {
+            //CPR er tom, skal måske tilbage til "angiv CPR"-skærm
+            p = new Person();
+         }
+         else
+         {
+            p = logik.HentPersonMedCPR(CPR);
+            textBox3.Text = p.navn;
+         }
       }
 
       private void button4_Click(object sender, EventArgs e)
