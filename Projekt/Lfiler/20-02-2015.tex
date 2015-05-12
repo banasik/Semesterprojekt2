@@ -1,6 +1,7 @@
 \chapter{Logbog}
 
-\textbf{Dato:} 20-02-2015
+\section{Dato: 20-02-2015}
+\hrule
 
 \textbf{Omhandler:} Kravspecifikation
 
@@ -14,4 +15,414 @@ Dagsorden:
 	\item Aktør-kontekst diagram, samt aktør beskrivelse
 	\item Use cases
 	\item Use cases diagram
-\end{itemize}Lars kiggede på det til vejledermødet og sagde OK til det. Det eneste var, at der skulle være 2 Use Cases, da vi skal kigge på EKG’et i forhold til HRV. Efter mødet lavede vi den sidst Use case.  
+\end{itemize}Lars kiggede på det til vejledermødet og sagde OK til det. Det eneste var, at der skulle være 2 Use Cases, da vi skal kigge på EKG’et i forhold til HRV. Efter mødet lavede vi den sidst Use case. 
+
+\section{Dato: 26-02-2015}
+\hrule
+
+\textbf{Omhandler:} Kravspecifikation
+
+\textbf{Ansvarlige:} Albert, Mads, Cecilie og Lise\\ 
+\\
+\textbf{Logbog}
+
+Dagsorden:
+\begin{itemize}
+	\item Arbejde videre på Use cases
+\end{itemize}
+
+
+Vi har i dag færdig gjort de to use cases omhandlede forprojektet. Vi har rettet aktør-navn i aktør-kontekstdiagram. 
+Snakket videre om, hvor meget ikke-funktionelle krav skal fylde i forprojektet (spørgsmål til Lars - Lars har givet svar).
+Vi har påbegyndt accepttest for use case 1.
+
+\section{Dato: 26-02-2015}
+\hrule 
+
+\textbf{Omhandler:} Kravspecifikation
+
+\textbf{Ansvarlige:} Lise
+
+\textbf{Logbog}
+
+Jeg lavede en beskrivelse af EKG-systemet - se under aktørbeskrivelse. 
+
+
+\section{Dato: 27-02-2015}
+\hrule
+
+\textbf{Omhandler:} Accepttest, funktionelle- og ikke funktionelle krav
+
+\textbf{Ansvarlige:} Lise, Albert, Cecilie og Mads
+ 
+\textbf{Logbog}
+Accepttest for use case 1 og 2 er færdiggjort og godkendt af vejleder - klar til review.
+Funktionelle og ikke funktionelle krav er påbegyndt ud fra FURBS og MoSCOW metoderne. 
+
+
+\section{Dato: 27-02-2015}
+\hrule
+
+\textbf{Omhandler:} Ikke-funktionelle krav
+
+\textbf{Ansvarlige:} Lise 
+ 
+\textbf{Logbog}
+
+Jeg har færdiggjort og indskrevet ikke-funktionelle krav i Latex. Jeg sender det til Lars, så han kan kigge det igennem inden næste møde! Jeg ændre også lige Lars's kommentar til Use case1 og den accepttest! 
+
+\section{Dato: 27-02-2015}
+\hrule 
+
+\textbf{Omhandler:} Programmering
+
+\textbf{Ansvarlige:} Mohammed, Malene, Sara og Martin
+
+\textbf{Logbog}
+
+I gruppen (programmering) med Mohammed, Malene, Sara og Martin, havde vi forberedt til i dag at se videon som omhandler LabVIEW2014 - NI-DAQmx-14 softwaren som nu er installeret på Saras og Martins computer. Vi sat Martins computer op først med kun at tilslutte EKG forstærker og lavede en test, uden at tilslutte noget, og vi kan konkludere at EKG forstærkeren og software virker. Efterfølgende tilsluttede vi det følgende print og tilsluttede først elektroderne til Mohammed og bagefter Sara. Ved begge målinger fik vi intet som skulle ligne et EKG signal, det lignede mest støj. Vi forsøgte at fejlfinde ved at flytte rundt på ledningerne, men uden nogle forbedringer. Lars var også lige forbi for at kigge på opstillingen, men det er Samuel som ved noget om udstyret og hvad der kan være galt. Lars ville forhøre Samuel om hvad der skal ske. Vi vil prøve en ekstra gang næste gang vi mødes.
+
+
+\section{Dato: 02-03-2015}
+\hrule 
+
+\textbf{Omhandler:} Programmering
+
+\textbf{Ansvarlige:} Mohammed, Malene, Sara og Martin
+
+\textbf{Logbog}
+
+Vi fik I dag snakket med Samuel og fik udleveret nogle andre elektroder vi kunne måle med. Dette resulteret i at nu kan måle EKG-signaler. Vi vil næste gang få kigget på den del af softwaren som skal opsamle disse data.
+
+
+\section{Dato: 06-03-2015}
+\hrule
+
+\textbf{Omhandler:} Kravspecifikation og accepttest
+
+\textbf{Ansvarlige:} Cecilie, Albert og Mads
+
+\textbf{Logbog}
+
+Rettelser i den endelige kravspec og accepttest. Beskrivelse af aktør-kontekst diagram, samt UseCase diagrammet er tilføjet. Desuden er der skrevet en indledning, der kort beskriver formålet ved en EKG-måler.
+ 
+
+\section{Dato: 06-03-2015}
+\hrule
+
+\textbf{Omhandler:} Programmering
+
+\textbf{Ansvarlige:} Mohammed, Malene og Martin
+
+\textbf{Logbog}
+
+\begin{itemize}
+	\item 
+	I dag fik vi lavet nye EKG målinger med Mohammed og Malene. Til at starte med var der en del støj på signalet, men det blev bedre og mere læsbart efter nogle forsøg. Vi kiggede nærmere på det udleveret software i C sharp, som bruges ved en EKG måling. Der fik vi ændret følgende:
+	
+	datacollector.deviceName = "Dev4/ai0";
+	
+	til datacollector.deviceName = "Dev1/ai0";
+	
+	Dette gjorde at vi nu får vores liste udskrevet i GUI'en.
+	
+Vi fik snakket med Lars om hvad vi skal lave i forprojektet i programmering og hvad programmet skal kunne vha. EKG-målinen:
+
+\item Udskrive EKG-måling i graf
+\item Udskrive puls
+\item Udskrive HRV (Heart Rate Variability) (R takker)
+
+Næste gang vil vi kigge på disse tre punkter og forsøge at begynde at programmere noget der vil kunne understøtte dette.
+	
+\end{itemize}
+
+\section{Dato: 13-03-2015}
+\hrule
+
+\textbf{Omhandler:} KS og AT
+
+\textbf{Ansvarlige:} Lise, Mads, Cecilie og Albert
+
+\textbf{Logbog}
+\\
+\\
+Dagsorden:
+\begin{itemize}
+	\item Tilrettelse af kommentar fra review-gruppen
+\end{itemize}
+
+Vi fik tilrettet og tilføjet rettelserne fra review-gruppen. Vi havde nogle problemer med at få tilføjet en kolonne i vores AT ("faktiske observationer/resultat"). Dette har jeg (Lise) dog senere få tilføjet, så der er styr på det. 
+Lars gav os "lov" til at undlade AT for de ikke-funktionelle krav i for-projektet - dog skal der laves en til selve projektet. Og ALLE krav skal der testes på. 
+
+
+\section{Dato: 13-03-2015}
+\hrule
+
+\textbf{Omhandler:} Programmering (forprojekt)
+
+\textbf{Ansvarlige:} Mohamed, Malene, Sara og Martin
+
+\textbf{Logbog}
+\\
+\\
+Dagsorden:
+
+	I dag fik vi tilføjet en graf i koden. Den viser en graf over den sidste måling. Vi havde problemer med at få grafen til at vise et EKG-signal. Lars hjalp med dette ved at ændre i koden, så nu samples funktionen virker i GUI'en. De forskellige parameter som der er i GUI'en, virker slet, de er ikke "aktive", derfor kunne vi bedre forstå der ikke rigtig skete noget når vi ændret på dem. :D
+\begin{itemize}
+	\item  Nu skal vi have programmet til at finde alle R-takker så vi kan beregne en puls udfra en måling. Dette fungerer ikke endnu, men en label er tilføjet til dette brug.
+	
+	\item Ligeledes mangler der en tilføjelse med HRV, afstenden mellem R-takker.
+\end{itemize}
+	
+Disse to punkter vil vi arbejde videre næste gang.
+
+
+\section{Dato: 18-03-2015}
+\hrule
+
+\textbf{Omhandler:}  Kravspec og accepttest 
+
+\textbf{Ansvarlige:} Lise, Albert og Mads
+ 
+\textbf{Logbog}
+\\
+\\
+Dagsorden:
+\begin{itemize}
+	\item Påbegynde projekt
+\end{itemize}
+
+Vi er påbegyndt tilrettelse vores accept-test, aktør/kontekst diagram, UseCase 1 og -2, samt FURPS, til hovedprojektet, og den valgte sygdom, atrieflimmer. Layoutet til Use-casene er blevet ændret i LaTex. Albert og Mads arbejder videre med rapporten fredag d. 20-03.
+
+
+\section{Dato: 20-03-2015}
+\hrule 
+
+\textbf{Omhandler: } Kravspec og acceptest Projekt
+
+\textbf{Ansvarlige:} Albert og Mads
+
+\textbf{Logbog}
+
+Acceptest over ikke-funktionelle krav \\
+Aktør kontekst diagram
+\\ Use Case diagram
+
+
+\section{Dato: 20-03-2015}
+\hrule
+
+\textbf{Omhandler:} Programmering
+
+\textbf{Ansvarlige:} Mohamed, Malene og Martin
+
+\textbf{Logbog}
+
+Lars hjalp os med at lave noget kode som kunne tælle rtakker og bagefter gøre det muligt at udregne pulsen. Det skal nu sættes ordenligt op i koden. Blev enig med Lars om at der skulle oprettes et nyt projekt i C\#, hvor vi i stedet for at skrive i den udleveret kode, kun lavede referancer til den. Dette vil gøre det mere gennemskueligt og kommer til at gøre nytte i hovedet projektet. Lars synes også at vi bare skulle fortsætte ind i selve projektet og at for-projektet nu er overstået for programmering.\\	
+	Næste gang skal der kigges på, så programmet kommer til at vise antal Rtakker, HRV og puls. Og så skal der kigges på, hvordan det kommer til at analysere vores sygdom rigtig.
+
+
+\section{Dato: 26-03-2015}
+\hrule 
+
+\textbf{Omhandler:} KS og AT 
+
+\textbf{Ansvarlige:} Lise, Mads, Cecilie og Albert
+ 
+\textbf{Logbog}
+\\
+\\
+Dagsorden:
+\begin{itemize}
+	\item Ændre KS og AT i forhold til sygdommen
+\end{itemize}
+
+I dag har vi fået ændret hele KS i forhold til atrieflimmer samt de ikke-funktionelle krav i AT. 
+I morgen skal vi lave AT færdig i forhold til atrieflimmer og lave ordliste. 
+
+
+\section{Dato: 09-04-2015}
+\hrule 
+
+\textbf{Omhandler:} Review rettelser samt påbegyndelse af rapportskrivning 
+
+\textbf{Ansvarlige:} Lise, Mads, Cecilie og Albert 
+
+\textbf{Logbog}
+\\
+\\
+Dagsorden:
+\begin{itemize}
+	\item Ret KS og AT i forhold til review kommentar 
+	\item Start på rapport 
+\end{itemize}
+
+Vi fik rettet de rettelser, der var samt sendt KS og AT til Lars igen. 
+Så begyndt vi at skrive problemformulering, indledning samt baggrund fra hele projektet. Cecilie og Albert er begyndt på beskrivende tekst omkring EKG-system i al almindelighed. Mads og Lise er begyndt at beskrive det raske hjerte. 
+
+\section{Dato: 10-04-2015}
+\hrule 
+
+
+\textbf{Omhandler:} Baggrund for projektet
+
+\textbf{Ansvarlige:} Lise, Mads, Cecilie og Albert 
+
+\textbf{Logbog}
+I dag har Cecilie og Albert færdig skrevet udkastet til baggrund for EKG og Atrieflimmer. 
+Mads og Lise har færdig skrevet udkastet til baggrund for det raske hjerte. 
+
+
+\section{Dato: 12-04-2015}
+\hrule 
+
+
+\textbf{Omhandler:} Baggrund for projektet
+
+\textbf{Ansvarlige:} Lise
+
+\textbf{Logbog}
+Jeg har i dag indskrevet baggrund for EKG og Atrieflimmer i Latex. Ellers har jeg læst det igennem og rettet små ting. 
+Tænker, at vi nu bare lige skal have beskrevet trelagsmodellen også er det nok baggrund. 
+
+\section{Dato: 15-04-2015}
+\hrule
+
+\textbf{Omhandler:} Rapport - baggrund
+
+\textbf{Ansvarlige:} Lise og Mads
+
+\textbf{Logbog}
+Vi fik færdigskrevet baggrundsafsnittet omkring trelagsmodellen. Afsnittet baggrund sendes til Lars for respons
+
+\section{Dato: 15-04-2015}
+\hrule
+
+\textbf{Omhandler:} Programmering
+
+\textbf{Ansvarlige: }Sara, Malene, Mohammed og Martin 
+
+\textbf{Logbog}
+\\
+\\
+Dagsorden:
+\begin{itemize}
+\item Arbejde med diagrammer
+\item Systembeskrivelse
+\item Arbejde med Trelags-modellen
+\end{itemize}
+
+Sara har lavet BBD, SD og påbegyndt arbejdet med
+en IBD. Dette vil der blive arbejdet videre med det på fredag.
+
+Mohammed, Malene og Martin har arbejdet med at få Logindelen af programmering til at virke, hvilket den gør nu. Derefter er arbejdet med CPR-tjekkeren påbegyndt.
+
+
+\section{Dato: 23-04-2015}
+\hrule 
+
+\textbf{Omhandler:} Programmering
+
+\textbf{Ansvarlige:} Malene, Sara og Martin
+
+\textbf{Logbog}
+\\
+I dag fik vi tilføjet en OK boks som kommer frem, når man har gemt et EKG signal. Udover det arbejder Malene og Martin med at give mulighed for at gemme et EKG signal oppe på SQL, hvilet har givet nogle ændringer i de tidligere tabeller. Sara har kigget på en metode til at analyserer vores sygdom. Det driller da når vi henter EKG signaler fra physionet, da de er meget forskellige, men hører stadig under samme sygdom. Martin har sendt en mail til Samuel om denne problematik.
+
+\section{Dato: 23-04-2015}
+\hrule 
+
+\textbf{Omhandler:} Diagrammer til design
+
+\textbf{Ansvarlige:} Lise og Albert 
+
+\textbf{Logbog}
+\\
+\\
+Dagsorden:
+\begin{itemize}
+	\item Begynd på diagrammer til design
+\end{itemize}
+
+Vi har i dag lavet to udkast til domænemodel (en simpel og en detaljeret) og et udkast til sekvensdiagrammer for hver Use Case. Vi havde først lavet den simple domænemodel, men snakkede med Kim (ISE-underviser) og han mente vi skulle have en controller, hvor alt gik igennem samt at SQL-databasen skulle specificeres endnu mere, altså med de forskellige tabeller. På den måde viser vi, hvordan tabellerne i databasen bliver brugt. 
+
+
+Lars har modtaget begge domænemodeller - dog ikke sekvensdiagrammer, da de endnu ikke er skrevet ind.
+
+
+\section{Dato: 24-04-2015}
+\hrule
+
+\textbf{Omhandler:} Sekvensdiagrammer
+
+\textbf{Ansvarlige:} Lise
+
+\textbf{Logbog}
+\\
+Har lavet alle sekvensdiagrammer i visio. Har sendt dem til Lars med en masse spørgsmål, så de forventes færdige onsdag i næste uge, når vi har fået feedback. 
+
+\section{Dato: 27-04-2015}
+\hrule
+
+\textbf{Omhandler:} Design
+
+\textbf{Ansvarlige:} Lise og Mads
+
+\textbf{Logbog}
+\\
+I dag har vi fået lavet klassediagrammerne til hver UC (med metoder fra sekvensdiagram). De er sendt til Lars, og forventes feedback på onsdag! 
+Vi har oprettet design-dokument i dokumentations.tex, hvor vi har lavet formen. Dertil er der blevet indsat BDD og grafisk tegning af opstillingen. 
+Vi har lavet grænseflader, som er en beskrivelse af forbindelserne mellem hardware-delene. 
+
+\section{Dato: 27-04-2015}
+\hrule
+
+
+\textbf{Omhandler:} Programmering og diagram
+
+\textbf{Ansvarlige:} Malene
+
+\textbf{Logbog}
+\\
+\\
+Dagsorden:
+\begin{itemize}
+	\item Arbejdet med UML klassediagram
+	\item Arbejdet videre med at gemme i SQL
+\end{itemize}
+
+
+Der er blevet skrevet metoder og atributter ind i UML klassediagram, dog er nogle enkelte ikke blevet udfyldt, da der var en uvished om, hvad der skulle stå. Der er blevet skrevet en mail til Lars med spørgsmålene samt diagrammet.
+
+Der er blevet arbejdet med at få gemt EKG data i SQL ved brug af BLOB, dog er det ikke lykkedes endnu. Sara og Malene har et møde med Brian torsdag kl. 11, hvor det gerne skulle blive færdiggjort.
+
+
+\section{Dato: 29-04-2015}
+\hrule
+
+\textbf{Omhandler:} Applikationsmodel i design
+
+\textbf{Ansvarlige:} Lise, Mads og Albert
+
+\textbf{Logbog}
+\\
+\\
+Dagsorden:
+\begin{itemize}
+	\item Tilret feedback fra Lars
+	\item Inkludere domæne, sekvens og klasse-diagram i LaTex med beskrivende design-beskrivelse
+\end{itemize}
+
+I dag har vi tilrettet alle diagramemrne
+Domæne :  Der var en fejl, da en klassen (EKG-vindue) fra præsentationslaget havde direkte kontakt med måling-tabel fra datalaget. Vi rettede det til, så forbindelse gik igennem controlleren. 
+\\
+Sekvens : Vi fik sat flere aktivitetsbokse ind, der hvor systemet venter på svare/respons. 
+\\
+Klasse : Tilrettet paramenterne (typen), så de stemmer overens med, hvad der returneres. 
+\\
+\\
+Kim sagde: I skal kun lave paramenter-typer, hvor det er åbenlyst (fx, hvis der bliver udskrevet en tekst = string) ellers skriver I bare void. 
+Han sagde også, at der er lukket pil, hvis der kommer til svar tilbage med en stiplet linje. Dette havde vi styr på, så pilene blev ikke rettet i sekvensdiagrammene.  
+ 
+
+
