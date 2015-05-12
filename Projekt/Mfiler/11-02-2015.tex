@@ -20,7 +20,17 @@
 	\item Use Cases - funktionelle og ikke-funktionelle krav
 	\item Der er nogle krav til, hvor vi skal måde i for-projektet (se diasshow fra intro-timen)
 	\item Lav det på en person
-\end{itemize} Sundhed: Vi skal måske skrive om, hvordan et rask hjerte fungere også gå over i, hvad fejlen er i hjertet til vores valgte sygdom indtræffer.  Vi skal aflevere design og rapport hver for sig. LaTex: synes Lars vi skal tage til! Design har sin version historik - rapporten har - KS og AT har sin egen.  Ugentlig møde : Onsdage kl. 11:30 - ellers send mail eller kig ind.  
+\end{itemize} 
+
+Sundhed: Vi skal måske skrive om, hvordan et rask hjerte fungere også gå over i, hvad fejlen er i hjertet til vores valgte sygdom indtræffer.  
+
+Vi skal aflevere design og rapport hver for sig. 
+
+LaTex: synes Lars vi skal tage til! 
+
+Design har sin version historik - rapporten har - KS og AT har sin egen.  
+
+Ugentlig møde : Onsdage kl. 11:30 - ellers send mail eller kig ind.  
 
 
 \section{Dato: 13-02-2015}
@@ -124,7 +134,31 @@ Vi har valgt at vores sygdom, som vi vil bruge i projektet, skal være artriefli
 \end{itemize}
 
 \textbf{Referat: }\\ 
-Design-mappe. Skal system test og acceptest ligge derinde?De kan godt ligge der inde. \\Skal vi teste ’Could’? MoSCoW kan bruges når man har mange use cases. Og kan bruges hvis der er vigtige dele der skal deles op i MoSCoW.\\Når man skriver det op i MosCow, burde der være en use case forbundet. \\Skal vi sorterer nogle af dem fra (touch-skærm f.eks.)?Den bør ikke være med i MoSCoW.\\Det der er ikke er funktionelle krav, skal ’bindes op’ på en use-case.\\Hvis DET er tidsmessigt af sammenhæng er det én usecase.Hvis det ikke er tidsmessigt af sammenhæng er det to eller flere use cases.\\Vores EKG-system:Aktør kontekst, kan vi lave en pil fra analog op til physionet?Vi kan lave en ekstern aktør, som er physio-net.\\Hovedforløb i use-casen, hvordan skal det være i forhold til opkobling til patient/physionetSom en forudsetning. Vi har et analog-signal, som skal opkobles til et EKG-signal.\\Aktør kontekst:Vi skal have bruger i stedet for sundhedsprof.
+Design-mappe. Skal system test og acceptest ligge derinde?
+De kan godt ligge der inde. \\
+Skal vi teste ’Could’? 
+MoSCoW kan bruges når man har mange use cases. Og kan bruges hvis der er vigtige dele der skal deles op i MoSCoW.
+\\
+Når man skriver det op i MosCow, burde der være en use case forbundet. 
+\\
+Skal vi sorterer nogle af dem fra (touch-skærm f.eks.)?
+Den bør ikke være med i MoSCoW.
+\\
+Det der er ikke er funktionelle krav, skal ’bindes op’ på en use-case.
+\\
+Hvis DET er tidsmessigt af sammenhæng er det én usecase.
+Hvis det ikke er tidsmessigt af sammenhæng er det to eller flere use cases.
+\\
+Vores EKG-system:
+Aktør kontekst, kan vi lave en pil fra analog op til physionet?
+Vi kan lave en ekstern aktør, som er physio-net.
+\\
+Hovedforløb i use-casen, hvordan skal det være i forhold til opkobling til patient/physionet
+Som en forudsetning. 
+Vi har et analog-signal, som skal opkobles til et EKG-signal.
+\\
+Aktør kontekst:
+Vi skal have bruger i stedet for sundhedsprof.
 
 \section{Dato: 17-04-2015}
 \hrule
@@ -143,7 +177,10 @@ Design-mappe. Skal system test og acceptest ligge derinde?De kan godt ligge der
 
 \textbf{Referat:}Vi aftalte, at vi sender diagrammer til Lars og får derefter respons over mail, og hvis relevant, uddybet på næste møde. \\
 	Respons på baggrunds afsnittet - trelagsmodel er ikke nødvendig at beskrive, kommer med i design gennem beskrivelse af vores system. \\
-	Vi skal beskrive systemet med ord, gerne billede. Ikke om koden, men bare om hvordan det fungerer.\\	Næste punkt er design \\	For meget på SD - ikke analog og DAQ,  → blackbox\\	Om EKG signalet, skal gemmes som rådata → gemme rådata, kan konverteres over i en liste + generelt vejledning til programmering \\
+	Vi skal beskrive systemet med ord, gerne billede. Ikke om koden, men bare om hvordan det fungerer.\\
+	Næste punkt er design \\
+	For meget på SD - ikke analog og DAQ,  → blackbox\\
+	Om EKG signalet, skal gemmes som rådata → gemme rådata, kan konverteres over i en liste + generelt vejledning til programmering \\
 	Møde næste uge er rykket til onsdag kl 12 på 400 gangen - dagsorden sendes tirsdag, efter 	møde i hultimen
 
 \section{Dato: 21-04-2015}
@@ -204,34 +241,97 @@ Trelagsmodel-diagrammet hedder en pakkediagram. Kan også laves om til UML-klass
 \textbf{Referat:}
 
 BDD er irrelevant, billedet erstatter
-\\ \\Spg: skal knapper også ind I UML - ikke nødvendigt at have \\	Skal skrives i design overvejelser
+\\ \\
+Spg: skal knapper også ind I UML - ikke nødvendigt at have \\
+	Skal skrives i design overvejelser
 \\
-\\Spg: hvor vælger man liste under EKG (i visio)?\\	De skal skrives ind i design overvejelser
 \\
-\\Note prog.: I skal selv lave typen (af listen el. whatever)
+
+Spg: hvor vælger man liste under EKG (i visio)?\\
+	De skal skrives ind i design overvejelser
 \\
-\\Spg: Blackbox, hvordan håndterer man den?\\	Der skal være et interface, properties, som kan sættes på
 \\
-\\	Spg: ”Using national instruments”, skal vi have den med?\\	Den kode fra Jesper, skal betraktes som 3. party software.	Man skal beskrive det interface, som Blackbox/Jespers Kode/Hvad den nu hedder\\	Det er kun set udefra som er i den\\	Henvis kun til Jespers kode.\\
+
+Note prog.: I skal selv lave typen (af listen el. whatever)
 \\
-Spg: Vil du gerne have at hver lag beskrives hver for sig? Eller skal de ind under designovervejelser?\\Man kan lave et pakke-diagram, men når vi har lavet de andre diagrammer er det ikke nødvendigt.\\De forskellige lag skal beskrives i designovervejelsen til UML diagrammet
 \\
-\\Rapporten: Meget fakta og præsenteret som gruppens arbejde, ikke individuelle kapitler.\\	Derfor: skal omformuleres (det er en god øvelser, det skal gøres upersonligt)	Niggas in trainin’\\
-\\Spg: Sekvensdiagram 1	Metodekald, besked tilbage.	\\Ikke metodenavn (navn med parentes bag på) på ”Bekræft login”\\Spørg Kim\\Ellers ser Sekvens diagrammet fint ud\\
+
+Spg: Blackbox, hvordan håndterer man den?\\
+	Der skal være et interface, properties, som kan sættes på
 \\
-Sekvensdiagram 2:\\	Reelt skal der stå: Objektet\\
-\\Sekvensdiagrammer generelt\\	Hvis den sender besked op til at åbne, sender den besked til GUI\\	Det hele skal gå igennem controller-klassen (som ikke er i logik-laget)
 \\
-\\Vores controller skal have ”åbner” metoden.Der hvor pilene går hen, skal metoden åbnes i\\Ses evt. Kim’s Metodekalds-beskrivelse\\
-\\De skærmbilleder der er vidst er skitser.
+	
+Spg: ”Using national instruments”, skal vi have den med?\\
+	Den kode fra Jesper, skal betraktes som 3. party software.
+	Man skal beskrive det interface, som Blackbox/Jespers Kode/Hvad den nu hedder\\
+	Det er kun set udefra som er i den\\
+	Henvis kun til Jespers kode.
+\\
+\\
+
+Spg: Vil du gerne have at hver lag beskrives hver for sig? Eller skal de ind under designovervejelser?\\
+Man kan lave et pakke-diagram, men når vi har lavet de andre diagrammer er det ikke nødvendigt.\\
+De forskellige lag skal beskrives i designovervejelsen til UML diagrammet
+\\
+\\
+
+Rapporten: Meget fakta og præsenteret som gruppens arbejde, ikke individuelle kapitler.\\
+	Derfor: skal omformuleres (det er en god øvelser, det skal gøres upersonligt)
+	Niggas in trainin’
+\\
+\\
+Spg: Sekvensdiagram 1
+	Metodekald, besked tilbage.	\\
+Ikke metodenavn (navn med parentes bag på) på ”Bekræft login”\\
+Spørg Kim\\
+Ellers ser Sekvens diagrammet fint ud
+\\
+\\
+
+Sekvensdiagram 2:\\
+	Reelt skal der stå: Objektet
+\\
+\\
+Sekvensdiagrammer generelt\\
+	Hvis den sender besked op til at åbne, sender den besked til GUI\\
+	Det hele skal gå igennem controller-klassen (som ikke er i logik-laget)
+\\
+\\
+
+Vores controller skal have ”åbner” metoden.
+Der hvor pilene går hen, skal metoden åbnes i\\
+Ses evt. Kim’s Metodekalds-beskrivelse
+\\
+\\
+
+De skærmbilleder der er vidst er skitser.
 
 
+\section{Dato: 12-05-2015}
+\hrule
 
 
+\textbf{Fremmødte:} Malene, Sara, Mads, Albert, Mouhammed og Lise 
+
+\textbf{Fraværende:} Martin
+
+\textbf{Dagens dagsorden:}
+\begin{itemize}
+	\item Hans tanker omkring databse og disse problemer
+	\item Hans kommentarer på database
+	\item Spørgsmål til dokumentationsrapport
+\end{itemize}
+
+\textbf{Referat:}
+
+Der er fikset et mindre problem med Databasen. 
+
+Der er blevet rettet nogen fejl i designdelen. I UML-diagrammet skal de metoder som bliver brugt, skrives i UML'en. Der skal laves et seperat afsnit hvor analysen bliver gennemgået i detaljer. Der skal skrives noget om implementering i dokumentationsrapporten. Her skal analysen og testprogrammet ligge. 
+
+Der behøves ikke lave dokumentation om offentlig database. 
+
+Der køres acceptest onsdag klokken 14:30. 
+
+ 
 
 
-
-
-
-
-
