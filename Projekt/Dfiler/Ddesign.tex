@@ -38,10 +38,27 @@ Grænseflader af forbindelserne imellem de forskellige dele af hardwaren.
 
 
 \section{Software arkitektur}
-I dette projekt arbejdes der med objektorienteret programmering i programmeringssproget C\#. Projektet er opbygget i henhold til trelagsmodellen, som er beskrevet i Rapporten under afsnittet Baggrund. Præsentationslaget består af 4 GUI’er, logiklaget af en enkelt klasse, og datalaget består af 3 klasser, hvoraf den ene er en blackbox.
+I dette projekt arbejdes der med objektorienteret programmering i programmeringssproget C\#. Projektet er opbygget i henhold til trelagsmodellen. Præsentationslaget består af 4 GUI’er, logiklaget af en enkelt klasse, og datalaget består af 3 klasser, hvoraf den ene er en blackbox. 
+
+\subsubsection{Trelagsmodellen}
+Trelagsmodellen er en model, som kan bruges til at opbygge et system. Idéen er, at systemet opdeles i mindre moduler/lag - et præsentationslag (grænseflade), et logiklag (funktionalitet) og et datalag (database), som spiller sammen. \\
+Præsentationslaget er det øverste lag. Det er det lag, brugeren har indvirkning på og hvor de behandlede data præsenteres brugervenligt. \\
+Logiklaget er det midterste lag. Dette lag er en slags bindeled mellem præsentationslaget og datalaget. I laget modtages og behandles informationerne fra præsentationslaget, og sendes videre til datalaget. Logiklaget kontrollerer hele systemets funktionalitet.\\
+Datalaget er det nederste lag. Laget modtager dataerne fra logiklaget, som håndteres og lagres. Datalaget fungere som en database, hvor man kan gemme nye data og hente gamle data frem igen. Trelagsmodellen vil typisk bygges grafisk op som vist på nedenstående figur 3.6.\\
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150415_39}
+	\caption{Trelagsmodel\protect\footnotemark}
+\end{figure}
+\footnotetext{http://en.wikipedia.org/wiki/Multitier\_architecture}
+
+Altså fungerer et system, opbygget efter trelagsmodellen, således, at alle lag er uafhængige af hinanden. Denne opbygning medfører, at det systemet bliver mere overskueligt, samt det er muligt at forstå de enkelte lag hver for sig. At lagene er uafhængige er også en fordel når der skal ændres i systemet. Det gør det muligt at begrænse vedligeholdelse til det aktuelle lag. Desuden er det muligt, at modtage et lag fra et andet system, og ligeledes at sende og genbruge et lag andetsteds. I en projektgruppe er det også en fordel, at det er muligt at fordele arbejdet mellem gruppemedlemmer, og dermed kunne arbejde uafhængigt af andre.
+
+
 
 \subsection{GUI}
-I dette afsnit vil GUI’erne beskrives nærmere. Grafiklaget består i alt af 4 GUI’er eller vinduer - Login-vindue, CPR-vindue, EKG-vindue og Gem\_måling-vindue.
+I dette afsnit vil GUI’erne beskrives nærmere. Præsentationslaget består i alt af 4 GUI’er eller vinduer - Login-vindue, CPR-vindue, EKG-vindue og Gem\_måling-vindue.
 
 \begin{figure}[H]
 	\centering
@@ -49,7 +66,7 @@ I dette afsnit vil GUI’erne beskrives nærmere. Grafiklaget består i alt af 4
 	\caption{Login-vindue}
 \end{figure}
 
-Når programmet startes op, vil et Login-vindue fremkomme på skærmen. Her skal brugeren logge ind for at få adgang til programmet, ved at indtaste sit personlige username og password. Bliver enten username eller password ikke godkendt, returneres en fejlmeddelelse, i form af en linje tekst nedenfor login-felterne. Bliver login godkendt åbnes CPR-vinduet.
+Når programmet startes op, vil et Login-vindue fremkomme på skærmen, se figur 2.3. Her skal brugeren logge ind for at få adgang til programmet, ved at indtaste sit personlige username og password. Bliver enten username eller password ikke godkendt, returneres en fejlmeddelelse, i form af en linje tekst nedenfor login-felterne. Bliver login godkendt åbnes CPR-vinduet, se figur 2.4.
 
 \begin{figure}[H]
 	\centering
@@ -60,7 +77,7 @@ Når programmet startes op, vil et Login-vindue fremkomme på skærmen. Her skal
 Her bliver brugeren bedt om at indskrive CPR-nummeret på den fiktive patient. CPR-nummeret bruges til at identificere personen i forbindelse med fremtidige målinger, samt til gemme målingerne i hvad der svarer til den fiktive persons journal. Hvis CPR-nummeret ikke bliver godkendt, vil brugerne blive gjort opmærksom på dette via en fejlmelding. 
 \\
 \\
-Når CPR-nummeret bliver godkendt, åbner det primære vindue, EKG-vinduet. 
+Når CPR-nummeret bliver godkendt, åbner det primære vindue, EKG-vinduet, se figur 2.5. 
 
 \begin{figure}[H]
 	\centering
@@ -71,7 +88,7 @@ Når CPR-nummeret bliver godkendt, åbner det primære vindue, EKG-vinduet.
 EKG-vinduet er der, hvor man kan starte og se målinger. Vinduet er udstyret med knapper, som angiver hvor lang tid brugeren ønsker en måling skal køre over. Til højre i vinduet vises grafen over EKG-signalet, kort efter der er trykket ”Start ny måling”. Yderligere til højre kan der, i de to tekstbokse, ses puls og HVR for den pågældende graf. I det tomme tekstfelt, til venstre under knappen "Start ny måling", vil diagnosen for EKG-signalet udskrives. Nederst i vinduet er der knapper til at gemme målingerne, samt at logge ud fra programmet. Hvis man logger ud, kommer man tilbage til Login-vinduet, og EKG-vinduet er ikke længere synligt. 
 \\
 \\
-Det sidste vindue der er valgbart, frembringes når der trykkes på ”Gem ny måling”. Herefter vises pop-up vindue, som bekræfter, at den pågældende EKG-målingen er gemt. 
+Det sidste vindue der er valgbart, frembringes når der trykkes på ”Gem ny måling”. Herefter vises pop-up vindue, som bekræfter, at den pågældende EKG-målingen er gemt, se figur 2.6. 
 
 \begin{figure}[H]
 	\centering
@@ -96,8 +113,6 @@ Applikationsmodellen for dette projekt består af en overordnet domænemodel, he
 
 \subsubsection{Domænemodel}
 Domænemodellen er skabt på baggrund af de fem Use Cases. Gennem navneordsanalyse af Use Casene er de konceptuelle klasser fundet. I modellen beskrives, hvordan de konceptuelle klasser interagerer med hinanden. Controlleren er ikke en konceptuelle klasse, men er den, der sørger for at systemet fungerer optimalt.
-\\
-Der er ingen multiplicity indsat i modellen, da der kun arbejdes med et scenarie af gangen. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! spørg Lars 
 
 \begin{figure}[H]
 	\centering
