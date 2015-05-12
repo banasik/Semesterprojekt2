@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ST2Prj2LibNI_DAQ;  //udleveret class (forbindelse til DAQ)
-
+using ST2Prj2LibNI_DAQ; //udleveret class (forbindelse til DAQ)
 
 namespace SemesterProjekt2
 {
@@ -73,30 +72,24 @@ namespace SemesterProjekt2
 
         public bool analyseSig()
         {
+            alglib.complex[] array;                                             //bruger nyt bibliotek
+            alglib.fftr1d(datacollector.currentVoltageSeqArray, out array);     //laver vores signal om til et komplekst array. Får alle de harmoniske svingninger (Fourier trans) 
+            List<double> frekvensliste = new List<double>();
 
-            double topinterval = 0.55;
-            double bottominterval = 0.5;
-            double baseline = (topinterval + bottominterval) / 2;   //skal omskrives. Dette er ikke det der ligger imellem 
-            
-            //bool pause = false; 
-
-            foreach(double i in datacollector.currentVoltageSeq)
+            for(int i=0; i<array.Length; i++)
             {
-                if(i > bottominterval && i < topinterval)
-                {
-
-
-
-
-
-                    if (fluctuations > 250)
-                    {
-                        return true;
-                    }
-
-                    else return false; 
-                }
+                double frekvens = i * (sample/array.Length/2.0);                                      //Dividerer med to for at få fordoblingen af frekvenserne væk. 
+                frekvensliste.Add(frekvens); 
             }
+      
+            
+
+            if ()
+            {
+                return true;
+            }
+
+            else return false; 
 
        }
 
