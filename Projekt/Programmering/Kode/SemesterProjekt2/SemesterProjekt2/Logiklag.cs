@@ -73,41 +73,32 @@ namespace SemesterProjekt2
 
         public bool analyseSig()
         {
-            double minValue = datacollector.currentVoltageSeq.Min();
-            double thresh = minValue * 0.7;
-            int stakker = 0;
-            int rTakker;
-            rTakker = AntalRtakker();
-            bool pause = false; 
 
-            foreach (double i in datacollector.currentVoltageSeq)
+            double topinterval = 0.55;
+            double bottominterval = 0.5;
+            double baseline = (topinterval + bottominterval) / 2;   //skal omskrives. Dette er ikke det der ligger imellem 
+            
+            //bool pause = false; 
+
+            foreach(double i in datacollector.currentVoltageSeq)
             {
-                if (!pause)                                              
+                if(i > bottominterval && i < topinterval)
                 {
-                    if (i > thresh)                             //Kommer spiksne ned under fores tærskel? 
-                    {
-                        stakker++;
-                        pause = true;                           //Hvis ja, så adder vi til antallet af stakkerne. Herefter bliver der igangsat en pause, ligesom ved puls. 
-                    }
-                }
-                else                                                    
-                {
-                    if (i < thresh)                             //B
-                    {
-                        pause = false;
-                    }
-                }
 
+
+
+
+
+                    if (fluctuations > 250)
+                    {
+                        return true;
+                    }
+
+                    else return false; 
+                }
             }
 
-            if (stakker * 2 > rTakker) //ret den her til, alt afhængig af hvordan EKG rent faktisk ser ud
-            {
-                return false;
-            }
-
-            else
-                return true;
-        }
+       }
 
        public bool getKode(string navn, int kode)
        {
