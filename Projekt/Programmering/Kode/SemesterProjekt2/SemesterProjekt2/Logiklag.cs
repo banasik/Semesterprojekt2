@@ -150,6 +150,15 @@ namespace SemesterProjekt2
           return (data.GemMålingPåPerson(patientID, GetBytes(måling), tidForMåling));
        }
 
+       public bool GemEKGDATA(List<double> måling, float samplerate_hz, long interval_sek, string data_format, string bin_eller_tekst, string maaleformat_type, DateTime start_tid)
+       {
+          return (data.GemEKGDATA(GetBytes(måling), samplerate_hz, interval_sek, data_format, bin_eller_tekst, maaleformat_type, start_tid));
+       }
+
+       public bool GemEKGMaeling(DateTime dato, int antal_maalinger, string medarbejdernr, string organisation)
+       {
+          return (data.GemEKGMaeling(dato, antal_maalinger, medarbejdernr, organisation));
+       }
 
        public Person HentPersonMedCPR(string CPR)
        {
