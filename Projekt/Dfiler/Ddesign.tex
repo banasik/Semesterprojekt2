@@ -3,9 +3,9 @@
 \begin{longtabu} to \linewidth{@{}l l l X[j]@{}}
     Version &    Dato &    Ansvarlig &    Beskrivelse\\[-1ex]
     \midrule
-    1.0 &    15-04-2015 &    SSK &    Udkast til BBD, IBD\\
+    1.0 &    15-04-2015 &    SSK &    Udkast til BDD, IBD\\
     1.1 &    23-04-2015 &    LSB og AJF &    Udkast for domænemodel og sekvensdiagrammer for hver UC\\
-    1.2 &    27-04-2015 &    LSB og MFJ &    Udkast til klassediagrammer for hver UC. Grænseflader lavet. BBD færdig. IBD udeladt\\
+    1.2 &    27-04-2015 &    LSB og MFJ &    Udkast til klassediagrammer for hver UC. Grænseflader lavet. BDD færdig. IBD udeladt\\
     1.2 &   27-04-2015  &    SSK og MCM &    Påbegyndt UML-klassediagram\\
     2.0	&	29-04-2015	&	LSB, MFJ og AJF	&	Tilrettet domæne-, sekvens- og klassediagrammer, så design var klar til deadline\\
     2.1	&	12-05-2015	&	LSB, MFJ og AJF	&	Rettet design-dokument i forhold til kommentar fra vejleder\\
@@ -56,9 +56,9 @@ I dette projekt arbejdes der med objektorienteret programmering i programmerings
 Trelagsmodellen er en model, som kan bruges til at opbygge et system. Idéen er, at systemet opdeles i mindre moduler/lag - et præsentationslag (grænseflade), et logiklag (funktionalitet) og et datalag (database), som spiller sammen. \\
 Præsentationslaget er det øverste lag. Det er det lag, brugeren har indvirkning på og hvor de behandlede data præsenteres brugervenligt. \\
 Logiklaget er det midterste lag. Dette lag er en slags bindeled mellem præsentationslaget og datalaget. I laget modtages og behandles informationerne fra præsentationslaget, og sendes videre til datalaget. Logiklaget kontrollerer hele systemets funktionalitet.\\
-Datalaget er det nederste lag. Laget modtager dataerne fra logiklaget, som håndteres og lagres. Datalaget fungere som en database, hvor man kan gemme nye data og hente gamle data frem igen. Trelagsmodellen vil typisk bygges grafisk op som vist på nedenstående figur 3.6.\\
+Datalaget er det nederste lag. Laget modtager dataerne fra logiklaget, som håndteres og lagres. Datalaget fungere som en database, hvor man kan gemme nye data og hente gamle data frem igen. Trelagsmodellen vil typisk bygges grafisk op som vist på nedenstående figur 3.2.\\
 
-\begin{figure}[htb]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Figurer/Snip20150415_39}
 	\caption{Trelagsmodel\protect\footnotemark}
@@ -78,7 +78,7 @@ I dette afsnit vil GUI’erne beskrives nærmere. Præsentationslaget består i 
 	\caption{Login-vindue}
 \end{figure}
 
-Når programmet startes op, vil et Login-vindue fremkomme på skærmen, se figur 2.3. Her skal brugeren logge ind for at få adgang til programmet, ved at indtaste sit personlige username og password. Bliver enten username eller password ikke godkendt, returneres en fejlmeddelelse, i form af en linje tekst nedenfor login-felterne. Bliver login godkendt åbnes CPR-vinduet, se figur 2.4.
+Når programmet startes op, vil et Login-vindue fremkomme på skærmen, se figur 3.3. Her skal brugeren logge ind for at få adgang til programmet, ved at indtaste sit personlige username og password. Bliver enten username eller password ikke godkendt, returneres en fejlmeddelelse, i form af en linje tekst nedenfor login-felterne. Bliver login godkendt åbnes CPR-vinduet, se figur 3.4.
 
 \begin{figure}[H]
 	\centering
@@ -89,7 +89,7 @@ Når programmet startes op, vil et Login-vindue fremkomme på skærmen, se figur
 Her bliver brugeren bedt om at indskrive CPR-nummeret på den fiktive patient. CPR-nummeret bruges til at identificere personen i forbindelse med fremtidige målinger, samt til gemme målingerne i hvad der svarer til den fiktive persons journal. Hvis CPR-nummeret ikke bliver godkendt, vil brugerne blive gjort opmærksom på dette via en fejlmelding. 
 \\
 \\
-Når CPR-nummeret bliver godkendt, åbner det primære vindue, EKG-vinduet, se figur 2.5. 
+Når CPR-nummeret bliver godkendt, åbner det primære vindue, EKG-vinduet, se figur 3.5. 
 
 \begin{figure}[H]
 	\centering
@@ -97,10 +97,10 @@ Når CPR-nummeret bliver godkendt, åbner det primære vindue, EKG-vinduet, se f
 	\caption{EKG-vindue}
 \end{figure}
 
-EKG-vinduet er der, hvor man kan starte og se målinger. Vinduet er udstyret med knapper, som angiver hvor lang tid brugeren ønsker en måling skal køre over. Til højre i vinduet vises grafen over EKG-signalet, kort efter der er trykket ”Start ny måling”. Yderligere til højre kan der, i de to tekstbokse, ses puls og HVR for den pågældende graf. I det tomme tekstfelt, til venstre under knappen "Start ny måling", vil diagnosen for EKG-signalet udskrives. Nederst i vinduet er der knapper til at gemme målingerne, samt at logge ud fra programmet. Hvis man logger ud, kommer man tilbage til Login-vinduet, og EKG-vinduet er ikke længere synligt. 
+EKG-vinduet er der, hvor man kan starte og se målinger. Vinduet er udstyret med knapper, som angiver hvor lang tid brugeren ønsker en måling skal køre over. Til højre i vinduet vises grafen over EKG-signalet, kort efter der er trykket ”Start ny måling”. Yderligere til højre kan der i tekstboksen, ses puls for den pågældende graf. I det tomme tekstfelt, til venstre under knappen "Start ny måling", vil diagnosen for EKG-signalet udskrives. Nederst i vinduet er der knapper til at gemme målingerne, samt at logge ud fra programmet. Hvis man logger ud, kommer man tilbage til Login-vinduet, og EKG-vinduet er ikke længere synligt. 
 \\
 \\
-Det sidste vindue der er valgbart, frembringes når der trykkes på ”Gem ny måling”. Herefter vises pop-up vindue, som bekræfter, at den pågældende EKG-målingen er gemt, se figur 2.6. 
+Det sidste vindue der er valgbart, frembringes når der trykkes på ”Gem ny måling”. Herefter vises pop-up vindue, som bekræfter, at den pågældende EKG-målingen er gemt, se figur 3.6. 
 
 \begin{figure}[H]
 	\centering
@@ -116,7 +116,7 @@ Det sidste vindue der er valgbart, frembringes når der trykkes på ”Gem ny m�
 	\caption{UML-klassediagram over softwaren}
 \end{figure}
 
-Det ovenstående UML diagram over projektets software, giver en bedre og lettere forståelse for selve koden. Her er det meget tydeligt, at koden er opbygget efter trelagsmodellen. Præsentationslaget er bygget op af de førnævnte GUI’er, som bliver interfacen for selve bruger-interaktionen. I dette lag sker der som udgangspunkt intet behandlingsarbejde. Opsætningen og funktionerne af grafiklaget er yderligere beskrevet under afsnittet ’GUI’.\\ \\Logiklaget består af en enkelt klasse, der fungerer som programmets primære styring. Logiklaget er til for, at grafiklaget ikke har direkte adgang til datalaget. Det er altså i dette lag, hvor alt programmets data bliver behandlet.  Her bliver EKG’et f.eks. analyseret og login, samt CPR, bliver valideret i forhold til det data, der befinder sig i datalaget. \\ \\Datalaget består af to klasser, og en tilhørende blackbox. I det overstående er der kun beskrevet de metoder i blackboxen, som bliver brugt i andre klasser i programmet. I dette lag bliver der primært sørget for forbindelsen til databasen. Klassen ”Datalag” er kernen i dette lag. Her bliver der sørget for at gemme og hente informationer fra databasen. Det er i dette lag, hvor dataen som logiklaget arbejder med, kommer fra. Klassen ”Person”, er til for at binde alle person-informationer sammen, som medfører at det kun er nødvendigt at kalde et enkelt objekt, frem for 4 attributter. 
+Det ovenstående UML diagram (figur 3.7) over projektets software, giver en bedre og lettere forståelse for selve koden. Her er det meget tydeligt, at koden er opbygget efter trelagsmodellen. Præsentationslaget er bygget op af de førnævnte GUI’er, som bliver interfacen for selve bruger-interaktionen. I dette lag sker der som udgangspunkt intet behandlingsarbejde. Opsætningen og funktionerne af grafiklaget er yderligere beskrevet under afsnittet ’GUI’.\\ \\Logiklaget består af en enkelt klasse, der fungerer som programmets primære styring. Logiklaget er til for, at grafiklaget ikke har direkte adgang til datalaget. Det er altså i dette lag, hvor alt programmets data bliver behandlet.  Her bliver EKG’et f.eks. analyseret og login, samt CPR, bliver valideret i forhold til det data, der befinder sig i datalaget. \\ \\Datalaget består af to klasser, og en tilhørende blackbox. I det overstående er der kun beskrevet de metoder i blackboxen, som bliver brugt i andre klasser i programmet. I dette lag bliver der primært sørget for forbindelsen til databasen. Klassen ”Datalag” er kernen i dette lag. Her bliver der sørget for at gemme og hente informationer fra databasen. Det er i dette lag, hvor dataen som logiklaget arbejder med, kommer fra. Klassen ”Person”, er til for at binde alle person-informationer sammen, som medfører at det kun er nødvendigt at kalde et enkelt objekt, frem for 4 attributter. 
 
 \subsection{Appliktationsmodel}
 En standard applikationsmodel vil i almindelig forstand indeholde en overordnet domænemodel, herefter klassediagram samt sekvensdiagram og tilsidst et opdateret klassediagram, hvor metoderne fra sekvensdiagram er inkluderet. 
