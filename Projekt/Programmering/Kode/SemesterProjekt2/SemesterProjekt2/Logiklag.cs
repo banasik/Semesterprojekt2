@@ -73,40 +73,23 @@ namespace SemesterProjekt2
 
         public bool analyseSig()
         {
-            double minValue = datacollector.currentVoltageSeq.Min();
-            double thresh = minValue * 0.7;
-            int stakker = 0;
-            int rTakker;
-            rTakker = AntalRtakker();
-            bool pause = false; 
+            alglib.complex[] array;                                             //bruger nyt bibliotek
+            alglib.fftr1d(datacollector.currentVoltageSeqArray, out array);     //laver vores signal om til et komplekst array. Får alle de harmoniske svingninger (Fourier trans) 
+            List<double> frekvensliste = new List<double>();
 
-            foreach (double i in datacollector.currentVoltageSeq)
+            for (int i = 0; i < array.Length; i++)
             {
-                if (!pause)                                              
-                {
-                    if (i > thresh)                             //Kommer spiksne ned under fores tærskel? 
-                    {
-                        stakker++;
-                        pause = true;                           //Hvis ja, så adder vi til antallet af stakkerne. Herefter bliver der igangsat en pause, ligesom ved puls. 
-                    }
-                }
-                else                                                    
-                {
-                    if (i < thresh)                             //B
-                    {
-                        pause = false;
-                    }
-                }
-
+                double frekvens = i * (sample / array.Length / 2.0);                                      //Dividerer med to for at få fordoblingen af frekvenserne væk. 
+                frekvensliste.Add(frekvens);
             }
 
-            if (stakker * 2 > rTakker) //ret den her til, alt afhængig af hvordan EKG rent faktisk ser ud
+            if()
             {
-                return false;
-            }
-
-            else
                 return true;
+            }
+
+            else return false; 
+ 
         }
 
        public bool getKode(string navn, int kode)

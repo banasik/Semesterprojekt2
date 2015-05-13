@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="alglibnet2">
+      <HintPath>..\..\..\SemesterProjekt2\SemesterProjekt2\alglibnet2.dll</HintPath>
+    </Reference>
+    <Reference Include="ST2Prj2LibNI-DAQ">
+      <HintPath>.\ST2Prj2LibNI-DAQ.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
