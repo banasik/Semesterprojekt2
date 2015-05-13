@@ -1,0 +1,2 @@
+C:\Users\Sara\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\Testprogram\TestprogramSTPRj\TestprogramSTPRj\bin\Debug\TestprogramSTPRj.exe.config
+C:\Users\Sara\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\Testprogram\TestprogramSTPRj\TestprogramSTPRj\bin\Debug\TestprogramSTPRj.exe.config
