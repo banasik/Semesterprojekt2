@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="alglibnet2">
+      <HintPath>.\alglibnet2.dll</HintPath>
+    </Reference>
     <Reference Include="ST2Prj2LibNI-DAQ, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Backup\Desktop\STPRJ2Support\CS\bin\Debug\ST2Prj2LibNI-DAQ.dll</HintPath>
