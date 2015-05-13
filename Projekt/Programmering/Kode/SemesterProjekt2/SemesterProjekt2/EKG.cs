@@ -21,7 +21,18 @@ namespace SemesterProjekt2
        //"Datamodel"
        private Person p;
        
-       
+
+      //Variabler til EKGData
+      private int HZ = 250;
+      private int interval_sek = 10;
+      private string data_format = ",";
+      private string bin_eller_tekst = "bin";
+      private string maaleformat_type = ",";
+      
+      //Variabler til EKGMaelinger
+      private int antal_maalinger = 0;
+      private string medarbejdernr = "Leder";
+      private string organisation = "IHA";
 
       public EKG(string CPR)
       {
@@ -72,9 +83,10 @@ namespace SemesterProjekt2
       private void button1_Click_1(object sender, EventArgs e)
       {
           liste = logik.datacollector.currentVoltageSeq;
-          //patientID = 
 
           logik.gemMålingPåPerson(p.ID, liste, DateTime.Now);
+          logik.GemEKGDATA(liste, HZ , interval_sek, data_format, bin_eller_tekst, maaleformat_type, DateTime.Now);
+          logik.GemEKGMaeling(DateTime.Now, antal_maalinger, medarbejdernr, organisation);
 
           gem = new Gem_måling();
 
