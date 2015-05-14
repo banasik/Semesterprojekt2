@@ -10,9 +10,11 @@ namespace SemesterProjekt2
     class Datalag
     {
         private SqlConnection conn;
+        private SqlConnection conn2;
         private SqlDataReader rdr;
         private SqlCommand cmd;
         private const String db = "F15ST2ITS2201405722";
+        private const String db2 = "F15ST2PRJ2OffEKGDatabase";
         private List<string> CPRliste;
 
 
@@ -22,6 +24,7 @@ namespace SemesterProjekt2
         {
             // Opsætning af DB forbindelsen til SQL Server webhotel10.iha.dk og valgt database (db)
             conn = new SqlConnection("Data Source=webhotel10.iha.dk;Initial Catalog=" + db + ";Persist Security Info=True;User ID=" + db + ";Password=" + db + "");
+            conn2 = new SqlConnection("Data Source=10.29.0.29;Initial Catalog=" + db2 + ";Persist Security Info=True;User ID=" + db2 + ";Password=" + db2 + "");
             CPRliste = new List<string>();
         }
 
@@ -119,49 +122,50 @@ namespace SemesterProjekt2
 
         public bool GemEKGDATA(byte[] måling, float samplerate_hz, long interval_sek, string data_format, string bin_eller_tekst, string maaleformat_type, DateTime start_tid)
         {
-           conn.Open();
 
-           cmd = new SqlCommand("insert into EKGDATA(måling, samplerate_hz, interval_sec, data_format, bin_eller_tekst, maleformat_type, dato) values (@ekgdataid, @raa_data, @samplerate_hz, @interval_sec, @data_format, @bin_eller_tekst, @maleformat_type, @start_tid)", conn);
+           conn2.Open();
+
+           cmd = new SqlCommand("insert into EKGDATA(raa_data, samplerate_hz, interval_sec, data_format, bin_eller_tekst, maaleformat_type, start_tid) values (@raa_data, @samplerate_hz, @interval_sec, @data_format, @bin_eller_tekst, @maaleformat_type, @start_tid)", conn2);
+
+           SqlParameter param1 = new SqlParameter();
+           param1.ParameterName = "@raa_data";
+           param1.Value = måling;
+           cmd.Parameters.Add(param1);
 
            SqlParameter param2 = new SqlParameter();
-           param2.ParameterName = "@måling";
-           param2.Value = måling;
+           param2.ParameterName = "@samplerate_hz";
+           param2.Value = samplerate_hz;
            cmd.Parameters.Add(param2);
 
            SqlParameter param3 = new SqlParameter();
-           param3.ParameterName = "@samplerate_hz";
-           param3.Value = samplerate_hz;
+           param3.ParameterName = "@interval_sec";
+           param3.Value = interval_sek;
            cmd.Parameters.Add(param3);
 
            SqlParameter param4 = new SqlParameter();
-           param4.ParameterName = "@interval_sec";
-           param4.Value = interval_sek;
+           param4.ParameterName = "@data_format";
+           param4.Value = "CSV";
            cmd.Parameters.Add(param4);
 
            SqlParameter param5 = new SqlParameter();
-           param5.ParameterName = "@data_format";
-           param5.Value = data_format;
+           param5.ParameterName = "@bin_eller_tekst";
+           param5.Value = "b";
            cmd.Parameters.Add(param5);
 
            SqlParameter param6 = new SqlParameter();
-           param6.ParameterName = "@bin_eller_tekst";
-           param6.Value = bin_eller_tekst;
+           param6.ParameterName = "@maaleformat_type";
+           param6.Value = "double";
            cmd.Parameters.Add(param6);
 
            SqlParameter param7 = new SqlParameter();
-           param7.ParameterName = "@maaleformat_type";
-           param7.Value = maaleformat_type;
+           param7.ParameterName = "@start_tid";
+           param7.Value = start_tid;
            cmd.Parameters.Add(param7);
-
-           SqlParameter param8 = new SqlParameter();
-           param8.ParameterName = "@start_tid";
-           param8.Value = start_tid;
-           cmd.Parameters.Add(param8);
 
 
            int antalRækkerSatInd = cmd.ExecuteNonQuery();
 
-           conn.Close();
+           conn2.Close();
 
            if (antalRækkerSatInd > 0)
            { return true; }
@@ -169,11 +173,11 @@ namespace SemesterProjekt2
            { return false; }
         }
 
-        public bool GemEKGMaeling(DateTime dato, int antal_maalinger, string medarbejdernr, string organisation)
+        public bool GemEKGMaeling(DateTime dato, int antalmaalinger, string sfp_ansvrmedarbjnr, string sfp_ans_org)
         {
-           conn.Open();
+           conn2.Open();
 
-           cmd = new SqlCommand("insert into EKGMAELING(@dato, @antal_maalinger, @medarbejdernr, @organisation)", conn);
+           cmd = new SqlCommand("insert into EKGMAELING(dato, antalmaalinger, sfp_ansvrmedarbjnr, sfp_ans_org) values (@dato, @antalmaalinger, @sfp_ansvrmedarbjnr, @sfp_ans_org)", conn2);
 
            SqlParameter param1 = new SqlParameter();
            param1.ParameterName = "@dato";
@@ -181,23 +185,23 @@ namespace SemesterProjekt2
            cmd.Parameters.Add(param1);
 
            SqlParameter param2 = new SqlParameter();
-           param2.ParameterName = "@antal_maalinger";
-           param2.Value = antal_maalinger;
+           param2.ParameterName = "@antalmaalinger";
+           param2.Value = antalmaalinger;
            cmd.Parameters.Add(param2);
 
            SqlParameter param3 = new SqlParameter();
-           param3.ParameterName = "@medarbejdernr";
-           param3.Value = medarbejdernr;
+           param3.ParameterName = "@sfp_ansvrmedarbjnr";
+           param3.Value = sfp_ansvrmedarbjnr;
            cmd.Parameters.Add(param3);
 
            SqlParameter param4 = new SqlParameter();
-           param4.ParameterName = "@organisation";
-           param4.Value = organisation;
+           param4.ParameterName = "@sfp_ans_org";
+           param4.Value = sfp_ans_org;
            cmd.Parameters.Add(param4);
 
            int antalRækkerSatInd = cmd.ExecuteNonQuery();
-
-           conn.Close();
+           
+           conn2.Close();
 
            if (antalRækkerSatInd > 0)
            { return true; }

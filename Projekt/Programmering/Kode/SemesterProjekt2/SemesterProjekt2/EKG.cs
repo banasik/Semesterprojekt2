@@ -30,7 +30,7 @@ namespace SemesterProjekt2
       private string maaleformat_type = ",";
       
       //Variabler til EKGMaelinger
-      private int antal_maalinger = 0;
+      private int antal_maalinger = 1;
       private string medarbejdernr = "Leder";
       private string organisation = "IHA";
 
@@ -109,6 +109,11 @@ namespace SemesterProjekt2
       }
 
       private void textBox3_TextChanged(object sender, EventArgs e)
+      {
+
+      }
+
+      private void EKG_Load(object sender, EventArgs e)
       {
 
       }

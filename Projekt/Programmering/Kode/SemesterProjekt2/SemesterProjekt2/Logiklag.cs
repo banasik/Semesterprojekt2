@@ -71,26 +71,26 @@ namespace SemesterProjekt2
 
         //analyse af vores signal; 
 
-        public bool analyseSig()
-        {
-            alglib.complex[] array;                                             //bruger nyt bibliotek
-            alglib.fftr1d(datacollector.currentVoltageSeqArray, out array);     //laver vores signal om til et komplekst array. Får alle de harmoniske svingninger (Fourier trans) 
-            List<double> frekvensliste = new List<double>();
+        //public bool analyseSig()
+        //{
+        //    alglib.complex[] array;                                             //bruger nyt bibliotek
+        //    alglib.fftr1d(datacollector.currentVoltageSeqArray, out array);     //laver vores signal om til et komplekst array. Får alle de harmoniske svingninger (Fourier trans) 
+        //    List<double> frekvensliste = new List<double>();
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                double frekvens = i * (sample / array.Length / 2.0);                                      //Dividerer med to for at få fordoblingen af frekvenserne væk. 
-                frekvensliste.Add(frekvens);
-            }
+        //    for (int i = 0; i < array.Length; i++)
+        //    {
+        //        double frekvens = i * (sample / array.Length / 2.0);                                      //Dividerer med to for at få fordoblingen af frekvenserne væk. 
+        //        frekvensliste.Add(frekvens);
+        //    }
 
-            if()
-            {
-                return true;
-            }
+        //    //if()
+        //    //{
+        //    //    return true;
+        //    //}
 
-            else return false; 
+        //    //else return false; 
  
-        }
+        //}
 
        public bool getKode(string navn, int kode)
        {
