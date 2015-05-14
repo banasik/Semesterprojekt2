@@ -66,6 +66,15 @@ namespace SemesterProjekt2
       {
          liste = logik.kørEKG();
          chart1.Series["EKG"].Points.DataBindY(liste);
+
+          if(logik.analyseSig() == true)
+          {
+              textBox5.Text = "Tjek for Atrieflimmer!!"; 
+          }
+          else
+          {
+              textBox5.Text = "Sundt EKG"; 
+          }
       }
 
 
@@ -117,5 +126,6 @@ namespace SemesterProjekt2
       {
 
       }
+
    }
 }

@@ -18,6 +18,10 @@ namespace SemesterProjekt2
         public double hz;
         public string CPR;
         public int ID; 
+        public static double thresh; 
+        public static List<double> amplitude;
+        public static List<double> specifikamplitude;
+        public static List<double> frekvensliste;
 
         public Logiklag()
         {
@@ -69,28 +73,42 @@ namespace SemesterProjekt2
             return puls;
         }
 
-        //analyse af vores signal; 
 
-        //public bool analyseSig()
-        //{
-        //    alglib.complex[] array;                                             //bruger nyt bibliotek
-        //    alglib.fftr1d(datacollector.currentVoltageSeqArray, out array);     //laver vores signal om til et komplekst array. Får alle de harmoniske svingninger (Fourier trans) 
-        //    List<double> frekvensliste = new List<double>();
+        public bool analyseSig()
+        {
+            datacollector.deviceName = "Dev1/ai0";
+            datacollector.getVoltageSeqBlocking();
+            amplitude = new List<double>();
+            specifikamplitude = new List<double>(); 
+            alglib.complex[] array;                                             //bruger nyt bibliotek
+            alglib.fftr1d(datacollector.currentVoltageSeqArray, out array);     //laver vores signal om til et komplekst array. Får alle de harmoniske svingninger (Fourier trans) 
+            thresh = 5.60; 
 
-        //    for (int i = 0; i < array.Length; i++)
-        //    {
-        //        double frekvens = i * (sample / array.Length / 2.0);                                      //Dividerer med to for at få fordoblingen af frekvenserne væk. 
-        //        frekvensliste.Add(frekvens);
-        //    }
+            for (int i = 0; i < array.Length; i++)
+            {
+                double amp = (Math.Sqrt(Math.Pow(array[i].x, 2)+Math.Pow(array[i].y, 2)));
+                amplitude.Add(amp);
+            }
 
-        //    //if()
-        //    //{
-        //    //    return true;
-        //    //}
+            for (int i = 600; i < 802; i++)
+			{
+                specifikamplitude.Add(amplitude[i]);  
+			}
 
-        //    //else return false; 
- 
-        //}
+           for (int i = 0; i < specifikamplitude.Count; i++)
+            {
+                double vaerdi;
+                vaerdi = specifikamplitude[i];
+
+                if (vaerdi > thresh)
+                {
+                    return true;
+                }
+
+            }
+
+           return false;
+        }
 
        public bool getKode(string navn, int kode)
        {
