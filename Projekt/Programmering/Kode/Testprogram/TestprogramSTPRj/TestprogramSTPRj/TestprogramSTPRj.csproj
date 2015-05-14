@@ -35,9 +35,6 @@
     <Reference Include="alglibnet2">
       <HintPath>..\..\..\SemesterProjekt2\SemesterProjekt2\alglibnet2.dll</HintPath>
     </Reference>
-    <Reference Include="ST2Prj2LibNI-DAQ">
-      <HintPath>.\ST2Prj2LibNI-DAQ.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="STPRJ2Support\ST2Prj2LibNI-DAQ\ST2Prj2LibNI-DAQ.csproj">
+      <Project>{21b1cab3-e098-4f28-a0ea-853bc8d37fb3}</Project>
+      <Name>ST2Prj2LibNI-DAQ</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
