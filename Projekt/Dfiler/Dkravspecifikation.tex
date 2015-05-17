@@ -12,7 +12,7 @@
 
 
 \section{Indledning}
-Kravspecifikationen vil beskrive, ud fra en række modeller, hvordan EKG-systemet fungerer. Helt generelt er EKG-måling en simpel metode, til at måle hjertets elektriske aktivitet via elektroder, som registrerer elektriske impulser, placeret på huden. Ud fra disse impulser dannes en graf, som benyttes til at analysere hjertets funktionalitet ud fra P-, Q-, R-, S- og T-takkerne, og dermed konkludere om den pågældende patient har et raskt eller sygt hjerte, samt hvilken sygdom der er tale om. Helt specifikt for denne opgave er formålet, at identificere sygdommen atrieflimmer via et virtuelt EKG-signal. 
+Kravspecifikationen vil beskrive, ud fra en række modeller, hvordan EKG-systemet fungerer. Helt generelt er EKG-måling en simpel metode, til at måle hjertets elektriske aktivitet via elektroder, som registrerer elektriske impulser, placeret på huden. Ud fra disse impulser dannes en graf, som benyttes til at analysere hjertets funktionalitet ud fra P-, Q-, R-, S- og T-takkerne, og dermed konkludere om den pågældende patient har et raskt eller sygt hjerte, samt hvilken sygdom, der er tale om. Helt specifikt for denne opgave er formålet, at identificere sygdommen atrieflimmer via et virtuelt EKG-signal. 
 
 \section{Funktionelle krav}
 De funktionelle krav vil nedenstående beskrives ud fra Aktør-kontekstdiagram, aktørbeskrivelse, Use Cases samt Use Case diagram. 
@@ -26,7 +26,7 @@ De funktionelle krav vil nedenstående beskrives ud fra Aktør-kontekstdiagram, 
 	\label{fig:aktoerbeskrivelse}
 \end{figure}
 
-Data hentes ned fra den ekstern aktør, physionet, og via Analog-discovery omdannes csv-filens data til et analogt signal, der sendes til EKG-systemet. Ud fra disse data danner EGK-systemet en graf. Programmet detekterer markørudsving i EKG-grafen, som derefter valideres og analyseres af brugeren.
+Data hentes ned fra den ekstern aktør, Physionet. Via Analog-discovery omdannes csv-filens data til et analogt signal, der sendes til EKG-systemet. Ud fra disse data danner EGK-systemet en graf. Programmet detekterer markørudsving i EKG-grafen, som derefter valideres og analyseres af brugeren.
 
 \subsection{Aktørbeskrivelse}
 
@@ -56,7 +56,7 @@ Data hentes ned fra den ekstern aktør, physionet, og via Analog-discovery omdan
 	\label{fig:Use Cases}
 \end{figure}
 
-Brugeren, den primære aktør bliver bedt om sit log ind, inden EKG-vinduet vises. Brugeren vælger indstillinger og trykker på "start"-knappen. EKG-dataerne fra den eksterne aktør, Physionet, behandles i Analog samt i DAQ'en, de sekundære aktør, hvor efter data vises som en EKG-graf i EKG-vinduet. Brugeren kan ud fra denne graf evaluere EKG-signalet i forhold til at diagnosticere atrieflimmer. Brugeren gemmer EKG-målingen i databasen og logger ud. 
+Brugeren, den primære aktør, bliver bedt om sit log ind, inden EKG-vinduet vises. Brugeren vælger indstillinger og trykker på "start"-knappen. EKG-dataerne fra den eksterne aktør, Physionet, behandles i Analog-discovery samt i DAQ'en, den sekundære aktør, hvor efter data vises som en EKG-graf i EKG-vinduet. Brugeren kan ud fra denne graf evaluere EKG-signalet i forhold til at diagnosticere atrieflimmer. Brugeren gemmer EKG-målingen i databasen og logger ud. 
 
 \subsection{Use Cases}
 
@@ -70,12 +70,12 @@ Brugeren, den primære aktør bliver bedt om sit log ind, inden EKG-vinduet vise
     Initialisere &&    Brugeren ønsker at logge ind\\
     Forudsætninger &&  At der er logget ud efter en tidligere måling\\
     Resultat &&    Brugeren bliver logget på og kan foretage en måling                     \\ \midrule
-    Hovedforløb &    1. &    Brugeren indtaster username samt password\\[-1ex]   						 	
-                &    2. &    Brugeren trykker på "Login-knappen". Login-vinduet lukkes ned mens CPR-vinduet åbnes\newline
+    Hovedforløb &    1. &    Brugeren indtaster username "moh04" samt password; 1234\\[-1ex]   						 	
+                &    2. &    Brugeren trykker på "Login"-knappen. Login-vinduet lukkes ned mens CPR-vinduet åbnes\newline
                 	[2.a \textit{Username eller password er forkert}]\\[-1ex]
                 &    \\ \midrule
                 
-    Undtagelser &    2a. & Besked vises på skærmen med tekst, der informerer om, at username eller password er forkert. Der forsættes i UC1 ved punkt 1     \\ \bottomrule
+    Undtagelser &    2a. & Besked vises på skærmen med tekst; "Fejl i username og/eller password". Der forsættes i UC1 ved punkt 1     \\ \bottomrule
 \caption{Fully dressed Use Case 1.}
 \label{UC1}
 \end{longtabu}
@@ -87,13 +87,13 @@ Brugeren, den primære aktør bliver bedt om sit log ind, inden EKG-vinduet vise
     Use case ID &&    2\\
     Samtidige forløb &&    1\\
     Primær aktør &&    Brugeren\\
-    Sekundær aktør &&	Analog\\
+    Sekundær aktør &&	Analog-discovery\\
     Sekunær aktør &&	DAQ\\
     Ekstern aktør &&	Physionet\\
     Initialisere &&    Brugeren ønsker at foretage en EKG-måling\\
-    Forudsætninger &&    Brugeren er logget ind og EKG-vinduet er vist samt Analog og DAQ'en er koblet til og data er hentet ned\\
+    Forudsætninger &&    Brugeren er logget ind og EKG-vinduet er vist samt Analog-discovery og DAQ'en er koblet til og data er hentet ned\\
     Resultat &&    EKG-graf bliver vist           \\ \midrule
-    Hovedforløb &    1. &    Brugeren indtaster virtuel patients CPR-nummer\newline
+    Hovedforløb &    1. &    Brugeren indtaster virtuel patients CPR-nummer; 123456-7890\newline
     						 [1.a \textit{CPR-nummeret findes ikke}]\\[-1ex]
     			&    2. &    Brugeren vælger indstillinger\newline
     						 [2.a \textit{Brugeren er tilfreds med default-indstillingerne}]\\[-1ex]	
@@ -135,8 +135,8 @@ Brugeren, den primære aktør bliver bedt om sit log ind, inden EKG-vinduet vise
     Initialisere &&    Brugeren ønsker at gemme EKG i databasen\\
     Forudsætninger &&  Use case 3 er gennemført\\
     Resultat &&    EKG er gemt i databasen                    \\ \midrule
-    Hovedforløb &    1. &    Brugeren trykker på "Gem-knappen". En messagebox kommer frem med besked om at data er gemt\\[-1ex]   						 	
-                &    2. &	Brugeren trykker på "Ok" knappen for at lukke messageboxen og EKG-vinduet vises igen
+    Hovedforløb &    1. &    Brugeren trykker på "Gem"-knappen. EKG-målingerne gemmes på en lokal og offentlig database. En messagebox kommer frem med besked om at data er gemt\\[-1ex]   						 	
+                &    2. &	Brugeren trykker på "Ok"-knappen for at lukke messageboxen og EKG-vinduet vises igen
                 	\\ \midrule
                 
     Undtagelser &       \\ \bottomrule
@@ -154,7 +154,7 @@ Brugeren, den primære aktør bliver bedt om sit log ind, inden EKG-vinduet vise
     Initialisere &&    Brugeren ønsker at logge ud\\
     Forudsætninger &&  Der skal være logget ind\\
     Resultat &&    Brugeren bliver logget ud, og EKG-vinduet lukkes og login-vinduet fremkommer                     \\ \midrule
-    Hovedforløb &    1. &    Brugeren trykker på "log ud-knappen" og EKG-vinduet lukkes, mens login-vinduet fremkommer 
+    Hovedforløb &    1. &    Brugeren trykker på "log ud"-knappen og EKG-vinduet lukkes, mens login-vinduet fremkommer 
     \\ \midrule
     Undtagelser & &
          \\ \bottomrule
@@ -171,19 +171,17 @@ MoSCoW er angivet i parentes med hhv. M, S, C eller W.
 \textbf{Usability}
 \begin{itemize}
 	\item (M) Brugeren skal kunne starte en default-måling maksimalt 20 sek. efter opstart af programmet
-	\item (M) Brugeren skal have mulighed for at ændre tidsintervallet før målingerne foretages
 	\item (M) Login-vinduet skal indholde en "login"-knap til at logge på og få vist EKG-vinduet
 	\item (M) EKG-vinduet skal indeholde en "start"-knap til at igangsætte målingerne
-	\item (M) EKG-vinduet  skal indeholde en "stop"-knap til at afslutte målingerne før den valgte tid
 	\item (M) EKG-vinduet skal indeholde en "log ud"-knap
 	\item (M) EKG-vinduet  skal indeholde en "gem"-knap
 	\item (M) Information-vinduet skal indeholde en "gem"-knap
-	\item (M) Målingen stopper automatisk efter det valgte tidsinterval
 \end{itemize}
 
 \textbf{Reliability}
 \begin{itemize}
-	\item (M) Systemet skal have en effektiv MTBF (Mean Time Between Failure) på 20 minutter og en MTTR (Mean Time To Restore) på 1 minut.				\begin{align}
+	\item (M) Systemet skal have en effektiv MTBF (Mean Time Between Failure) på 20 minutter og en MTTR (Mean Time To Restore) på 1 minut.
+				\begin{align}
 					Availability = \frac{MTBF}{MTBF+MTTR} = \frac{20}{20+1} = 0,952 = 95,2 \%
 				\end{align}
 
