@@ -26,7 +26,7 @@ De funktionelle krav vil nedenstående beskrives ud fra Aktør-kontekstdiagram, 
 	\label{fig:aktoerbeskrivelse}
 \end{figure}
 
-Data hentes ned fra den ekstern aktør, Physionet. Via Analog-discovery omdannes csv-filens data til et analogt signal, der sendes til EKG-systemet. Ud fra disse data danner EGK-systemet en graf. Programmet detekterer markørudsving i EKG-grafen, som derefter valideres og analyseres af brugeren.
+Data hentes ned fra den ekstern aktør, Physionet. Via Analog-discovery omdannes csv-filens data til et analogt signal, som derefter omdannes til et digitalt signal i DAQ'en. Dette signal sendes til EKG-systemet, som ud fra disse data danner en graf. Programmet detekterer markørudsving i EKG-grafen, som derefter valideres og analyseres af brugeren.
 
 \subsection{Aktørbeskrivelse}
 
@@ -51,7 +51,7 @@ Data hentes ned fra den ekstern aktør, Physionet. Via Analog-discovery omdannes
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=1\textwidth]{Figurer/Snip20150327_24}
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150518_11}
 	\caption{Use case-diagram}
 	\label{fig:Use Cases}
 \end{figure}
@@ -70,12 +70,12 @@ Brugeren, den primære aktør, bliver bedt om sit log ind, inden EKG-vinduet vis
     Initialisere &&    Brugeren ønsker at logge ind\\
     Forudsætninger &&  At der er logget ud efter en tidligere måling\\
     Resultat &&    Brugeren bliver logget på og kan foretage en måling                     \\ \midrule
-    Hovedforløb &    1. &    Brugeren indtaster username "moh04" samt password; 1234\\[-1ex]   						 	
-                &    2. &    Brugeren trykker på "Login"-knappen. Login-vinduet lukkes ned mens CPR-vinduet åbnes\newline
+    Hovedforløb &    1. &    Brugeren indtaster username samt password\\[-1ex]   						 	
+                &    2. &    Brugeren trykker på "Login"\--knappen. Login-vinduet lukkes ned mens CPR-vinduet åbnes\newline
                 	[2.a \textit{Username eller password er forkert}]\\[-1ex]
                 &    \\ \midrule
                 
-    Undtagelser &    2a. & Besked vises på skærmen med tekst; "Fejl i username og/eller password". Der forsættes i UC1 ved punkt 1     \\ \bottomrule
+    Undtagelser &    2a. & Besked vises på skærmen med tekst, der informerer om, at username eller password er forkert. Der forsættes i UC1 ved punkt 1     \\ \bottomrule
 \caption{Fully dressed Use Case 1.}
 \label{UC1}
 \end{longtabu}
@@ -93,11 +93,11 @@ Brugeren, den primære aktør, bliver bedt om sit log ind, inden EKG-vinduet vis
     Initialisere &&    Brugeren ønsker at foretage en EKG-måling\\
     Forudsætninger &&    Brugeren er logget ind og EKG-vinduet er vist samt Analog-discovery og DAQ'en er koblet til og data er hentet ned\\
     Resultat &&    EKG-graf bliver vist           \\ \midrule
-    Hovedforløb &    1. &    Brugeren indtaster virtuel patients CPR-nummer; 123456-7890\newline
+    Hovedforløb &    1. &    Brugeren indtaster virtuel patients CPR-nummer\newline
     						 [1.a \textit{CPR-nummeret findes ikke}]\\[-1ex]
     			&    2. &    Brugeren vælger indstillinger\newline
     						 [2.a \textit{Brugeren er tilfreds med default-indstillingerne}]\\[-1ex]	
-                &    3. &    Målingen startes ved at trykke på "Start"\\[-1ex]
+                &    3. &    Målingen startes ved at trykke på "Start-ny-måling"\\[-1ex]
                 &    4. &    EKG-data illustreres på en graf\\ \midrule
                 
     Undtagelser &    1a. &    CPR-nummeret findes ikke. Besked vises på 								skærmen med tekst, der informerer om, at CPR-						nummeret ikke er gyldigt. UC2 startes forfra 						med nyt CPR-nummer\\
@@ -135,8 +135,8 @@ Brugeren, den primære aktør, bliver bedt om sit log ind, inden EKG-vinduet vis
     Initialisere &&    Brugeren ønsker at gemme EKG i databasen\\
     Forudsætninger &&  Use case 3 er gennemført\\
     Resultat &&    EKG er gemt i databasen                    \\ \midrule
-    Hovedforløb &    1. &    Brugeren trykker på "Gem"-knappen. EKG-målingerne gemmes på en lokal og offentlig database. En messagebox kommer frem med besked om at data er gemt\\[-1ex]   						 	
-                &    2. &	Brugeren trykker på "Ok"-knappen for at lukke messageboxen og EKG-vinduet vises igen
+    Hovedforløb &    1. &    Brugeren trykker på "Gem-ny-måling"\--knappen. EKG-målingerne gemmes på en lokal og offentlig database. En messagebox kommer frem med besked om at data er gemt\\[-1ex]   						 	
+                &    2. &	Brugeren trykker på "Ok"\--knappen for at lukke messageboxen og EKG-vinduet vises igen
                 	\\ \midrule
                 
     Undtagelser &       \\ \bottomrule
@@ -154,7 +154,7 @@ Brugeren, den primære aktør, bliver bedt om sit log ind, inden EKG-vinduet vis
     Initialisere &&    Brugeren ønsker at logge ud\\
     Forudsætninger &&  Der skal være logget ind\\
     Resultat &&    Brugeren bliver logget ud, og EKG-vinduet lukkes og login-vinduet fremkommer                     \\ \midrule
-    Hovedforløb &    1. &    Brugeren trykker på "log ud"-knappen og EKG-vinduet lukkes, mens login-vinduet fremkommer 
+    Hovedforløb &    1. &    Brugeren trykker på "log ud"\--knappen og EKG-vinduet lukkes, mens login-vinduet fremkommer 
     \\ \midrule
     Undtagelser & &
          \\ \bottomrule
@@ -171,11 +171,11 @@ MoSCoW er angivet i parentes med hhv. M, S, C eller W.
 \textbf{Usability}
 \begin{itemize}
 	\item (M) Brugeren skal kunne starte en default-måling maksimalt 20 sek. efter opstart af programmet
-	\item (M) Login-vinduet skal indholde en "login"-knap til at logge på og få vist EKG-vinduet
-	\item (M) EKG-vinduet skal indeholde en "start"-knap til at igangsætte målingerne
-	\item (M) EKG-vinduet skal indeholde en "log ud"-knap
-	\item (M) EKG-vinduet  skal indeholde en "gem"-knap
-	\item (M) Information-vinduet skal indeholde en "gem"-knap
+	\item (M) Login-vinduet skal indholde en "login"\--knap til at logge på og få vist EKG-vinduet
+	\item (M) EKG-vinduet skal indeholde en "start"\--knap til at igangsætte målingerne
+	\item (M) EKG-vinduet skal indeholde en "log ud"\--knap
+	\item (M) EKG-vinduet  skal indeholde en "gem"\--knap
+	\item (M) Information-vinduet skal indeholde en "gem"\--knap
 \end{itemize}
 
 \textbf{Reliability}

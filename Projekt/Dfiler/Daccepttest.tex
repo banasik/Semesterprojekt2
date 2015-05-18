@@ -24,11 +24,11 @@
     \\ \midrule
     1. &Indtast username "moh04" samt password; 1234 &   Username- og passwordboks bliver udfyldt  &    ~ &		%{\Huge \checkmark}
     \\
-    2. &Tryk på "Login"-knappen.  &    Login bliver godkendt. Login-vinduet lukkes ned mens CPR-vinduet åbnes  &     ~ &		%{\Huge \checkmark}
+    2. &Tryk på "Login"\--knappen.  &    Login bliver godkendt. Login-vinduet lukkes ned mens CPR-vinduet åbnes  &     ~ &		%{\Huge \checkmark}
 	\\ \midrule
 	~ &\textit{Exentions} & ~ & ~ & 
 	\\ \midrule	
-    2a. &	Username eller password er forkert &    Besked vises på skærmen med tekst; "Fejl i username og/eller password".  &   ~  &		%{\Huge \checkmark}
+    2a. &	Username eller password er forkert &    Besked vises på skærmen med tekst, der informerer om, at brugernavn eller password er forkert  &   ~  &		%{\Huge \checkmark}
  \\ \bottomrule
  
 \caption{Accepttest af Use Case 1.}\\
@@ -52,7 +52,7 @@
 	\\
 	4. & EKG-data illustreres på en graf & En analyserebar graf fremvises i EKG-vinduet & & %{\Huge \checkmark}
 	\\ \midrule
-	1.a & CPR-nummeret findes ikke. Besked vises med tekst; "Ugyldigt CPR-nummer - indtast nyt". & Nyt CPR-nummer indtastes 
+	1.a & CPR-nummeret findes ikke. Besked vises med tekst, der informerer om, at CPR-nummeret ikke er gyldigt & Nyt CPR-nummer indtastes 
 	\\
 	2.a & Ingen ændring i indstillinger  & Målingen foretages med default-indstillingerne & & %{\Huge \checkmark}
 	\\ \bottomrule
@@ -94,9 +94,9 @@
     \midrule
     ~ &\textit{Hovedscenarie} & ~ & ~ &
     \\ \midrule
-    1. &Tryk på "Gem"-knappen. &    Messagebox kommer frem med besked om at målingen er gemt  &    ~ &		%{\Huge \checkmark}
+    1. &Tryk på "Gem-ny-måling"\--knappen. &    Messagebox kommer frem med besked om at målingen er gemt  &    ~ &		%{\Huge \checkmark}
     \\
-    2. & Tryk på "Ok"-knappen	 &   Målingen er gemt, vinduet lukkes og EKG-vinduet vises igen &     ~ &		%{\Huge \checkmark}
+    2. & Tryk på "Ok"\--knappen	 &   Målingen er gemt, vinduet lukkes og EKG-vinduet vises igen &     ~ &		%{\Huge \checkmark}
     \\
 	\\ \midrule
 	~ &\textit{Exentions} & ~ & ~ & 
@@ -117,7 +117,7 @@
     \midrule
     ~ &\textit{Hovedscenarie} & ~ & ~ &
     \\ \midrule
-    1. & Tryk på "log ud"-knappen &    EKG-vinduet lukkes ned, mens login-vinduet fremkommer &    ~ &		%{\Huge \checkmark}
+    1. & Tryk på "log ud"\--knappen &    EKG-vinduet lukkes ned, mens login-vinduet fremkommer &    ~ &		%{\Huge \checkmark}
    	\\ \midrule
 	~ &\textit{Exentions} & ~ & ~ & 
 	\\ \midrule	
@@ -134,9 +134,10 @@
 	\\[-1ex] \midrule
 	&  \textit{Usability} &  &  & & \\ \midrule
 	& Brugeren skal kunne starte en default-måling maksimalt 20 sekunder efter opstart af program & Start programmet, hvorefter der vha. stopur måles opstartstiden & At programmet er startet op indenfor 20 sekunder & & \\ \midrule
-	& Login-vinduet skal indholde en "login"-knap til at logge på og få vist EKG-vinduet & login-knappen er synlig i GUI, og ved tryk på knappen vises EKG-vinduet & At EKG-vinduet vises & & \\ \midrule 
-	& EKG-vinduet skal indeholde en "gem"-knap til at gemme målingerne & Gem-knappen er synlig i GUI, og ved tryk på knappen gemmes måling i database & Messageboks vises på skærmen med teksten "Måling er gemt" og kan findes i databasen & & \\ \midrule
-	& EKG-vinduet skal indeholde en "log ud"-knap til at logge ud & "log ud"-knappen er synlig i GUI, og ved tryk på knap lukkes EKG-vinduet og login-vinduet vises & Login-vinduet vises & & \\ \midrule
+	& Login-vinduet skal indholde en "login"\--knap til at logge på og få vist EKG-vinduet & "login"\--knappen er synlig i GUI, og ved tryk på knappen vises EKG-vinduet & At EKG-vinduet vises & & \\ \midrule 
+	& EKG-vinduet skal indeholde en "Start"\--knap til at igangsætte målingen & "Start"\--knappen er synlig i GUI, og ved tryk på knap igangsættes målingen & At målingen igangsættes & & \\ \midrule
+	& EKG-vinduet skal indeholde en "gem"\--knap til at gemme målingerne & "Gem"\--knappen er synlig i GUI, og ved tryk på knappen gemmes måling i database & Messageboks vises på skærmen med teksten "Måling er gemt" og kan findes i databasen & & \\ \midrule
+	& EKG-vinduet skal indeholde en "log ud"\--knap til at logge ud & "log ud"\--knappen er synlig i GUI, og ved tryk på knap lukkes EKG-vinduet og login-vinduet vises & Login-vinduet vises & & \\ \midrule
 	& \textit{Reliability} & & & & \\ \midrule
 	& Systemet skal have en effektiv MTBF på 20 minutter og MTTR på 1 minut & Køre programmet i 20 minutter. Genstart derefter programmet, hvor der tages tid med et stopur & Programmet har kørt i 20 minutter og genstartes indenfor 1 minut  & & \\ \midrule
 	& \textit{Performance} & & & & \\ \midrule
