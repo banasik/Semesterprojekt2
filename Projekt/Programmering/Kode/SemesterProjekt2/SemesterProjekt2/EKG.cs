@@ -38,8 +38,8 @@ namespace SemesterProjekt2
       {
          InitializeComponent();
          logik = new Logiklag();
-         
 
+         button1.Enabled = false;
          textBox4.Text = CPR;    //Viser CPR nummer i EKG vinduet
 
 
@@ -62,11 +62,24 @@ namespace SemesterProjekt2
           Login.ShowDialog();
       }
 
+       
+       
       private void button3_Click(object sender, EventArgs e) //"Start ny måling"
       {
-         liste = logik.kørEKG();
-         chart1.Series["EKG"].Points.DataBindY(liste);
+         
+        
+         button3.Enabled = false;
+            
+        
 
+         liste = logik.kørEKG();
+         for (int i = 0; i < liste.Count; i++)
+         {
+             chart1.Series["EKG"].Points.AddXY((double)i * 0.004, liste[i]);
+         }
+            
+             //chart1.Series["EKG"].Points.DataBindY(liste);
+         logik.analyseSig();
           if(logik.analyseSig() == true)
           {
               textBox5.Text = "Tjek for Atrieflimmer!!"; 
@@ -75,6 +88,12 @@ namespace SemesterProjekt2
           {
               textBox5.Text = "Sundt EKG"; 
           }
+          textBox1.Text = Convert.ToString(logik.getPuls());
+            
+
+          button3.Enabled = true;
+          button1.Enabled = true;
+
       }
 
 
@@ -127,5 +146,11 @@ namespace SemesterProjekt2
 
       }
 
+      private void label2_Click(object sender, EventArgs e)
+      {
+
+      }
+
+     
    }
 }

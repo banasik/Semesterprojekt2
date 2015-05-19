@@ -64,12 +64,11 @@ namespace SemesterProjekt2
             return Rtakker; 
         }
 
-        public int getPuls()
+        public double getPuls()
         {
-            int puls;
-            sample = 
-            puls = sample * AntalRtakker(); 
-
+            double puls;
+            puls = (4.166 * AntalRtakker());
+            puls = Math.Round(puls);
             return puls;
         }
 
@@ -135,6 +134,7 @@ namespace SemesterProjekt2
 
         public List<double> kørEKG()
         {
+                        
             datacollector = new NI_DAQVoltage();
             datacollector.deviceName = "Dev1/ai0";  //device1/indgang på DAQ som kommer fra AD
             datacollector.getVoltageSeqBlocking();
