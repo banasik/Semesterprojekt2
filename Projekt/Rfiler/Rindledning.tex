@@ -8,6 +8,15 @@
 \end{longtabu}
 
 \chapter{Indledning}
-I dagens danmark er incidensen af hjertesygdomme på ca. 45.000 nye tilfælde årligt\footnote{http://www.si-folkesundhed.dk/upload/hjertekarsygdomme\_i\_2011-2\_rapport.pdf}. Mange typer af hjertesygdomme diagnosticeres via et EKG-apperat, som læser hjertets impulser. Formålet med dette projet er heraf, at udvikle en software, som netop har til formål at kunne detektere en selvvalgt hjertesygdom, vha. udleveret hardware.\\
-Dette specifikke projekt omhandler sygdommen atrieflimren. En sygdom med en  prævalens der særligt omfatter den ældre befolkning da 5-10\%\footnote{https://www.sundhed.dk/borger/sygdomme-a-aa/hjerte-og-blodkar/sygdomme/hjertearytmier/atrieflimren-og-flagren/} af danmarks befolkning over 80 er ramt af sygdommen. \\
+I dagens Danmark er incidensen af hjertesygdomme på ca. 45.000 nye tilfælde årligt\footnote{http://www.si-folkesundhed.dk/upload/hjertekarsygdomme\_i\_2011-2\_rapport.pdf}. Mange typer af hjertesygdomme diagnosticeres via et EKG-apperat, som læser hjertets impulser. Formålet med dette projet er, at udvikle en software, som netop har til formål at detektere en selvvalgt hjertesygdom. Dette gøres vha. udleveret kode og hardware. \\
+Dette specifikke projekt omhandler sygdommen atrieflimren. En sygdom med en  prævalens der særligt omfatter den ældre befolkning, da 5-10\%\footnote{https://www.sundhed.dk/borger/sygdomme-a-aa/hjerte-og-blodkar/sygdomme/hjertearytmier/atrieflimren-og-flagren/} af danmarks befolkning over 80 år er ramt af sygdommen.
+
+
+
+Atrieflimren forekommer, når atriernes normale kontraktionsmønster forstyrres og dermed begynder at "flimre". Softwaren skal detektere denne "flimren" og give besked til brugeren af EKG'et om risiko for forekomst af atrieflimren. Derefter vil brugeren være opmærksom på denne sygdom, når EKG-grafen analyseres. \\
+Efter brugeren har analyseret grafen, gemmes grafen i en SQL-database. Denne database er tilkoblet et specifikt sted, fx sygehus, hvor denne EKG-maskine er tilkoblet. Dermed har man en "lokal" database, som udelukkende indeholder patienter, som er tilkoblet dette sted.
+Pr. 4. Maj 2015 indføre Sundhedsstyrelsen et krav, som omhandler opsamlede EKG-målinger. Disse målinger skal fremover indsamles i en offentlig database. Det vil sige at foruden SQL-databasen, så vil et sygehus have adgang til EKG-målinger fra samtlige patienter i Danmark. Dette vil gøre det nemmere for brugeren at få adgang til ældre målinger, hvis en ny patient   
+
+
+
 
