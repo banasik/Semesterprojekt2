@@ -93,10 +93,12 @@ Brugeren, den primære aktør, bliver bedt om sit log ind, inden EKG-vinduet vis
     Initialisere &&    Brugeren ønsker at foretage en EKG-måling\\
     Forudsætninger &&    Brugeren er logget ind og EKG-vinduet er vist samt Analog-discovery og DAQ'en er koblet til og data er hentet ned\\
     Resultat &&    EKG-graf bliver vist           \\ \midrule
-    Hovedforløb &    1. &    Brugeren indtaster virtuel patients CPR-nummer\newline
-    						 [1.a \textit{CPR-nummeret findes ikke}]\\[-1ex]
-                &    2. &    Målingen startes ved at trykke på "Start-ny-måling"\\[-1ex]
-                &    3. &    EKG-data illustreres på en graf\\ \midrule
+    Hovedforløb &    1. &    Brugeren indtaster virtuel patients CPR-nummer\\[-1ex]
+    						 
+    			&	 2.	&	 Brugeren trykker på "Ok"\--knappen. CPR-vinduet 				 lukkes ned, mens EKG-vinduet åbnes\newline
+    						[2.a \textit{CPR-nummeret findes ikke}]\\[-1ex]
+                &    3. &    Målingen startes ved at trykke på "Start-ny-måling"\\[-1ex]
+                &    4. &    EKG-data illustreres på en graf\\ \midrule
                 
     Undtagelser &    1a. &    CPR-nummeret findes ikke. Besked vises på 								skærmen med tekst, der informerer om, at CPR-						nummeret ikke er gyldigt. UC2 startes forfra 						med nyt CPR-nummer
      \\ \bottomrule
@@ -188,7 +190,6 @@ MoSCoW er angivet i parentes med hhv. M, S, C eller W.
 \begin{itemize}
 	\item (M) Der skal vises en EKG-graf i EKG-vinduet, hvor spænding vises op af y-aksen (-1V til 1V) og tiden på x-aksen
 	\item (M) Grafen skal være scrollbar på x-aksen, så brugeren selv ved brug af musen kan vælge det udsnit af grafen, der skal vises mere detaljeret
-	\item (M) Skal tage en sample over et brugerbestemt interval, hvor frekvensen  er tilpasset målingerne, således at grafen er analyserbar
 \end{itemize}
 
 \textbf{Supportability}

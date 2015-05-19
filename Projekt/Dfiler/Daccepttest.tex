@@ -24,7 +24,7 @@
     \\ \midrule
     1. &Indtast username "moh04" samt password; 1234 &   Username- og passwordboks bliver udfyldt  &    ~ &		%{\Huge \checkmark}
     \\
-    2. &Tryk på "Login"\--knappen.  &    Login bliver godkendt. Login-vinduet lukkes ned mens CPR-vinduet åbnes  &     ~ &		%{\Huge \checkmark}
+    2. &Tryk på "Login"\--knappen  &    Login bliver godkendt. Login-vinduet lukkes ned mens CPR-vinduet åbnes  &     ~ &		%{\Huge \checkmark}
 	\\ \midrule
 	~ &\textit{Exentions} & ~ & ~ & 
 	\\ \midrule	
@@ -46,11 +46,13 @@
 	\\ \midrule
 	1. &Indtast virtuel patients CPR-nummer; 123456-7890 & CPR-nummerboks bliver udfyldt & & %{\Huge \checkmark}
 	\\
-	2. & Tryk på "Start ny måling" & Målingen startes i EKG-vinduet & & %{\Huge \checkmark}
+	2. & Tryk på "Ok"\--knappen & CPR er gyldig. CPR-vinduet lukkes ned mens EKG-vinduet åbnes & & %{\Huge \checkmark}
 	\\
-	3. & EKG-data illustreres på en graf & En analyserebar graf fremvises i EKG-vinduet & & %{\Huge \checkmark}
+	3. & Tryk på "Start ny måling" & Målingen startes i EKG-vinduet & & %{\Huge \checkmark}
+	\\
+	4. & EKG-data illustreres på en graf & En analyserebar graf fremvises i EKG-vinduet & & %{\Huge \checkmark}
 	\\ \midrule
-	1.a & CPR-nummeret findes ikke. Besked vises med tekst, der informerer om, at CPR-nummeret ikke er gyldigt & Nyt CPR-nummer indtastes 
+	2.a & CPR-nummeret findes ikke. Besked vises med tekst, der informerer om, at CPR-nummeret ikke er gyldigt & Nyt CPR-nummer indtastes 
 	\\ \bottomrule
 
 \caption{Accepttest af Use Case 2.}\\
@@ -131,7 +133,7 @@
 	&  \textit{Usability} &  &  & & \\ \midrule
 	& Brugeren skal kunne starte en default-måling maksimalt 20 sekunder efter opstart af program & Start programmet, hvorefter der vha. stopur måles opstartstiden & At programmet er startet op indenfor 20 sekunder & & \\ \midrule
 	& Login-vinduet skal indholde en "login"\--knap til at logge på og få vist EKG-vinduet & "login"\--knappen er synlig i GUI, og ved tryk på knappen vises EKG-vinduet & At EKG-vinduet vises & & \\ \midrule 
-	& EKG-vinduet skal indeholde en "Start"\--knap til at igangsætte målingen & "Start"\--knappen er synlig i GUI, og ved tryk på knap igangsættes målingen & At målingen igangsættes & & \\ \midrule
+	& EKG-vinduet skal indeholde en "start"\--knap til at igangsætte målingen & "Start"\--knappen er synlig i GUI, og ved tryk på knap igangsættes målingen & At målingen igangsættes & & \\ \midrule
 	& EKG-vinduet skal indeholde en "gem"\--knap til at gemme målingerne & "Gem"\--knappen er synlig i GUI, og ved tryk på knappen gemmes måling i database & Messageboks vises på skærmen med teksten "Måling er gemt" og kan findes i databasen & & \\ \midrule
 	& EKG-vinduet skal indeholde en "log ud"\--knap til at logge ud & "log ud"\--knappen er synlig i GUI, og ved tryk på knap lukkes EKG-vinduet og login-vinduet vises & Login-vinduet vises & & \\ \midrule
 	& \textit{Reliability} & & & & \\ \midrule
@@ -139,7 +141,6 @@
 	& \textit{Performance} & & & & \\ \midrule
 	& Der skal vises en EKG-graf i interfacet, hvor spænding vises op ad y-aksen (-1V til 1V) og tiden på x-aksen & Gennemfør en måling & At spændingen for EKG-signalet er op ad y-aksen, samt tiden hen ad x-aksen & & \\ \midrule
 	& Det skal være muligt at kunne scrolle igennem målingerne hen ad x-aksen & Der gennemføres en måling hvorefter der scrolles hen ad x-aksen & At der ved scrolling kan ses forskellige dele af EKG-signalet hen ad x-aksen & & \\ \midrule
-	& Der skal kunne tages et sample over et brugerbestemt interval, hvor frekvensen er tilpasses målingerne, således at grafen er analyserbar & Gennemfør en måling, hvor et bestemt interval hen ad x-aksen er valgt & At det valgte interval synliggøres & & \\ \midrule
 	& \textit{Supportability} & & & & \\ \midrule
 	& Softwaren er opbygget af trelagsmodellen & Kig i koden efter data-lag, logik-lag og GUI-lag & At koden indeholder et data-lag, et logik-lag og et GUI-lag & & \\ \bottomrule
 \caption{Accepttest af Ikke-funktionelle krav}
