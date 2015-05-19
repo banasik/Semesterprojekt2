@@ -1,14 +1,6 @@
 \chapter{Projektformulering}
-\section{Problemformulering}
- I dette projekt vil vi udvikle en software, som ud fra en virtuel patients EKG-målinger kan detektere hjertesygdomme. 
-\section{Indledning}
-Vi har valgt at fokusere på arytmien atrieflimren. Via kendskabet til raske EGK-signaler, ved vi hvordan forholdet mellem P-, Q-, R-, S- og T-takkerne normalt er. Ud fra dette kan vi programmere et system, som kan analysere et givet abnormalt EKG-signal, og dermed informere brugeren fx i form af sundhedsfagligt personale om eventuelle forekomster af atrieflimren.\\
-Udover at detektere og informere om atrieflimre kan softwaren også danne en graf og gemme de givne data i en SQL-database. Softwaren er opbygget via trelagsmodellen, som består af et data-, logik- og GUI-lag.
-\\ 
-Det abnormale EKG-signal hentes ned i form af en csv-fil fra den eksterne EKG-database, Physionet (lav reference eller ordliste). Csv-filens data omdannes via Analog-discovery til et analogt signal. Det analoge signal omdannes via DAQ'en til et digitalt signal. Det er dette digitale signal softwaren behandler, og er dermed det signal, der dannes en graf ud fra. Softwaren detekterer atrieflimmer og informerer brugeren herom.     
 
-
-1. rask hjerte\\
-2. EKG-signaler generelt inkl. beskrivelse af takker\\
-3. patofysiologi - atrieflimmer inkl. detektion via EKG\\
-4. Software og hardware beskrivelse
+Dette projekt har til formål at udvikle software, der kan afbillede, detektere atrieflimre samt gemme et EKG-signal i database. Projekt tager udgangspunkt i virtuelle patienters EKG-signaler. Disse EKG-signaler hentes fra Physionet\footnote{www.physionet.org}, som er en ekstern database, der indeholder mange forskellige EKG-signaler fra forskellige patienter. EKG-signalerne behandles af udleveret hardware, som består af Analog-discovery og en DAQ. Det hentet signal ændres fra en CSV-fil til et digitalt signal. \\
+Det er dette digitale signal softwaren skal kunne afbillede som en graf - en såkaldt EKG-graf. Et andet krav til projektet er, at softwaren skal via en analyse detektere atrieflimren hos den virtuelle patient. Målingen skal også gemmes i en privat database. Den private database skal forståes således, at databasen er tilkoblet et specifikt sted, fx et sygehus, hvor lige præcis denne EKG-måling er foretaget. \\
+Den 4. Maj 2015 indførte Sundhedsstyrelsen et krav, om at alle EKG-målinger foretaget i Danmark skal gemmes i en offentlig database. Det vil sige, at EKG-signalet skal både gemmes i den private- og den offentlige database. Den offentlige database gør det muligt at kunne tilgå et EKG-signal uafhængig af, hvor målingen er foretaget.\\ \\
+Så helt specifikt skal dette projekts produkt være et software system, der kan afbillede EKG-graf, gemme EKG-signal i privat- og offentlig database samt detektere forekomsten af atrieflimmer for den virtuelle patients EKG-signal.  
