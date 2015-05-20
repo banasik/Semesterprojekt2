@@ -21,8 +21,8 @@ namespace TestprogramSTPRj
         {
             datacollector = new NI_DAQVoltage();
             datacollector.deviceName = "Dev1/ai0";
-            datacollector.getVoltageSeqBlocking(); 
-            sample = datacollector.samplesPerChannel;
+            datacollector.getVoltageSeqBlocking();
+            sample = datacollector.samplesPerChannel; 
             int plads = 1;
             amplitude = new List<double>();
             specifikamplitude = new List<double>(); 
