@@ -47,3 +47,7 @@ C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProj
 C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.Gem_måling.resources
 C:\Users\MaleneCecilie\Documents\GitHub\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.Gem_måling.resources
 C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\alglibnet2.dll
+C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.exe.manifest
+C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.application
+C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\SemesterProjekt2.exe.manifest
+C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\SemesterProjekt2.application

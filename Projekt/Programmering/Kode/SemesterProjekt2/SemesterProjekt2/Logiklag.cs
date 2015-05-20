@@ -134,7 +134,7 @@ namespace SemesterProjekt2
 
         public List<double> kørEKG()
         {
-                        
+            
             datacollector = new NI_DAQVoltage();
             datacollector.deviceName = "Dev1/ai0";  //device1/indgang på DAQ som kommer fra AD
             datacollector.getVoltageSeqBlocking();
