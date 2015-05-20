@@ -56,7 +56,7 @@ I dette projekt arbejdes der med objektorienteret programmering i programmerings
 Trelagsmodellen er en model, som kan bruges til at opbygge et system. Idéen er, at systemet opdeles i mindre moduler/lag - et præsentationslag (grænseflade), et logiklag (funktionalitet) og et datalag (database), som spiller sammen. \\
 Præsentationslaget er det øverste lag. Det er det lag, brugeren har indvirkning på og hvor de behandlede data præsenteres brugervenligt. \\
 Logiklaget er det midterste lag. Dette lag er en slags bindeled mellem præsentationslaget og datalaget. I laget modtages og behandles informationerne fra præsentationslaget, og sendes videre til datalaget. Logiklaget kontrollerer hele systemets funktionalitet.\\
-Datalaget er det nederste lag. Laget modtager dataerne fra logiklaget, som håndteres og lagres. Datalaget fungere som en database, hvor man kan gemme nye data og hente gamle data frem igen. Trelagsmodellen vil typisk bygges grafisk op som vist på nedenstående figur 3.2.\\
+Datalaget er det nederste lag. Laget modtager dataerne fra logiklaget, som håndteres og lagres. Datalaget fungere som bindeled til databaser, hvor man kan gemme nye data og hente gamle data frem igen. Trelagsmodellen vil typisk bygges grafisk op som vist på nedenstående figur 3.2.\\
 
 \begin{figure}[H]
 	\centering
@@ -116,7 +116,7 @@ Det sidste vindue der er valgbart, frembringes når der trykkes på ”Gem ny m�
 	\caption{UML-klassediagram over softwaren}
 \end{figure}
 
-Det ovenstående UML diagram (figur 3.7) over projektets software, giver en bedre og lettere forståelse for selve koden. Her er det meget tydeligt, at koden er opbygget efter trelagsmodellen. Præsentationslaget er bygget op af de førnævnte GUI’er, som bliver interfacen for selve bruger-interaktionen. I dette lag sker der som udgangspunkt intet behandlingsarbejde. Opsætningen og funktionerne af grafiklaget er yderligere beskrevet under afsnittet ’GUI’.\\ \\Logiklaget består af en enkelt klasse, der fungerer som programmets primære styring. Logiklaget er til for, at grafiklaget ikke har direkte adgang til datalaget. Det er altså i dette lag, hvor alt programmets data bliver behandlet.  Her bliver EKG’et f.eks. analyseret og login, samt CPR, bliver valideret i forhold til det data, der befinder sig i datalaget. \\ \\Datalaget består af to klasser, og en tilhørende blackbox. I det overstående er der kun beskrevet de metoder i blackboxen, som bliver brugt i andre klasser i programmet. I dette lag bliver der primært sørget for forbindelsen til databasen. Klassen ”Datalag” er kernen i dette lag. Her bliver der sørget for at gemme og hente informationer fra databasen. Det er i dette lag, hvor dataen som logiklaget arbejder med, kommer fra. Klassen ”Person”, er til for at binde alle person-informationer sammen, som medfører at det kun er nødvendigt at kalde et enkelt objekt, frem for 4 attributter. 
+Det ovenstående UML diagram (figur 3.7) over projektets software, giver en bedre og lettere forståelse for selve koden. Her er det meget tydeligt, at koden er opbygget efter trelagsmodellen. Præsentationslaget er bygget op af de førnævnte GUI’er, som bliver interfacen for selve bruger-interaktionen. I dette lag sker der som udgangspunkt intet behandlingsarbejde. Opsætningen og funktionerne af grafiklaget er blevet yderligere beskrevet under afsnittet ’GUI’.\\ \\Logiklaget består af en enkelt klasse, der fungerer som programmets primære styring. Logiklaget er til for, at grafiklaget ikke har direkte adgang til datalaget. Det er altså i dette lag, hvor alt programmets data bliver behandlet.  Her bliver EKG’et f.eks. analyseret og login, samt CPR, bliver valideret i forhold til det data, der befinder sig i datalaget. \\ \\Datalaget består af to klasser, og en tilhørende blackbox. I det overstående er der kun beskrevet de metoder i blackboxen, som bliver brugt i andre klasser i programmet. I dette lag bliver der primært sørget for forbindelsen til databasen. Klassen ”Datalag” er kernen i dette lag. Her bliver der sørget for at gemme og hente informationer fra databasen. Det er i dette lag, hvor dataen som logiklaget arbejder med, kommer fra. Klassen ”Person”, er til for at binde alle person-informationer sammen, som medfører at det kun er nødvendigt at kalde et enkelt objekt, frem for 4 attributter. 
 
 \subsection{Appliktationsmodel}
 En standard applikationsmodel vil i almindelig forstand indeholde en overordnet domænemodel, herefter klassediagram samt sekvensdiagram og tilsidst et opdateret klassediagram, hvor metoderne fra sekvensdiagram er inkluderet. 
@@ -197,6 +197,32 @@ De opdateret klassediagrammer indeholder metoderne fra de dertilhørende  sekven
 	\includegraphics[width=1\textwidth]{Figurer/Snip20150429_25}
 	\caption{Klassediagram for UC5}
 \end{figure}
+
+\section{Software implementering}
+I dette afsnit vil ideen samt overvejelserne bag analysen af atrieflimren beskrives. Analysen fungere via et testprogram, som også her beskrives. Der vil være billeder, der understøtter og er forklarende til beskrivelsen. 
+
+\subsection{Analyse}
+Denne analyse er ikke bygget op omkring den grundlæggende definition af atrieflimren, altså at atrieflimren viser sig ved små fluktuationer på baselinen. Analysen er i stedet bygget op omkring informationen at amplituden i et bestemt frekvensområde, vil være forhøjet, hvis der er mulighed for atrieflimren. \\ \\Analysen af EKG’et består grundlæggende af tre for-løkker. \\ \\Før analysen kan gå i gang, kræver det dog at den aktuelle EKG-sekvens bliver lavet om til et Furier-transformeret komplekst array. Her skal der bruges et bibliotek som indeholder metoder, som gør at der kan bruges komplekst matematik i softwaren. Dette sker ved hjælp af en metode fra biblioteket alglibnet2. \\ \\Herefter indeholder det komplekse array vektor-koordinator, som repræsenterer amplituden for alle frekvenser i signalet. I den første for-løkke, findes længden for alle vektorer en for en, og indsættes i listen amplitude. \\ \\Da det er bevist, at atrieflimren viser sig ved forhøjet signalamplitude i frekvensspekteret 300 Hz til 400 Hz, er det der, softwaren skal tjekke om amplituden ligger over tærsklen. Før selve amplitudetærsklen kan vurderes, kræves det dog at pladserne matchende frekvensspekteret, findes. Måden de er fundet, er gjort rede for, i afsnittet omkring testprogrammet. \\ \\I den næste løkke, bliver de pladser tilsvarende det valgte frekvensspektrum, lagt over i en liste for sig. Dette sker fordi analysen kun er interesseret i de amplituder som ligger i frekvensspektrummet, og det ville derfor være unødvendigt at kigge på samtlige 3600 amplituder, som er at finde i amplitude listen. Derfor ligges de udvalgte pladser i amplitudelisten over i endnu en liste, som indeholder de endelige amplitude-resultater for frekvensspektrummet i det aktuelle EKG. \\ \\Endeligt bliver der i den sidste for-løkke vurderet hvorvidt om amplituden i frekvensspekteret er højere end den valgte tærskel. \\ \\Det skal nævnes, at denne analyse ikke passer på alle signaler. Dette er der to grunde til. Den ene er, at atrieflimren kan forme et signal på mange forskellige måder. Det vil derfor være svært at lave en analyse, som vil kunne dække over alle signaler. Den anden ting er, at alle mennesker er forskellige. Vores hjerterytmer kan have forskellige baselines, og vil derfor ligge forskelligt spændingsmæssigt. 
+
+\subsection{Testprogram}
+Den essentielle i analysen, er amplitudetærskelen. For at kunne vurdere tærsklen, kræver det, at man har værdier for både et rask og et sygt EKG, og ud fra dette vurderer hvornår et signal har så betydelige ændringer i dets amplitude, at der kan være tale om atrieflimren. Til dette har gruppen valgt at skrive et testprogram. Programmet er skrevet, og brugt, i flere trin. Ligesom EKG-softwaren, er testprogrammet forbundet med matematik-biblioteket og STPrj2LibNI-DAQ-biblioteket. \\ \\Fremgangsmetoden for behandling af signalet er i første omgang den samme som ved den reelle analyse; der laves en furier-transformation og derefter regnes arrayet om til en liste af amplituder. Ud over dette, laves der en liste af frekvenser. Dette sker ved dividere antal samples med antal pladser i arrayet, og derefter dividere resultatet med 2. Dette gøres for at fjerne fordoblingen af frekvenserne. \\ \\De ønskede lister bliver herefter udskrevet i en tekstfil. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150520_12}
+	\caption{Kode udsnit af testprogram}
+\end{figure}
+
+På figur (nummer) kan der ses, hvor det valgte frekvensspekter ligger i listen. Herefter bekræftes det, at det valgte frekvensspekter, altså fra 300 Hz til 400 Hz, starter på plads 601 og slutter på plads 801. Derved skal der forstås, at amplituderne for frekvensspekteret altså også ligger på de samme pladser i deres liste. Herefter regnes længden af vektorerne ud, og disse bliver derefter også skrevet ud i en fil. Dette kan ses på figur (nummer). 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150520_13}
+	\caption{Kode udsnit af testprogram}
+\end{figure}
+
+Det samme gøres for et sygt EKG. Herefter sammenlignes amplituderne, og der kan vurderes en tærskel. I vores projekt er tærsklen vurderet til at være 5.6 V. 
 
 
 
