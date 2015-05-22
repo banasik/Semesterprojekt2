@@ -66,6 +66,7 @@ namespace SemesterProjekt2
        
       private void button3_Click(object sender, EventArgs e) //"Start ny måling"
       {
+          chart1.Series["EKG"].Points.Clear();
           Cursor.Current = Cursors.WaitCursor;
         
          button3.Enabled = false;
