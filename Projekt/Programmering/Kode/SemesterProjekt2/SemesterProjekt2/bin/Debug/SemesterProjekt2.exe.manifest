@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SemesterProjekt2.exe" size="28160">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SemesterProjekt2.exe" size="27648">
       <assemblyIdentity name="SemesterProjekt2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JGngaR9KfVbZsOiumd69vtZBDTH8AKA5pu+QcnJKlVA=</dsig:DigestValue>
+        <dsig:DigestValue>INk2ZWF65K7yd4TVziOK4sSBITqpgpDT5AzMnQHYueA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -22,67 +22,65 @@ namespace SemesterProjekt2
        private Person p;
        
 
-      //Variabler til EKGData
+      //Variabler til tabellen EKGData i offentlig database
       private int HZ = 250;
       private int interval_sek = 10;
       private string data_format = ",";
       private string bin_eller_tekst = "bin";
       private string maaleformat_type = ",";
       
-      //Variabler til EKGMaelinger
+      //Variabler til tabellen EKGMaelinger i offentlig database
       private int antal_maalinger = 1;
       private string medarbejdernr = "Leder";
       private string organisation = "IHA";
 
-      public EKG(string CPR)
+      public EKG(string CPR) //Konstruktor
       {
          InitializeComponent();
          logik = new Logiklag();
 
-         button1.Enabled = false;
-         textBox4.Text = CPR;    //Viser CPR nummer i EKG vinduet
+         button1.Enabled = false;   //deaktivere knappen "Gem ny måling"
+         textBox4.Text = CPR;       //Viser CPR nummer i EKG vinduet
 
 
          if (CPR == "")
          {
-            //CPR er tom, skal måske tilbage til "angiv CPR"-skærm
-            p = new Person();
+            p = new Person();       //opretter ny person - men vores program understøtter ikke den funktion
          }
          else
          {
-            p = logik.HentPersonMedCPR(CPR);
-            textBox3.Text = p.navn;
+            p = logik.HentPersonMedCPR(CPR);    //henter allerede person
+            textBox3.Text = p.navn;             //udfylder tekstboxen "Navn på patienten" - f.eks Sara
          }
       }
 
-      private void button4_Click(object sender, EventArgs e)
+      private void button4_Click(object sender, EventArgs e) //"log ud" knap
       {
-          Login = new Login();
-          Hide();
-          Login.ShowDialog();
+          Login = new Login();              //atributten login sættes til at være et nyt log in vindue
+          Hide();                           //gemmer EKG vindue
+          Login.ShowDialog();               //viser log ind vindue
       }
 
        
        
-      private void button3_Click(object sender, EventArgs e) //"Start ny måling"
+      private void button3_Click(object sender, EventArgs e) //"Start ny måling" knap
       {
-          chart1.Series["EKG"].Points.Clear();
-          Cursor.Current = Cursors.WaitCursor;
-        
-         button3.Enabled = false;
+          chart1.Series["EKG"].Points.Clear();          //chart nulstilles
+          Cursor.Current = Cursors.WaitCursor;          //cursor viser "tænker"
+
+          button3.Enabled = false;                      //deaktivere knappen "Start ny måling"
          
         
 
-         liste = logik.kørEKG();
+         liste = logik.kørEKG();                        //metoden "kørEKG()" køres
          
-         for (int i = 0; i < liste.Count; i++)
+         for (int i = 0; i < liste.Count; i++)  //liste løbes igennem
          {
-             chart1.Series["EKG"].Points.AddXY((double)i * 0.004, liste[i]);
+             chart1.Series["EKG"].Points.AddXY((double)i * 0.004, liste[i]);  //tilføjer punkter i grafen -- 0.004 * samples = sekunder
          }
-            
-             //chart1.Series["EKG"].Points.DataBindY(liste);
-         logik.analyseSig();
-          if(logik.analyseSig() == true)
+                      
+         logik.analyseSig(); //metoden analyseSig()
+         if(logik.analyseSig() == true) //resultatet fra analysen
           {
               textBox5.Text = "Tjek for Atrieflimmer!!"; 
           }
@@ -90,71 +88,30 @@ namespace SemesterProjekt2
           {
               textBox5.Text = "Sundt EKG"; 
           }
-          textBox1.Text = Convert.ToString(logik.getPuls());
+
+          textBox1.Text = Convert.ToString(logik.getPuls()); //pulsen vises i puls tekstboksen
             
 
-          button3.Enabled = true;
-          button1.Enabled = true;
-
+          button3.Enabled = true;  //knappen "Start ny måling" aktiveres
+          button1.Enabled = true;  //knappen "Gem ny måling" aktiveres
+ 
       }
 
-
-      private void button1_Click(object sender, EventArgs e)
+      private void button1_Click_1(object sender, EventArgs e) //knappen "Gem ny måling"
       {
-         
+          Cursor.Current = Cursors.WaitCursor;              //cursor viser "tænker"
+          liste = logik.datacollector.currentVoltageSeq;    //listen fra DAQ vis ref. ST2Prj2LibNI-DAQ 
+
+          logik.gemMålingPåPerson(p.ID, liste, DateTime.Now);                                                       //måling gemmes i privat db
+          logik.GemEKGDATA(liste, HZ , interval_sek, data_format, bin_eller_tekst, maaleformat_type, DateTime.Now); //måling gemmes i offentlig db
+          logik.GemEKGMaeling(DateTime.Now, antal_maalinger, medarbejdernr, organisation);                          //måling gemmes i offentlig db
+
+          gem = new Gem_måling();   //atributten gem sættes til at være et nyt gem vindue
+
+          gem.ShowDialog();         //vindue "gem måling" vises
       }
 
-      private void textBox4_TextChanged(object sender, EventArgs e)
-      {
-          
-          chart1.Series["EKG"].Points.DataBindY(logik.kørEKG());
-      }
-
-      private void button1_Click_1(object sender, EventArgs e)
-      {
-          Cursor.Current = Cursors.WaitCursor;
-          liste = logik.datacollector.currentVoltageSeq;
-
-          logik.gemMålingPåPerson(p.ID, liste, DateTime.Now);
-          logik.GemEKGDATA(liste, HZ , interval_sek, data_format, bin_eller_tekst, maaleformat_type, DateTime.Now);
-          logik.GemEKGMaeling(DateTime.Now, antal_maalinger, medarbejdernr, organisation);
-
-          gem = new Gem_måling();
-
-          gem.ShowDialog();
-      }
-
-      private void button2_Click(object sender, EventArgs e)
-      {
-
-      }
-
-      private void textBox4_TextChanged_1(object sender, EventArgs e)
-      {
-
-      }
-
-      private void chart1_Click(object sender, EventArgs e)
-      {
-
-      }
-
-      private void textBox3_TextChanged(object sender, EventArgs e)
-      {
-
-      }
-
-      private void EKG_Load(object sender, EventArgs e)
-      {
-
-      }
-
-      private void label2_Click(object sender, EventArgs e)
-      {
-
-      }
-
-      
+        
 
      
    }
