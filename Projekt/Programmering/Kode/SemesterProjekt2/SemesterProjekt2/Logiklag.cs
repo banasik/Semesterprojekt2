@@ -13,22 +13,19 @@ namespace SemesterProjekt2
         private Datalag data;
         private List<string> lliste;
         public NI_DAQVoltage datacollector;
-        public double baseline;
         public int sample;
         public double hz;
-        public string CPR;
-        public int ID; 
         public static double thresh; 
         public static List<double> amplitude;
         public static List<double> specifikamplitude;
-        public static List<double> frekvensliste;
+        
 
         public Logiklag()
         {
             data = new Datalag();
             datacollector = new NI_DAQVoltage();
-            sample = datacollector.samplesPerChannel;  //samples                                     Mangler reference
-            hz = datacollector.sampleRateInHz;//metoden til hertz                                    Mangler reference
+            sample = datacollector.samplesPerChannel;   //samples                                     Mangler reference
+            hz = datacollector.sampleRateInHz;          //metoden til hertz                           Mangler reference
 
         }
 
@@ -64,7 +61,7 @@ namespace SemesterProjekt2
             return Rtakker; 
         }
 
-        public double getPuls()
+        public double getPuls()  //beregning af puls
         {
             double puls;
             puls = (4.166 * AntalRtakker());
@@ -73,7 +70,7 @@ namespace SemesterProjekt2
         }
 
 
-        public bool analyseSig()
+        public bool analyseSig()  //analyse af EKG signal
         {
             datacollector.deviceName = "Dev1/ai0";
             datacollector.getVoltageSeqBlocking();
@@ -142,33 +139,30 @@ namespace SemesterProjekt2
             
         }
 
-       //public bool gemData()
-       //{
-       //   return (data.FlytTilSQL());
-       //}
-       public bool gemMålingPåPerson(int patientID, List<double> måling, DateTime tidForMåling)
+       
+       public bool gemMålingPåPerson(int patientID, List<double> måling, DateTime tidForMåling) //transport igennem logik lag
        {
           return (data.GemMålingPåPerson(patientID, GetBytes(måling), tidForMåling));
        }
 
-       public bool GemEKGDATA(List<double> måling, float samplerate_hz, long interval_sek, string data_format, string bin_eller_tekst, string maaleformat_type, DateTime start_tid)
+       public bool GemEKGDATA(List<double> måling, float samplerate_hz, long interval_sek, string data_format, string bin_eller_tekst, string maaleformat_type, DateTime start_tid) //transport igennem logik lag
        {
           return (data.GemEKGDATA(GetBytes(måling), samplerate_hz, interval_sek, data_format, bin_eller_tekst, maaleformat_type, start_tid));
        }
 
-       public bool GemEKGMaeling(DateTime dato, int antal_maalinger, string medarbejdernr, string organisation)
+       public bool GemEKGMaeling(DateTime dato, int antal_maalinger, string medarbejdernr, string organisation) //transport igennem logik lag
        {
           return (data.GemEKGMaeling(dato, antal_maalinger, medarbejdernr, organisation));
        }
 
-       public Person HentPersonMedCPR(string CPR)
+       public Person HentPersonMedCPR(string CPR) //transport igennem logik lag
        {
            return data.GetPersonMedCPR(CPR);
        }
 
        //Konverterer List<Double> til byte[] (Som skal bruges for at gemme i sql-db). Bliver brugt ovenfor
        // google-link: http://stackoverflow.com/questions/6952923/conversion-double-array-to-byte-array
-       static byte[] GetBytes(List<double> values)
+       static byte[] GetBytes(List<double> values) //konvetering
        {
           return values.ToArray().SelectMany(value => BitConverter.GetBytes(value)).ToArray();
        }
