@@ -28,9 +28,9 @@
       /// </summary>
       private void InitializeComponent()
       {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,55 +50,54 @@
             // 
             // chart1
             // 
-            chartArea3.AxisX.LabelStyle.Format = "0";
-            chartArea3.AxisX.MajorGrid.Interval = 0.4D;
-            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Salmon;
-            chartArea3.AxisX.MinorGrid.Enabled = true;
-            chartArea3.AxisX.MinorGrid.Interval = 0.2D;
-            chartArea3.AxisX.MinorGrid.LineColor = System.Drawing.Color.Salmon;
-            chartArea3.AxisX.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea3.AxisX.ScaleView.Size = 4D;
-            chartArea3.AxisX.ScaleView.SmallScrollMinSize = 0.1D;
-            chartArea3.AxisX.ScaleView.SmallScrollSize = 100D;
-            chartArea3.AxisX.ScaleView.SmallScrollSizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
-            chartArea3.AxisX.ScrollBar.BackColor = System.Drawing.Color.Transparent;
-            chartArea3.AxisX.ScrollBar.ButtonColor = System.Drawing.Color.LightGray;
-            chartArea3.AxisX.ScrollBar.ButtonStyle = System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonStyles.SmallScroll;
-            chartArea3.AxisX.ScrollBar.IsPositionedInside = false;
-            chartArea3.AxisX.ScrollBar.LineColor = System.Drawing.Color.Black;
-            chartArea3.AxisX.ScrollBar.Size = 20D;
-            chartArea3.AxisX.Title = "Time [s]";
-            chartArea3.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea3.AxisX.TitleForeColor = System.Drawing.Color.Red;
-            chartArea3.AxisY.Interval = 0.2D;
-            chartArea3.AxisY.MajorGrid.Interval = 0.4D;
-            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Salmon;
-            chartArea3.AxisY.Maximum = 1D;
-            chartArea3.AxisY.Minimum = -0.5D;
-            chartArea3.AxisY.MinorGrid.Enabled = true;
-            chartArea3.AxisY.MinorGrid.Interval = 0.1D;
-            chartArea3.AxisY.MinorGrid.LineColor = System.Drawing.Color.Salmon;
-            chartArea3.AxisY.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea3.AxisY.Title = "Electric potential [mV]";
-            chartArea3.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea3.AxisY.TitleForeColor = System.Drawing.Color.Red;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.AxisX.LabelStyle.Format = "0";
+            chartArea1.AxisX.MajorGrid.Interval = 0.2D;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Salmon;
+            chartArea1.AxisX.MinorGrid.Enabled = true;
+            chartArea1.AxisX.MinorGrid.Interval = 0.04D;
+            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.Salmon;
+            chartArea1.AxisX.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.AxisX.ScaleView.Size = 4D;
+            chartArea1.AxisX.ScaleView.SmallScrollMinSize = 0.1D;
+            chartArea1.AxisX.ScaleView.SmallScrollSize = 100D;
+            chartArea1.AxisX.ScaleView.SmallScrollSizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
+            chartArea1.AxisX.ScrollBar.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX.ScrollBar.ButtonColor = System.Drawing.Color.LightGray;
+            chartArea1.AxisX.ScrollBar.ButtonStyle = System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonStyles.SmallScroll;
+            chartArea1.AxisX.ScrollBar.IsPositionedInside = false;
+            chartArea1.AxisX.ScrollBar.LineColor = System.Drawing.Color.Black;
+            chartArea1.AxisX.ScrollBar.Size = 20D;
+            chartArea1.AxisX.Title = "Time [s]";
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.Red;
+            chartArea1.AxisY.Interval = 0.2D;
+            chartArea1.AxisY.MajorGrid.Interval = 0.4D;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Salmon;
+            chartArea1.AxisY.Maximum = 1D;
+            chartArea1.AxisY.Minimum = -0.5D;
+            chartArea1.AxisY.MinorGrid.Enabled = true;
+            chartArea1.AxisY.MinorGrid.Interval = 0.1D;
+            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.Salmon;
+            chartArea1.AxisY.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.AxisY.Title = "Electric potential [V]";
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.TitleForeColor = System.Drawing.Color.Red;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(230, 94);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.IsVisibleInLegend = false;
-            series3.Legend = "Legend1";
-            series3.Name = "EKG";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.IsVisibleInLegend = false;
+            series1.Legend = "Legend1";
+            series1.Name = "EKG";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(1123, 653);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "EKG-graf";
-            
             // 
             // textBox1
             // 
@@ -138,7 +137,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(236, 22);
             this.textBox3.TabIndex = 7;
-            
             // 
             // textBox4
             // 
@@ -148,7 +146,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(269, 22);
             this.textBox4.TabIndex = 8;
-            
             // 
             // label3
             // 
@@ -218,7 +215,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 135);
             this.label2.TabIndex = 20;
-            
             // 
             // label5
             // 
