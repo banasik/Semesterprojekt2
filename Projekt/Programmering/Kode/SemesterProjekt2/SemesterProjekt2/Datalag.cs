@@ -15,7 +15,7 @@ namespace SemesterProjekt2
         private SqlCommand cmd;
         private const String db = "F15ST2ITS2201405722";
         private const String db2 = "F15ST2PRJ2OffEKGDatabase";
-        private List<string> CPRliste;
+        private List<string> CPRliste; //bruges ved getCPR()
 
 
                
@@ -28,7 +28,7 @@ namespace SemesterProjekt2
             CPRliste = new List<string>();
         }
 
-        public int getKode(string navn)
+        public int getKode(string navn) //Slår den indtastet kode op
         {
             int resultat = 0;
             cmd = new SqlCommand("select Kode from Login where Navn ='" + navn + "'", conn);
@@ -44,7 +44,7 @@ namespace SemesterProjekt2
             return resultat;
         }
 
-        public List<string> GetCPR()
+        public List<string> GetCPR() //Slår det indtastet CPR nr op
         {
             string CPR = "00";
             conn.Open();
@@ -60,7 +60,7 @@ namespace SemesterProjekt2
             conn.Close();
             return CPRliste;
         }
-        public Person GetPersonMedCPR(string Cprnummer)
+        public Person GetPersonMedCPR(string Cprnummer) //Slår person op på baggrund af CPR nr
         {
            Person p = new Person();
             
@@ -68,11 +68,6 @@ namespace SemesterProjekt2
 
             cmd = new SqlCommand("select Navn, CPR, PatientID From Patient where CPR = '"+Cprnummer+"'", conn);
            
-            //SqlParameter param = new SqlParameter();
-            //param.ParameterName = "@cprNummer_in";
-            //param.Value = Cprnummer;
-
-
             rdr = cmd.ExecuteReader();
 
             if (rdr.Read())
@@ -81,14 +76,13 @@ namespace SemesterProjekt2
                p.CPR = rdr.GetString(1);
                p.ID = Convert.ToInt32(rdr.GetValue(2));
 
-               //p.PatientsMålinger = HentMålingerFraPatientID(p.ID);
             }
 
             conn.Close();
             return p;
         }
 
-        public bool GemMålingPåPerson(int patientID, byte[] måling, DateTime tidForMåling)
+        public bool GemMålingPåPerson(int patientID, byte[] måling, DateTime tidForMåling) //Gemmer måling i privat db
         {
            conn.Open();
 
@@ -120,7 +114,7 @@ namespace SemesterProjekt2
         }
 
 
-        public bool GemEKGDATA(byte[] måling, float samplerate_hz, long interval_sek, string data_format, string bin_eller_tekst, string maaleformat_type, DateTime start_tid)
+        public bool GemEKGDATA(byte[] måling, float samplerate_hz, long interval_sek, string data_format, string bin_eller_tekst, string maaleformat_type, DateTime start_tid) // gemmer til offentlig db
         {
 
            conn2.Open();
@@ -173,7 +167,7 @@ namespace SemesterProjekt2
            { return false; }
         }
 
-        public bool GemEKGMaeling(DateTime dato, int antalmaalinger, string sfp_ansvrmedarbjnr, string sfp_ans_org)
+        public bool GemEKGMaeling(DateTime dato, int antalmaalinger, string sfp_ansvrmedarbjnr, string sfp_ans_org) //gemmer til offentlig db
         {
            conn2.Open();
 
@@ -208,43 +202,7 @@ namespace SemesterProjekt2
            else
            { return false; }
         }
-       /*public Målinger HentMålingerFraPatientID(int ID_in)
-       {
-          //
-       }*/
-
-       /*public bool FlytTilSQL()
-       {
-          byte[] målinger = new byte[3000];
-          using (SqlConnection connection = new SqlConnection("ConnectionString")) 
-          { 
-             SqlParameter param;
-                        
-                connection.Open(); 
-                using(SqlCommand cmd = new SqlCommand("INSERT INTO Patient(CPR, Måling, Navn, Dato) VALUES (@CPR, @Måling, @Navn, @Dato)", conn)) 
-                { 
-                        
-                     param = new SqlParameter();
-                     param.DbType = System.Data.DbType.String;
-                     param.ParameterName = "@CPR";
-                     param.Value = "1111111-1111";
-                     cmd.Parameters.Add(param);
-
-                     param = new SqlParameter();
-                     param.DbType = System.Data.DbType.Byte;
-                     param.ParameterName = "@Måling";
-                     param.Value = målinger;
-                     cmd.Parameters.Add(param);
-
-                     //cmd.Parameters.Add("@CPR", sqlDbType.Nvarvhar) Value =; 
-                     //cmd.Parameters.Add("@Måling", SqlDbType.VarBinary).Value = ByteArray; 
-                     //cmd.Parameters.Add("@Navn", SqlDbType.NVarchar).Value = "Any text Description"; 
-                     cmd.ExecuteNonQuery();
-               } 
-         }
-
-          return true;
-      }*/
+       
 
     }
 }
