@@ -54,7 +54,6 @@
             this.label1.Size = new System.Drawing.Size(291, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Indtast CPR-nummer på den ønskede patient";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -85,7 +84,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CPR_nummer";
             this.Text = "CRP_nummer";
-            this.Load += new System.EventHandler(this.CPR_nummer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

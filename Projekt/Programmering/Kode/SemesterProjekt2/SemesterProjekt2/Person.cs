@@ -11,7 +11,7 @@ namespace SemesterProjekt2
       public string navn;
       public string CPR;
       public int ID;
-      //public List<Målinger> PatientsMålinger;
+      
 
       public Person()
       { }

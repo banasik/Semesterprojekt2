@@ -38,19 +38,11 @@ namespace SemesterProjekt2
           }
       }
 
-      private void label1_Click(object sender, EventArgs e)
-      {
-
-      }
-
+     
       private void button1_Click(object sender, EventArgs e)
       {
           tjekCPR(textBox1.Text);
       }
 
-      private void CPR_nummer_Load(object sender, EventArgs e)
-      {
-
-      }
    }
 }

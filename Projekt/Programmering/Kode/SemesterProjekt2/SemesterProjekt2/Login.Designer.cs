@@ -70,7 +70,6 @@
          this.label1.Size = new System.Drawing.Size(88, 13);
          this.label1.TabIndex = 3;
          this.label1.Text = "Indtast username";
-         this.label1.Click += new System.EventHandler(this.label1_Click);
          // 
          // label2
          // 
@@ -102,7 +101,6 @@
          this.Controls.Add(this.button1);
          this.Name = "Login";
          this.Text = "Login";
-         this.Load += new System.EventHandler(this.Login_Load);
          this.ResumeLayout(false);
          this.PerformLayout();
 

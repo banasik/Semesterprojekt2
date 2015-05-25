@@ -12,17 +12,13 @@ namespace SemesterProjekt2
 {
    public partial class Gem_måling : Form
    {
-      private EKG ekg;
+      
       public Gem_måling()
       {
          InitializeComponent();
       }
 
-      private void label1_Click(object sender, EventArgs e)
-      {
-
-      }
-
+      
       private void button1_Click(object sender, EventArgs e)
       {
          

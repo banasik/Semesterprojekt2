@@ -24,11 +24,7 @@ namespace SemesterProjekt2
          logik = new Logiklag();
       }
 
-      private void label1_Click(object sender, EventArgs e)
-      {
-
-      }
-
+      
       private void tjekLogin(string navn, int kode)
       {
 
@@ -37,7 +33,7 @@ namespace SemesterProjekt2
             CPR_GUI = new CPR_nummer();
             Hide();
             CPR_GUI.ShowDialog();
-            //CPR_GUI.Show();
+            
          }
 
          else
@@ -46,17 +42,7 @@ namespace SemesterProjekt2
          }
 
       }
-
-      private void button1_Click(object sender, EventArgs e)
-      {
-         //tjekLogin(textBox1.Text, Convert.ToInt32(textBox2.Text));
-      }
-
-      private void Login_Load(object sender, EventArgs e)
-      {
-
-      }
-
+             
       private void button1_Click_1(object sender, EventArgs e)
       {
           tjekLogin(textBox1.Text, Convert.ToInt32(textBox2.Text));
