@@ -44,12 +44,95 @@ Softwaren er bygget op i henhold til trelagsmodellen, hvor GUI’erne fungerer s
 
 
 \subsection{Design}
+Alle tanker omkring, hvordan koden skulle være bygget op, bunder i trelagsmodellen. Der er derfor sørget for at der ikke er noget kode, som kommunikerer med et lag, som de ikke har tilladelse til. Der kan læses mere om trelagsmodellen i dokumentationen(henvisning).\\ \\I dette projekt, har der i slutfasen været fokuseret meget på brugervenlighed og feedback til brugeren. Tideligt i projektet, var det ikke tydeligt, hvornår der blev foretaget en måling. Dette er blevet tydeliggjort, ved at musen bliver til en cirkel, der er i bevægelse, imens der tages en måling. Der er også lavet et pop-up vindue, som bekræfter, at en måling er blevet gemt.\\ \\Der er desuden, lavet en feature, som viser grid-lines på grafen. I gruppen, blev der besluttet, at der skulle være to typer af grids. En lille og en stor type.  De store grids, repræsenterer hver 0,2 sekunder og de små, svarer til 0,04 sekunder. Disse intervaller er fastlagt, ud fra standarder for professionelle EKG-displays.  Dette blev herefter implementeret i koden.\\ \\En anden ting, som har været meget dominerende i overvejelserne, er sikkerhed. Det er personfølsomme oplysninger, som skal detekteres i dette program, er det er derfor vigtigt at det ikke er alle og enhver, der skal kunne få adgang til det. Derfor er der et vindue, som beder brugeren om at logge ind, med et gyldigt brugernavn og kodeord. Dette vil validere, at denne person har rettigheder, til at få adgang til systemet. En valideret person, vil typisk være en sundhedsprofessionel.\\ \\Yderligere er der lavet et identifikationsvindue, hvor der skal indtastes et CPR-nummer. Ved hjælp af denne oplysning, bliver der hentet en person. Denne person bliver brugt igennem systemet, som indikator for, hvem den her person er. Navnet bliver f.eks. vist i EKG-vinduet, og det er også dette nummer der bliver brugt, når målingerne skal gemmes.  
 
 \subsection{Implementering}
+Analysen er det essentielle i implementeringen. Hvis ikke der er en analyse der fungerer, så programmet obsolet. I et tideligere afsnit er der beskrevet, at analysen blev bygget op omkring en anden definition af atrieflimren, end den patofysiologien beskriver.
+\\Analysen er i stedet bygget op omkring tre for-løkker, som identificerer forhøjede amplituder inden for et specielt frekvensspektrum. Ved hjælp af matematikbiblioteket alglibnet2, bliver signalet først konverteret til et komplekst Furier-transformeret array, som indeholder koordinater repræsenterende vektorer for amplituden i signalet. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_41}
+	\caption{Kode udsnit af analyse implementering}
+\end{figure}
+
+Herefter bliver amplituderne regnet ud, ved hjælp af standard formelen for vektorudregning. Disse værdier bliver tilføjet til en ny liste. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_43}
+	\caption{Kode udsnit af analyse implementering}
+\end{figure}
+
+Herefter bliver arrayet udspecificeret til kun, at indeholde de pladser, som repræsenterer amplituderne for det valgte frekvensspektrum. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_44}
+	\caption{Kode udsnit af analyse implementering}
+\end{figure}
+
+Disse værdier bliver derefter tjekket for, om de indeholder en amplitude, som ligger over tærskelværdien. Hvis dette er tilfældet, returnere metoden ’true’, hvilket repræsenterer at det er rigtigt, at denne person kan have atrieflimren. Hvis der ikke findes en værdi, som er højere end tærsklen, returnerer metoden ’false’. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_47}
+	\caption{Kode udsnit af analyse implementering}
+\end{figure}
+
+Tærskelværdien er blev fundet ud fra testprogrammet, som der kan læses yderligere om i dokumentationen(henvisning). Der kan desuden også læses yderligere specifikation omkring implementeringen i dokumentationen(henvisning). 
+
 
 \subsection{Test}
+I dette projekt er der hverken lavet modul eller integrationstest. I stedet er koden blevet testet efterhånden, som metoder er blevet færdigt gjort. Det er også på denne måde, at gruppen har kunnet tjekke, at metoden ikke melder fejl, eller får systemet til at bryde sammen. Metoden "KørEKG" kan give et eksempel på hvordan forløbet har været. "KørEKG" er en essentiel del af koden, og det var derfor vigtigt, at den fungerede fra starten af. Her blev den estimerede kode først skrevet, og der blev derefter kørt et EKG for at se, om grafen kom frem. Dette gjorde den ikke i første omgang, og der blev derfor tilføjet en linje kode, som henter den maksimale volt, som kommer igennem Analog Discovery. 
 
 \section{Resultater og diskussion}
+Kravene til dette projekt er at afbillede, analysere og gemme EKG-signaler fra virtuelle patienter. Alt dette er lykkes. \\ 
+Før det er muligt at starte en måling skal man igennem et Login-vindue samt et CPR-vindue, hvor man indtaster den virtuelle patients CPR-nummer. Når login og CPR-nummeret til blevet godkendt vises EKG-vinduet, som er vinduet, hvor programmet køres fra. \\ \\
+Ved tryk på "Start ny måling" går der X-antal minutter og EKG-signalet bliver afbilledet som en EKG-graf. Se figur NUMMER. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_25}
+	\caption{Visning af EKG-signal samt analyse af Sundt EKG-signal}
+\end{figure}
+
+Når EKG-grafen vises i EKG-vinduet har programmet også analyseret EKG-signalet i forhold til atrieflimren. Hvis EKG-signalet er normalt skriver programmet "Sundt EKG" under Resultat, se figur Nummer (ovenfor). Hvis EKG-signalet afviger fra standart værdierne skriver programmet "Tjek for Atrieflimmer!!", se figur Nummer. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_26}
+	\caption{Analyse af sygt EKG-signal}
+\end{figure}
+
+Efter visningen samt analysen af EKG-signalet skal data om målingen gemmes i en privat- samt en offentlig database. Dette sker ved tryk på "Gem ny måling". Et pop-up vindue fremkommer og bekræfter handlingen. Efterfølgende kan man i den private database under "Måling"\--tabellen, se de gemte måleringer, se figur nummer.   
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_27}	
+	\caption{Lagring af data i privat database}
+\end{figure}
+
+I den offentlige data base er der to tabeller. Den ene hedder EKG\_Data. Her bliver den virtuelle patientens og brugerens data gemt, se figur nummer. Den anden hedder EKG\_måling. Her bliver informationer omkring selve målingen gemt, se figur nummer. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_28}
+	\caption{Lagring af den virtuelle patients- og brugerens data i den offentlig database}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_29}
+	\caption{Lagring af målingens data i offentlig database}
+\end{figure}
+
+Med hensyn til visningen af målingen, kunne der godt have været et mere præcis gitter, således at lægerne nemmere kunne aflæse ud fra grafen om patienten har atrieflimmer. Det kan godt lade sig gøre at aflæse på nuværende tidspunkt, men det er mindre præcis, da ternene ikke er kvadratiske.
+
+muligvis noget om analysen!!!! 
+
+Med hensyn til at gemme i offentlig database er flere af værdierne blev fravalgt pga. tidspres, men man kunne have indført nogle flere værdier, så man f.eks. kunne ligger patientens CPR-nummer og navn ind og gemme det i EKG\_Data.
+
 
 \section{Opnået erfaringer}
 

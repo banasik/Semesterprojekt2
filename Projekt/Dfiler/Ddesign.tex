@@ -93,7 +93,7 @@ Når CPR-nummeret bliver godkendt, åbner det primære vindue, EKG-vinduet, se f
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{Figurer/Snip20150522_17}
+	\includegraphics[width=1.0\textwidth]{Figurer/Snip20150525_25}
 	\caption{EKG-vindue}
 \end{figure}
 
@@ -201,11 +201,31 @@ De opdateret klassediagrammer indeholder metoderne fra de dertilhørende  sekven
 \section{Software implementering}
 I dette afsnit vil ideen samt overvejelserne bag analysen af atrieflimren beskrives. Analysen fungere via et testprogram, som også her beskrives. Der vil være billeder, der understøtter og er forklarende til beskrivelsen. Kravene til programmet i forhold til at afbillede og gemme EKG-måling vil også i dette afsnit beskrives. 
 
+\subsection{Visning af EKG-signal}
+Grafen bliver genereret, ved hjælp af en metode i logiklaget. Denne metode, ’Kør EKG’, sætter de nødvendige forudsætninger for, at hardwaren bliver trigget til at starte en måling. Der bliver oprettet en ny sekvens, og herefter bliver navnet på enheden, samt den spænding der kommer, sat. Metoden returnerer herefter den måling, der bliver fortaget.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figurer/Snip20150525_39}
+	\caption{Kode udsnit af visning af EKG-signal}
+\end{figure}
+
+Denne metode bliver efterfølgende kaldt i grafiklaget, nærmere betegnet i Formen EKG. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_40}
+	\caption{Kode udsnit af visning af EKG-signal}
+\end{figure}
+
+Målingen bliver lagt over i en liste. Herefter køres alle punkter i målingen igennem, og bliver en for en lagt over i grafen. Disse bliver ganget med 0,004, for at konvertere samples til tid i sekunder. 
+
+
 \subsection{Analyse}
 Denne analyse er ikke bygget op omkring den grundlæggende definition af atrieflimren, altså at atrieflimren viser sig ved små fluktuationer på baselinen. Analysen er i stedet bygget op omkring informationen at amplituden i et bestemt frekvensområde, vil være forhøjet, hvis der er mulighed for atrieflimren. \\ \\Analysen af EKG’et består grundlæggende af tre for-løkker. \\ \\Før analysen kan gå i gang, kræver det dog at den aktuelle EKG-sekvens bliver lavet om til et Furier-transformeret komplekst array. Her skal der bruges et bibliotek som indeholder metoder, som gør at der kan bruges komplekst matematik i softwaren. Dette sker ved hjælp af en metode fra biblioteket alglibnet2. \\ \\Herefter indeholder det komplekse array vektor-koordinator, som repræsenterer amplituden for alle frekvenser i signalet. I den første for-løkke, findes længden for alle vektorer en for en, og indsættes i listen amplitude. \\ \\Da det er bevist, at atrieflimren viser sig ved forhøjet signalamplitude i frekvensspekteret 300 Hz til 400 Hz, er det der, softwaren skal tjekke om amplituden ligger over tærsklen. Før selve amplitudetærsklen kan vurderes, kræves det dog at pladserne matchende frekvensspekteret, findes. Måden de er fundet, er gjort rede for, i afsnittet omkring testprogrammet. \\ \\I den næste løkke, bliver de pladser tilsvarende det valgte frekvensspektrum, lagt over i en liste for sig. Dette sker fordi analysen kun er interesseret i de amplituder som ligger i frekvensspektrummet, og det ville derfor være unødvendigt at kigge på samtlige 3600 amplituder, som er at finde i amplitude listen. Derfor ligges de udvalgte pladser i amplitudelisten over i endnu en liste, som indeholder de endelige amplitude-resultater for frekvensspektrummet i det aktuelle EKG. \\ \\Endeligt bliver der i den sidste for-løkke vurderet hvorvidt om amplituden i frekvensspekteret er højere end den valgte tærskel. \\ \\Det skal nævnes, at denne analyse ikke passer på alle signaler. Dette er der to grunde til. Den ene er, at atrieflimren kan forme et signal på mange forskellige måder. Det vil derfor være svært at lave en analyse, som vil kunne dække over alle signaler. Den anden ting er, at alle mennesker er forskellige. Vores hjerterytmer kan have forskellige baselines, og vil derfor ligge forskelligt spændingsmæssigt. 
 
 \subsection{Testprogram}
-Den essentielle i analysen, er amplitudetærskelen. For at kunne vurdere tærsklen, kræver det, at man har værdier for både et rask og et sygt EKG, og ud fra dette vurderer hvornår et signal har så betydelige ændringer i dets amplitude, at der kan være tale om atrieflimren. Til dette har gruppen valgt at skrive et testprogram. Programmet er skrevet, og brugt, i flere trin. Ligesom EKG-softwaren, er testprogrammet forbundet med matematik-biblioteket og STPrj2LibNI-DAQ-biblioteket. \\ \\Fremgangsmetoden for behandling af signalet er i første omgang den samme som ved den reelle analyse; der laves en furier-transformation og derefter regnes arrayet om til en liste af amplituder. Ud over dette, laves der en liste af frekvenser. Dette sker ved dividere antal samples med antal pladser i arrayet, og derefter dividere resultatet med 2. Dette gøres for at fjerne fordoblingen af frekvenserne. \\ \\De ønskede lister bliver herefter udskrevet i en tekstfil. 
+Den essentielle i analysen, er amplitudetærskelen. For at kunne vurdere tærsklen, kræver det, at man har værdier for både et rask og et sygt EKG, og ud fra dette vurderer hvornår et signal har så betydelige ændringer i dets amplitude, at der kan være tale om atrieflimren. Til dette har gruppen valgt at skrive et testprogram. Programmet er skrevet, og brugt, i flere trin. Ligesom EKG-softwaren, er testprogrammet forbundet med matematik-biblioteket og STPrj2LibNI-DAQ-biblioteket. \\ \\Fremgangsmetoden for behandling af signalet er i første omgang den samme som ved den reelle analyse; der laves en furier-transformation og derefter regnes arrayet om til en liste af amplituder. Ud over dette, laves der en liste af frekvenser. Dette sker ved dividere antal samples med antal pladser i arrayet, og derefter dividere resultatet med 2. Dette gøres for at fjerne fordoblingen af frekvenserne. \\ \\De ønskede lister bliver herefter udskrevet i en tekstfil.
 
 \begin{figure}[H]
 	\centering
@@ -223,6 +243,66 @@ På figur (nummer) kan der ses, hvor det valgte frekvensspekter ligger i listen.
 \end{figure}
 
 Det samme gøres for et sygt EKG. Herefter sammenlignes amplituderne, og der kan vurderes en tærskel. I vores projekt er tærsklen vurderet til at være 5.6 V. 
+
+\subsection{Lagring i database}
+Patienternes data og målinger gemmes i to forskellige databaser. Den ene database er oprettet af semestergruppen og den anden er en offentlige database udleveret af vejlederen i slutningsfasen af projektet. Den offentlige database bruges til at indrapportere EKG målinger til brug fra forskning og udveksling af EKG målinger.  Der er brugt SQL til at gemme og hente patienternes data og EKG målinger. Herunder vil der kort blive beskrevet hvordan QL-koden er implementeret. 
+
+\subsubsection{Offentlig database}
+I den offentlige database findes der to tabeller med navnene EKG\_måling og EKG\_Data. Associationen mellem de to tabeller illustreres som følgende. Figur 1 viser at en patient kan have mange EKG målinger. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figurer/Snip20150525_38}
+	\caption{Association mellem EKG\_måling og EKG\_Data}
+\end{figure}
+
+Opsætning til den offentlige database sker ved at navnet til databasen erklæres vha. en private access specifier i datalaget. Herefter bruges en default constructor til at skabe forbindelse. Her fra er forbindelsen til den offentlige database skabt. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_32}	
+	\caption{Kode udsnit fra lagring i database}
+\end{figure}
+
+Metoden "GemEKGDATA" gemmer patientens data i den offentlige database. De data som en patient kan ses som parametre i metoden. Disse data bliver lagt ind i de tilhørende kolonner i tabellen EKGDATA. Der er valgt én parameter til at demonstrere indsætning af en patients data i tabellen. De resterende parameter behandles tilsvarende. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_33}
+	\caption{Kode udsnit fra lagring af database}
+\end{figure}
+
+Tabellen EKGMAELING behandles på samme måde som tabellen EKGDATA. 
+\subsubsection{Privat database}
+Semestergruppens database indeholder tabellerne login, måling og patient. Indsættelsen af data er foretaget manuelt dvs. uden brug af SQL-kode. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_34}
+	\caption{Eksempel på tabel, Patient}
+\end{figure}
+
+Forbindelsen til denne databaseserver oprettes som tideligere eksempel, med den offentlige database.  
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_35}
+	\caption{Kode udsnit af privat databse}	
+\end{figure}
+
+SQL-koden i metoden getKode går ind tabellen Login og vælger en kode som tilhører et bestemt navn. Hvis koden matcher det tilhørende navn så returner den det ønsket navn og kode.   
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figurer/Snip20150525_36}
+	\caption{Kode udsnit af privat database}
+\end{figure}
+
+De resterende SQL-kode for tabellen patient og måling i datalaget medtages ikke her, grundet deres sammenlighed med den overstående beskrivelse. Nærmere beskrivelse henvises til xxxx. 
+
+
+
+
 
 
 
