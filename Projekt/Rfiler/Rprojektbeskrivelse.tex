@@ -62,7 +62,7 @@ Yderligere er der lavet et patient identifikationsvindue, hvor der skal indtaste
 
 \subsection{Implementering}
 Analysen er det essentielle i implementeringen. Hvis ikke der er en analyse, der fungerer, så er programmet obsolet.\\
-Analysen er bygget op omkring tre for-løkker, som identificerer forhøjede amplituder inden for et specielt frekvensspektrum. Ved hjælp af matematikbiblioteket alglibnet2, bliver signalet først konverteret til et komplekst Furier-transformeret array, som indeholder koordinater repræsenterende vektorer for amplituden i signalet. \textbf{WHAT, hvad mener du? + figur henvisning} 
+Analysen er bygget op omkring tre for-løkker, som identificerer forhøjede amplituder inden for et specielt frekvensspektrum. Ved hjælp af matematikbiblioteket alglibnet2, bliver signalet først konverteret til et komplekst Furier-transformeret array, som indeholder koordinater repræsenterende vektorer for amplituden i signalet. Denne konvertering, ses på figur 6.4. \textbf{WHAT, hvad mener du? + figur henvisning} 
 
 \begin{figure}[H]
 	\centering
@@ -70,7 +70,7 @@ Analysen er bygget op omkring tre for-løkker, som identificerer forhøjede ampl
 	\caption{Kode udsnit af analyse implementering}
 \end{figure}
 
-Herefter bliver amplituderne regnet ud, ved hjælp af standard formelen for vektorudregning. Disse værdier bliver tilføjet til en ny liste. \textbf{Henvisning}
+Herefter bliver amplituderne regnet ud, ved hjælp af standard formelen for vektorudregning. Disse værdier bliver tilføjet til en ny liste. Dette ses på figur 6.5 nedefor.
 
 \begin{figure}[H]
 	\centering
@@ -78,7 +78,7 @@ Herefter bliver amplituderne regnet ud, ved hjælp af standard formelen for vekt
 	\caption{Kode udsnit af analyse implementering}
 \end{figure}
 
-Efterfølgende bliver arrayet udspecificeret til kun, at indeholde de pladser, som repræsenterer amplituderne for det valgte frekvensspektrum. \textbf{Henvisning til figur} 
+Efterfølgende bliver arrayet udspecificeret til kun, at indeholde de pladser, som repræsenterer amplituderne for det valgte frekvensspektrum. Se figur 6.6 for dette udsnit af koden.  
 
 \begin{figure}[H]
 	\centering
@@ -86,7 +86,7 @@ Efterfølgende bliver arrayet udspecificeret til kun, at indeholde de pladser, s
 	\caption{Kode udsnit af analyse implementering}
 \end{figure}
 
-Disse værdier bliver derefter tjekket for, om de indeholder en amplitude, som ligger over tærskelværdien. Hvis dette er tilfældet, returnerer metoden ’true’, hvilket repræsenterer, at det er rigtigt, at denne patienten kan have atrieflimren. Hvis der ikke findes en værdi, som er højere end tærsklen, returnerer metoden ’false’, hvilket repræsenterer, at patienten ikke har atrieflimren. \textbf{henvisning til figur} 
+Disse værdier bliver derefter tjekket for, om de indeholder en amplitude, som ligger over tærskelværdien. Hvis dette er tilfældet, returnerer metoden ’true’, hvilket repræsenterer, at det er rigtigt, at denne patienten kan have atrieflimren. Hvis der ikke findes en værdi, som er højere end tærsklen, returnerer metoden ’false’, hvilket repræsenterer, at patienten ikke har atrieflimren. Dette kan ses på figur 6.7. 
 
 \begin{figure}[H]
 	\centering
@@ -99,7 +99,7 @@ Tærskelværdien er blev fundet ud fra testprogrammet, som der kan læses yderli
 
 \subsection{Test}
 I dette projekt er der hverken lavet modul eller integrationstest. I stedet er koden blevet testet efterhånden, som metoder er blevet færdiggjort. Det er også på denne måde, at gruppen har kunnet tjekke, at metoderne ikke melder fejl, eller får systemet til at bryde sammen. \\ \\
-Metoden "KørEKG" kan give et eksempel på hvordan forløbet har været. "KørEKG" er en essentiel del af koden, og det var derfor vigtigt, at den fungerede fra starten af. Her blev den estimerede kode først skrevet, og derefter blev der kørt et EKG for at se, om grafen kom frem. Dette gjorde den ikke i første omgang, og der blev derfor tilføjet en linje kode, som henter den maksimale volt, som kommer igennem Analog Discovery. \textbf{og hva så?? Virkede det så?}
+Metoden "KørEKG" kan give et eksempel på hvordan forløbet har været. "KørEKG" er en essentiel del af koden, og det var derfor vigtigt, at den fungerede fra starten af. Her blev den estimerede kode først skrevet, og derefter blev der kørt et EKG for at se, om grafen kom frem. Dette gjorde den ikke i første omgang, og der blev derfor tilføjet en linje kode, som henter den maksimale volt, som kommer igennem Analog Discovery, og det blev derefter en succes. \textbf{og hva så?? Virkede det så?}
 
 \section{Resultater og diskussion}
 Kravene til dette projekt er at afbilde, analysere og gemme EKG-signaler fra virtuelle patienter. Alt dette er lykkes. \\ 
