@@ -6,7 +6,7 @@
     1.0 &    18-03-2015 &    LSB, AJF og MFJ &    Påbegyndt tilrettelse af UC1 og UC2, aktør-kontekst samt funktionellekrav i forhold til den valgte sygdom, Atrieflimren\\
     1.1 &	26-03-2015  &    LSB, AJF, MFJ og CAA &    KS er færdigskrevet og klar til review\\
     2.0 &    09-04-2015 &    LSB, AJF, MFJ og CAA &    Rettet i forhold til review-kommentarer\\
-    Tekst &    Tekst &    Tekst &    Tekst.\\
+    3.0	&	17-05-2015 & CAA & Rettet til i forhold til udførelse af accepttesten\\ 
 \label{version_Systemark}
 \end{longtabu}
 
@@ -26,7 +26,7 @@ De funktionelle krav vil nedenstående beskrives ud fra Aktør-kontekstdiagram, 
 	\label{fig:aktoerbeskrivelse}
 \end{figure}
 
-Data hentes ned fra den ekstern aktør, Physionet. Via Analog-discovery omdannes csv-filens data til et analogt signal, som derefter omdannes til et digitalt signal i DAQ'en. Dette signal sendes til EKG-systemet, som ud fra disse data danner en graf. Programmet detekterer markørudsving i EKG-grafen, som derefter valideres og analyseres af brugeren.
+Data hentes ned fra den ekstern aktør, PhysioNet. Via Analog-discovery omdannes csv-filens data til et analogt signal, som derefter omdannes til et digitalt signal i DAQ'en. Dette signal sendes til EKG-systemet, som ud fra disse data danner en graf. Programmet detekterer markørudsving i EKG-grafen, som derefter valideres og analyseres af brugeren.
 
 \subsection{Aktørbeskrivelse}
 
@@ -34,11 +34,11 @@ Data hentes ned fra den ekstern aktør, Physionet. Via Analog-discovery omdannes
 \begin{tabularx}{\textwidth}{l l X}
      Aktørnavn  & Type      & Beskrivelse \\ \midrule
      Bruger   & Primær    & Brugeren er den aktør, der ønsker at foretage målingerne, som omfatter EKG samt diagnosticering af artieflimmer. Brugeren er en person, der har kendskab til EKG-systemet. Fx sundhedsfaglig personale \\ 						  									  \addlinespace[2mm]
-     Analog-discovery & Sekundær  & Analog-discovery omdanner data fra den eksterne aktør, physionet, til et analog signal \\ 
+     Analog-discovery & Sekundær  & Analog-discovery omdanner data fra den eksterne aktør, PhysioNet, til et analog signal \\ 
      	\addlinespace[2mm]
      DAQ & Sekundær  & DAQ'en omdanner det analoge signal fra analog-discovery til et digitalt signal, som EKG-systemet kan generere en graf ud fra  \\ 
      	\addlinespace[2mm]
-     Physionet & Ekstern 	& Physionet er en database, hvor der ligger mange forskellige EKG-signaler. Det er ud fra disse EKG-signaler, virtuelle patienter skabes.\\	                                                                                                                                                                           
+     PhysioNet & Ekstern 	& PhysioNet er en database, hvor der ligger mange forskellige EKG-signaler. Det er ud fra disse EKG-signaler, virtuelle patienter skabes.\\	                                                                                                                                                                           
    
      \bottomrule                                                                                                                   
     \end{tabularx}
@@ -49,14 +49,14 @@ Data hentes ned fra den ekstern aktør, Physionet. Via Analog-discovery omdannes
 
 \subsection{Use case-diagram}
 
-\begin{figure}[htb]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Figurer/Snip20150518_11}
 	\caption{Use case-diagram}
 	\label{fig:Use Cases}
 \end{figure}
 
-Brugeren, den primære aktør, bliver bedt om sit log ind, inden EKG-vinduet vises. Brugeren vælger indstillinger og trykker på "start"-knappen. EKG-dataerne fra den eksterne aktør, Physionet, behandles i Analog-discovery samt i DAQ'en, den sekundære aktør, hvor efter data vises som en EKG-graf i EKG-vinduet. Brugeren kan ud fra denne graf evaluere EKG-signalet i forhold til at diagnosticere atrieflimmer. Brugeren gemmer EKG-målingen i databasen og logger ud. 
+Brugeren, den primære aktør, bliver bedt om sit log ind, inden EKG-vinduet vises. Brugeren vælger indstillinger og trykker på "start"\--knappen. EKG-dataerne fra den eksterne aktør, PhysioNet, behandles i Analog-discovery samt i DAQ'en, den sekundære aktør, hvor efter data vises som en EKG-graf i EKG-vinduet. Brugeren kan ud fra denne graf evaluere EKG-signalet i forhold til at diagnosticere atrieflimmer. Brugeren gemmer EKG-målingen i databasen og logger ud. 
 
 \subsection{Use Cases}
 
@@ -89,7 +89,7 @@ Brugeren, den primære aktør, bliver bedt om sit log ind, inden EKG-vinduet vis
     Primær aktør &&    Brugeren\\
     Sekundær aktør &&	Analog-discovery\\
     Sekunær aktør &&	DAQ\\
-    Ekstern aktør &&	Physionet\\
+    Ekstern aktør &&	PhysioNet\\
     Initialisere &&    Brugeren ønsker at foretage en EKG-måling\\
     Forudsætninger &&    Brugeren er logget ind og EKG-vinduet er vist samt Analog-discovery og DAQ'en er koblet til og data er hentet ned\\
     Resultat &&    EKG-graf bliver vist           \\ \midrule
@@ -142,6 +142,7 @@ Brugeren, den primære aktør, bliver bedt om sit log ind, inden EKG-vinduet vis
 \caption{Fully dressed Use Case 4.}
 \label{UC4}
 \end{longtabu}
+
 
 \begin{longtabu} to \linewidth{@{}l r X[j]@{}} %UC5%
     {\large \textbf{Use Case 5}} && \\

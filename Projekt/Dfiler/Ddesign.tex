@@ -17,7 +17,7 @@
 Formålet med design afsnittet er at beskrive hardwaren og softwaren for EKG-systemet. Det beskrives vha.  diagrammer og skitser som tydeligør, hvordan de forskellige klassers funktionalitet er, og hvordan klasserne snakker sammen.
   
 \section{Hardware arkitektur}
-I dette projekt er hardwaren blevet udleveret, derfor vil hardware arkitekturen ikke blive beskrevet ned i mindste detalje, men derimod kun hardwarens overordnede funktion. Hardwaren for systemet består af en National Instruments DAQ og en signalgenerator fra Analog Discovery. Disse er begge forbundet til en computer via USB-porte.
+I dette projekt er hardwaren blevet udleveret, derfor vil hardware arkitekturen ikke blive beskrevet ned i mindste detalje, men derimod kun hardwarens overordnede funktion. Hardwaren for systemet består af en National Instruments DAQ og en signalgenerator fra Analog-discovery. Disse er begge forbundet til en computer via USB-porte.
 \\ 
 I dette projekt bliver EKG-signalet ikke målt fysisk via en patient, men simuleret via et signal, som er hentet ned fra websiden PhysioNet \footnote{http://www.physionet.org}. 
 
@@ -30,7 +30,7 @@ I dette projekt bliver EKG-signalet ikke målt fysisk via en patient, men simule
 Som det ses på den overstående figur, er hardware opstillingen meget simpel. Figur 3.1 viser, hvordan de forskellige komponenter relaterer til hinanden. Display hardwaren vil i dette projekt være en computer, hvilket er et krav fra softwarens side, således at der kan vises et EKG-signal i form af en graf.
 \\
 \\  
-Som beskrevet ovenfor er det Analog Discovery, som sammen med EKG-signalets informationer fra PhysioNet, der skaber den fiktive patient. Før EKG-signalet vises på computerens skærm, skal det igennem de forskellige komponenter i opstillingen. Analog Discovery modtager EKG-signalets  information som en CSV-fil, denne fil omdanner Analog Discovery til et analogt signal, som herefter sendes videre til DAQ’en. I DAQ’en digitaliseres det analoge signal, og tilpasses, så det efterfølgende kan udskrives på computer skærmen, i form af en EKG-graf. 
+Som beskrevet ovenfor er det Analog-discovery, som sammen med EKG-signalets informationer fra PhysioNet, der skaber den fiktive patient. Før EKG-signalet vises på computerens skærm, skal det igennem de forskellige komponenter i opstillingen. Analog-discovery modtager EKG-signalets  information som en CSV-fil, denne fil omdanner Analog-discovery til et analogt signal, som herefter sendes videre til DAQ’en. I DAQ’en digitaliseres det analoge signal og tilpasses, så det efterfølgende kan udskrives på computer skærmen, i form af en EKG-graf. 
 
 \subsection{Grænseflader}
 Grænseflader af forbindelserne imellem de forskellige dele af hardwaren. 
@@ -41,9 +41,9 @@ Grænseflader af forbindelserne imellem de forskellige dele af hardwaren.
      \textbf{Forbindelse}   & \textbf{Signaltype} & \textbf{Funktionalitet}    \\ \midrule
      DAQ - Computer         & Digital & DAQ'en konverterer det analoge signal til digitalt og videresender det til 							  computeren. Informationen sendes begge veje. \\ 
      					      \addlinespace[2mm]                                                                                                                                                                            
-     Computer - Analog Discovery			& Digital & Computeren simulerer et EKG-signal og sender det til Analog Discovery.\\ 
+     Computer - Analog-discovery			& Digital & Computeren simulerer et EKG-signal og sender det til Analog-discovery.\\ 
      				    	  \addlinespace[2mm]   				                                                                                                                                                                           
-     Analog Discovery - DAQ			   	& Analog & Analog Discovery	 konverterer signalet fra digitalt til analogt og videresender det til 							      DAQ'en.\\  				      
+     Analog Discovery - DAQ			   	& Analog & Analog-discovery	 konverterer signalet fra digitalt til analogt og videresender det til 							      DAQ'en.\\  				      
     \bottomrule                                                                                                                   
     \end{tabularx}
     \caption {Beskrivelse af grænseflader.}
@@ -202,10 +202,10 @@ De opdateret klassediagrammer indeholder metoderne fra de dertilhørende  sekven
 \end{figure}
 
 \section{Software implementering}
-I dette afsnit vil ideen samt overvejelserne bag analysen af atrieflimren beskrives. Analysen fungere via et testprogram, som også her beskrives. Der vil være billeder, der understøtter og er forklarende til beskrivelsen. Kravene til programmet i forhold til at afbilde og gemme EKG-måling vil også i dette afsnit beskrives. 
+I dette afsnit vil ideen samt overvejelserne bag analysen af atrieflimren beskrives. Informationerne i analysen er bestemt via et testprogram, som også her beskrives. Der vil være billeder, der understøtter og er forklarende. Kravene til programmet i forhold til at afbilde og gemme EKG-måling vil også blive beskrevet i dette afsnit. 
 
 \subsection{Visning af EKG-signal}
-Grafen bliver genereret ved hjælp af en metode i logiklaget. Denne metode, "KørEKG", sætter de nødvendige forudsætninger for, at hardwaren bliver trigget til at starte en måling. Der bliver oprettet en ny sekvens, og herefter bliver navnet på enheden, samt den spænding, der kommer sat. Metoden returnerer herefter den måling, der bliver fortaget. Metoden kan ses på figur 3.19.
+Grafen bliver genereret ved hjælp af en metode i logiklaget. Denne metode, "KørEKG", sætter de nødvendige forudsætninger for, at hardwaren bliver trigget til at starte en måling. Der bliver oprettet en ny sekvens, og herefter bliver navnet på enheden, samt den spænding der kommer, sat. Metoden returnerer herefter den måling, der bliver fortaget. Metoden kan ses på figur 3.19.
 
 \begin{figure}[H]
 	\centering
@@ -226,10 +226,10 @@ Målingen bliver lagt over i en liste. Herefter køres alle punkter i målingen 
 
 \subsection{Analyse}
 Denne analyse er ikke bygget op omkring den grundlæggende definition af atrieflimren, altså at atrieflimren viser sig ved små fluktuationer på baselinen. Analysen er i stedet bygget op omkring informationen, om at amplituden i et bestemt frekvensområde vil være forhøjet, hvis der er mulighed for atrieflimren. \\ \\
-Analysen af EKG’et består grundlæggende af tre for-løkker. \\ \\
-Før analysen kan gå i gang, kræver det dog at den aktuelle EKG-sekvens bliver lavet om til et Furier-transformeret komplekst array. Her skal der bruges et bibliotek som indeholder metoder, som gør, at der kan bruges komplekst matematik i softwaren. Dette sker ved hjælp af en metode fra biblioteket alglibnet2. \\ \\
+Analysen af EKG-signalet består grundlæggende af tre for-løkker. \\ \\
+Før analysen kan gå i gang, kræver det dog, at den aktuelle EKG-sekvens bliver lavet om til et Furier-transformeret og komplekst array. Her skal der bruges et bibliotek som indeholder metoder, som gør, at der kan bruges komplekst matematik i softwaren. Dette sker ved hjælp af biblioteket alglibnet2. \\ \\
 Herefter indeholder det komplekse array vektor-koordinator, som repræsenterer amplituden for alle frekvenser i signalet. I den første for-løkke, findes længden for alle vektorer en for en, og indsættes i listen amplitude. \\ \\
-Da det er bevist, at atrieflimren viser sig ved forhøjet signalamplitude i frekvensspekteret 300 Hz til 400 Hz, er det der, softwaren skal tjekke om amplituden ligger over tærsklen. Før selve amplitudetærsklen kan vurderes, kræves det dog, at pladserne matchende frekvensspekteret, findes.\textbf{Omformuleres.} Måden de er fundet, er gjort rede for, i afsnittet omkring testprogrammet. \\ \\
+Da det er bevist, at atrieflimren viser sig ved forhøjet signalamplitude i frekvensspekteret 300 Hz til 400 Hz, er det der, softwaren skal tjekke om amplituden ligger over tærsklen. Før selve amplitudetærsklen kan vurderes, kræves det dog, at pladserne, der matcher det pågældende frekvensspekter, findes. Måden de er fundet, er gjort rede for, i afsnittet omkring testprogrammet. \\ \\
 I den næste løkke bliver de pladser, tilsvarende det valgte frekvensspektrum, lagt over i en liste for sig. Dette sker, fordi analysen kun er interesseret i de amplituder, som ligger i frekvensspektrummet, og det ville derfor være unødvendigt at kigge på samtlige 3600 amplituder, som er at finde i amplitude listen. Derfor ligges de udvalgte pladser i amplitudelisten over i endnu en liste, som indeholder de endelige amplitude-resultater for frekvensspektrummet i det aktuelle EKG-signal. \\ \\
 Endelig bliver der i den sidste for-løkke vurderet om, hvorvidt amplituden i frekvensspekteret er højere end den valgte tærskel. \\ \\
 Det skal nævnes, at denne analyse ikke passer på alle EKG-signaler. Dette er der to grunde til. Den ene er, at atrieflimren kan forme et signal på mange forskellige måder. Det vil derfor være svært at lave en analyse, som vil kunne dække over alle signaler. Den anden ting er, at alle mennesker er forskellige. Vores hjerterytmer kan have forskellige baselines, og vil derfor ligge forskelligt spændingsmæssigt. 
@@ -277,7 +277,7 @@ Opsætning til den offentlige database sker ved, at navnet til databasen erklær
 	\caption{Kode udsnit fra lagring i database}
 \end{figure}
 
-Metoden "GemEKGDATA" gemmer patientens data i den offentlige database. De data som en patient har, kan ses som parametre i metoden. Disse data bliver lagt ind i de tilhørende kolonner i tabellen EKGDATA. Der er valgt én parameter til at demonstrere indsætning af en patients data i tabellen. De resterende parameter behandles tilsvarende. Se figur 3.25. 
+Metoden "GemEKGDATA"\  gemmer patientens data i den offentlige database. De data som en patient har, kan ses som parametre i metoden. Disse data bliver lagt ind i de tilhørende kolonner i tabellen EKG\_Data. Der er valgt én parameter til at demonstrere indsætning af en patients data i tabellen. De resterende parameter behandles tilsvarende. Se figur 3.25. 
 
 \begin{figure}[H]
 	\centering
@@ -285,7 +285,7 @@ Metoden "GemEKGDATA" gemmer patientens data i den offentlige database. De data s
 	\caption{Kode udsnit fra lagring af database}
 \end{figure}
 
-Tabellen EKGMAELING behandles på samme måde som tabellen EKGDATA. 
+Tabellen EKG\_måling behandles på samme måde som tabellen EKG\_Data. 
 
 \subsubsection{Privat database}
 Gruppens database indeholder tabellerne login, måling og patient. Indsættelsen af data er foretaget manuelt dvs. uden brug af SQL-kode. I figur 3.26 ses en skitse af patient-tabellen. 
@@ -304,7 +304,7 @@ Forbindelsen til denne databaseserver oprettes som tideligere eksempel, med den 
 	\caption{Kode udsnit af privat databse}	
 \end{figure}
 
-SQL-koden i metoden "getKode" går ind tabellen "Login" og vælger en kode, som tilhører et bestemt navn. Hvis koden matcher det tilhørende navn, så returner den det ønskede navn og kode, se figur 3.28.   
+SQL-koden i metoden "getKode"\  går ind tabellen "Login"\  og vælger en kode, som tilhører et bestemt navn. Hvis koden matcher det tilhørende navn, så returner den det ønskede navn og kode, se figur 3.28.   
 
 \begin{figure}[H]
 	\centering
@@ -312,7 +312,7 @@ SQL-koden i metoden "getKode" går ind tabellen "Login" og vælger en kode, som 
 	\caption{Kode udsnit af privat database}
 \end{figure}
 
-De resterende SQL-koder for tabellen "patient" og "måling" i datalaget medtages ikke her, grundet deres sammenlignelighed med den overstående beskrivelse. Nærmere beskrivelse henvises til \textbf{hvor er det nærmere beskrevet, hvilket henvisning.} 
+De resterende SQL-koder for tabellen "patient" og "måling" i datalaget medtages ikke her, grundet deres sammenlignelighed med den overstående beskrivelse. Nærmere beskrivelse henvises til koden i bilag.
 
 
 
