@@ -37,7 +37,7 @@ Softwaren er bygget op i henhold til trelagsmodellen, hvor GUI’erne fungerer s
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{Figurer/Snip20150512_9}
+	\includegraphics[width=0.9\textwidth]{Figurer/Snip20150527_29}
 	\caption{UML-klassediagram}
 \end{figure}
  
@@ -98,12 +98,12 @@ Tærskelværdien er blev fundet ud fra testprogrammet, som der kan læses yderli
 
 \subsection{Test}
 I dette projekt er der hverken lavet modul eller integrationstest. I stedet er koden blevet testet efterhånden, som metoder er blevet færdiggjort. Det er også på denne måde, at gruppen har kunnet tjekke, at metoderne ikke melder fejl, eller får systemet til at bryde sammen. \\ \\
-Metoden "KørEKG" kan give et eksempel på hvordan forløbet har været. "KørEKG" er en essentiel del af koden, og det var derfor vigtigt, at den fungerede fra starten af. Her blev den estimerede kode først skrevet, og derefter blev der kørt et EKG for at se, om grafen kom frem. Dette gjorde den ikke i første omgang, og der blev derfor tilføjet en linje kode, som henter den maksimale volt, som kommer igennem Analog Discovery, og det blev derefter en succes. \textbf{og hva så?? Virkede det så?}
+Metoden "KørEKG"\  kan give et eksempel på hvordan forløbet har været. "KørEKG"\  er en essentiel del af koden, og det var derfor vigtigt, at den fungerede fra starten af. Her blev den estimerede kode først skrevet, og derefter blev der kørt et EKG for at se, om grafen kom frem. Dette gjorde den ikke i første omgang, og der blev derfor tilføjet en linje kode, som henter den maksimale spænding, som kommer igennem Analog-discovery, og det blev derefter en succes. 
 
 \section{Resultater og diskussion}
 Kravene til dette projekt er at afbilde, analysere og gemme EKG-signaler fra virtuelle patienter. Alt dette er lykkes. \\ 
-Før det er muligt at starte en måling, skal man igennem et Login-vindue samt et CPR-vindue, hvor man indtaster den virtuelle patients CPR-nummer. Når login og CPR-nummeret til blevet godkendt vises EKG-vinduet, som er vinduet, hvor programmet køres fra. \\ \\
-Ved tryk på "Start ny måling" går der X-antal sekunder og EKG-signalet bliver afbildet som en graf. Se figur 6.8. 
+Før det er muligt at starte en måling, skal man igennem et Login-vindue samt et CPR-vindue, hvor man indtaster den virtuelle patients CPR-nummer. Når login og CPR-nummeret er blevet godkendt vises EKG-vinduet, som er vinduet, hvor programmet køres fra. \\ \\
+Ved tryk på "Start ny måling"\  går der x-antal sekunder og EKG-signalet bliver afbildet som en graf. Se figur 6.8. 
 
 \begin{figure}[H]
 	\centering
@@ -111,7 +111,7 @@ Ved tryk på "Start ny måling" går der X-antal sekunder og EKG-signalet bliver
 	\caption{Visning af EKG-signal samt analyse af sundt EKG-signal}
 \end{figure}
 
-Når EKG-grafen vises i EKG-vinduet har programmet også analyseret EKG-signalet i forhold til atrieflimren. Hvis EKG-signalet er normalt skriver programmet "Sundt EKG" under Resultat, se figur 6.8. Hvis EKG-signalet afviger fra standardværdierne (se under 3.2) skriver programmet "Tjek for Atrieflimmer!!", se figur 6.9. 
+Når EKG-grafen vises i EKG-vinduet har programmet også analyseret EKG-signalet i forhold til atrieflimren. Hvis EKG-signalet er normalt skriver programmet "Sundt EKG"\  under Resultat, se figur 6.8. Hvis EKG-signalet afviger fra standardværdierne (se under 3.2) skriver programmet "Tjek for Atrieflimmer!!", se figur 6.9. 
 
 \begin{figure}[H]
 	\centering
@@ -141,19 +141,18 @@ I den offentlige database er der to tabeller. Den ene hedder EKG\_Data, hvor den
 	\caption{Lagring af målingens data i offentlig database}
 \end{figure}
 
-Med hensyn til visningen af målingen, kunne der godt have været et mere præcis gitter, således at brugeren nemmere kunne aflæse ud fra grafen om patienten har atrieflimren. Det kan godt lade sig gøre at aflæse på nuværende tidspunkt, men det er mindre præcis, da ternene ikke er kvadratiske.
+Med hensyn til visningen af målingen, kunne der godt have været et mere præcist gitter, således at brugeren nemmere kunne aflæse ud fra grafen om patienten har atrieflimren. Det kan godt lade sig gøre at aflæse på nuværende tidspunkt, men det er mindre præcist, da ternene ikke er kvadratiske.
 
 Det har ikke været muligt at gøre analysen så præcis, at den kunne detektere atrieflimren helt præcist, men derimod gør den brugeren opmærksom på, at der er en anormalitet i forhold til et normalt EKG-signal. Analysen kunne ikke gøres præcis, da der findes mange forskellige typer af EKG-signaler, der repræsenterer atrieflimren, som følge af, at mennesker er forskellige.
 
-Da det kom sent ud, at der skulle kunne gemmes i en offentlig database, er flere af værdierne blev fravalgt pga. tidspres. Dog kunne der have været indskrevet nogle flere værdier, således at f.eks. patientens CPR-nummer og navn kunne lægges ind og gemmes i tabellen EKG\_Data.
+Da det kom sent ud, at der skulle kunne gemmes i en offentlig database, er flere af værdierne blev fravalgt. Dog kunne der have været indskrevet nogle flere værdier, således at f.eks. patientens CPR-nummer og navn kunne lægges ind og gemmes i tabellen EKG\_Data.
 
-I kapitel 4 i dokumentationen kan resultatet af accepttesten læses. 
+I kapitel 4 i dokumentationen kan resultatet af accepttesten læses.
 
+Projektet har krævet, at det har været nødvendigt at opsøge viden ud over pensum. Eksempelvis er der brugt BLOB, som er benyttet til gemme-funktionen i den private- og offentlige database. Ydermere er der brugt et matematikbibliotek, alglibnet2, til udarbejdelse af analyse.
 
-\section{Opnået erfaringer}
-
-VI SKAL HAVE NOGET OM HVAD GRUPPEN TILSAMMEN HAR OPNÅET - BARE KORT. 
-
+\section{Opnåede erfaringer}
+Gruppen har opnået stor erfaring i forhold til at koble fagene sammen, dette gælder i særhed programmering og ISE. Arbejde med metoderne fra fagene, har givet erfaringer i til at bruge teorien i praksis. Desuden har der været stor fokus på udarbejdelse og opbygning af rapport samt dokumentation og de tilhørende logbog og mødereferater. 
 
 \textbf{Lise Skytte Brodersen}\\
 
@@ -169,6 +168,11 @@ Selve emnet har været meget relevant, og det har givet en del erfaring til arbe
 Projektet er blevet fuldført, men jeg synes, at vi kun lige har fuldført den. Vi havde mange gode ideer, da vi startede, men det mundede ud i, at vi kun fik lavede det mest nødvendige. Til næste projekt kunne jeg godt tænke mig, da der blev arbejdet lidt mere fokuseret, og at der blev stillet lidt højere krav indenfor gruppen.
 
 \textbf{Mohammed Hussein Mohamed}\\
+Det er lykkes at udvikle et software produkt, der kan afbillede, detektere atrieflimren samt gemme et EKG-signal i en privat database oprette af gruppen og i en offentlig database, som er udleveret af vejlederen. Som forventet bliver der brugt en del tid på, hvordan designet til softwaren skulle se ud og hvad for nogen use cases, som er relevant at have med. Ambitionerne var høje og ideerne fejlede ikke noget i starten, men undervejs under projektet har vi droppet et par funktioner som vores software burde have, da vi ikke kunne opfylde det pga. vores begrænsede viden på området.
+Vi har delt os i to større grupper som hver havde deres ansvarsområde. Den ene gruppe designede og programmerede og den anden gruppe lavede system og use case beskrivelse arkitektur. Jeg var en del af den gruppe, der programmerede. Derfor var det mest af det jeg har været med og ikke så meget til rapportskrivning. Stemning i gruppen har været fint og jeg har oplevet at alle har bidraget med det de kunne.
+Den tværfaglige viden i dette semesterprojekt er ifølge mig kommet til udtryk. Det vi har lært i de forskellige fag kunne direkte anvendes sammenlignet med sidste semesterprojekt, hvor den tværfaglig ikke var så tydelig. Dette har efter min mening været interessant. Jeg var især begejstret for faget ISE og hvordan faget havde så meget relevans i semesterprojektet.
+Måden vi har arbejdet med dette projekt kunne ligne, hvordan man arbejder ud i den virkelige verden, altså at kunne udvikle et produkt i samarbejde med en kunde, hvor kunden og udvikleren af produktet stiller krav til produktet. Undervejs kan kunden ændre krav og udvikleren må herefter indstille sig på disse nye krav. Dette scenarie blev vi testet i på dette semesterprojekt. Vejlederen har i slutningsfasen af semesterprojektet ændret lidt på kravene, hvor vi fik udleveret en offentlige database som vores målinger og data skulle gemmes.  Heldigvis krævede det ikke megen kode og tid, men gruppen var ikke begejstret for den sene udmelding fra vejlederen uden at flytte deadline for projektets færdiggørelse.
+Overordnet set har dette projekt været fint og lærerigt. 
 
 \textbf{Sara-Sofie Staub Kirkeby}\\
 I dette projekt, har jeg primært arbejdet med det programmeringsmæssige aspekt. Personligt, syntes jeg det har været en anelse frustrerende, da der i den sammenhæng, er dukket nogen ting op, som ikke har været en del af vores undervisning, i dette semester. Det har krævet meget tænkning ud af boksen. Dette har selvfølgeligt også gjort, at vi har været tvunget til, at lære os selv, yderligere ting. \\
@@ -190,9 +194,9 @@ Men alt i alt synes jeg, det har været en god oplevelse at lave dette projekt. 
 
 \section{Fremtidigt arbejde}
 Som følge af at projektet er tiltænkt som en prototype, er der løbende gennem projektudførelsen opstået en masse muligheder og idéer for videreudvikling af systemet. \\\\
-Den første helt basale idé, som også er forsøgt udført sideløbende i projektet, er etablering af en "opret ny patient"\--funktion. Funktionen skal muliggøre, at brugeren kan oprette en ny patient i systemet, i forbindelse med indtastning af patientens CPR-nummer. Funktionen skal fungere således, at hvis ikke det indtastede CPR-nummer i forvejen er kendt i systemet, skal skridtet efter CPR-vinduet være et nyt "Opret Patient"\--vindue. Her skal brugeren kunne indtaste relevante oplysninger omkring patienten, og til slut oprette patienten i både den private- og offentlige database.\\\\
+Den første helt basale idé, som også er forsøgt udført sideløbende i projektet, er etablering af en "opret ny patient"\--funktion. Funktionen skal muliggøre, at brugeren kan oprette en ny patient i systemet i forbindelse med indtastning af patientens CPR-nummer. Funktionen skal fungere således, at hvis ikke det indtastede CPR-nummer i forvejen er kendt i systemet, skal skridtet efter CPR-vinduet være et nyt "Opret Patient"\--vindue. Her skal brugeren kunne indtaste relevante oplysninger omkring patienten, og til slut oprette patienten i både den private- og offentlige database.\\\\
 Et ideelt område til videreudvikling er brugervenlighed, både på software plan og i særhed på hardware plan.\\
 Software kan udvikles i en retning, hvor det bliver lettere og mere overskueligt for brugeren, at analysere og evaluere EKG-signalet. En forbedring ville være, at der skal være mulighed for at trække en eller flere x- og y-cursors ned over EKG-signalet, og dermed få vist amplitude, tid og relevante intervaller. Herefter kunne en mulighed være, at de observerede værdier kunne gemmes som tilhørende tekst til det specifikke EKG-signal. \\
-Sideløbende, imens EKG-målingen foretages, vil det være muligt, at have direkte adgang til den pågældende patients sygejournal. Adgangen til sygejournalen skal kunne læses i en et andet vindue, som er synligt samtidig med EKG-vinduet arbejder, hvorefter det er muligt at skifte mellem disse vinduer, og tilføje ændringer, notater etc. i journalen. Med andre ord skal systemet understøtte EPJ.\\ \\
+Sideløbende, imens EKG-målingen foretages, vil det være muligt, at have direkte adgang til den pågældende patients sygejournal. Adgangen til sygejournalen skal kunne læses i et andet vindue, som er synligt samtidig med EKG-vinduet arbejder, hvorefter det er muligt at skifte mellem disse vinduer, og tilføje ændringer, notater etc. i journalen. Med andre ord skal systemet understøtte den elektroniske patient journal.\\ \\
 Den endelige udgave af softwaren skal implementeres på et mere brugervenligt interface, eksempelvis en tablet eller lignende. Samtidig kan systemet være tilknyttet en håndholdt EKG-måler, i form af en holter, hvorefter softwaren aflæser data, og udskriver på tabletten.\\ Desuden skal det være muligt for brugeren at vælge indstillinger alt efter, hvad der ønskes analyseres for. Prototypen er kun tilpasset analyse for atrieflimren, men med det endelige produkt skal være muligt at kunne vælge undersøgelse for eksempelvis andre hjertesygdomme. De forskellige undersøgelser skal derudover også kunne mixes på kryds og tværs, hvis patienten har blandede symptomer, således at der søges for flere sygdomme. Dette vil medføre, at brugeren kan tage udstyr med sig på hjemmebesøg, såvel som at patienten selv kan foretage en måling.
 
