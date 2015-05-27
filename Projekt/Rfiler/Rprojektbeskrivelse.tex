@@ -1,7 +1,7 @@
 \chapter{Projektbeskrivelse}
 
 \section{Projektgennemførelse}
-Projektet startede med, at der blev lavet en tidsplan, som var mulig at ændre undervejs, dog med faste deadlines, som skulle overholdes. De forskellige deadlines lagde op til, at der kunne arbejdes efter vandfaldsmodellen, hvilket dette projekt følger, se figur 6.1. Vandfaldsmodellen går ud på, at der først stilles nogle krav til produktet. Derefter designes produktet på papiret, hvor udseende og kunnen beskrives. Efterfølgende implementeres produktet ud fra krav og design. Til slut udføres accepttest, hvor der testes i forhold til de funktionelle og ikke-funktionelle krav, der er stillet til produktet.
+Projektet startede med, at der blev lavet en tidsplan, som var mulig at ændre undervejs, dog med faste deadlines, som skulle overholdes. De forskellige deadlines lagde op til, at der kunne arbejdes efter vandfaldsmodellen, hvilket dette projekt følger, se figur 6.1. Vandfaldsmodellen går ud på, at der først stilles nogle krav til produktet. Derefter designes produktet på papiret, hvor udseende og kunnen beskrives. Efterfølgende implementeres produktet ud fra krav og design. Til slut udføres en accepttest, hvor der testes i forhold til de funktionelle og ikke-funktionelle krav, der er stillet til produktet.
 
 \begin{figure}[H]
 	\centering
@@ -16,34 +16,33 @@ Projektgruppen har været på 8 medlemmer, som er blevet delt ind i 2 grupper. D
 Dette afsnit har til formål at beskrive hvilke metoder, der er benyttet i udarbejdelsen af projektet. Primært er der tale om metoder fra faget ISE samt Sundhedsvidenskab.\\ 
 Desuden bliver der i dette afsnit også beskrevet hvilke arbejdsredskaber, der er benyttet til udførelse af projektet, rapporten og dokumentationen.\\ \\
 Til beskrivelse samt opbygning af EKG-systemet er der fra ISE benyttet metoden SysML. SysML er en metode, der vha. digrammer analyserer, specificerer, designer og verificerer et givet system. Altså er metoden benyttet til at beskrive systemets opbygning og kommunikationen. \\ 
-Yderligere er der en applikationsmodel, hvor et samlet overblik over systemet er beskrevet. Denne model består af en domænemodel, hvor alle aktiviteterne i systemet er beskrevet samt tilhørende klassediagrammer med metoder fra SD. SD beskriver systemets virkning og hvordan de enkelte dele interagerer, hvilket er specifik for hver enkelt use case.\\ 
-Softwaren er beskrevet gennem metoden UML, helt specifikt ved et UML klassediagram. Klassediagrammet viser, hvilke klasser og metoder al softwaren (med undtagelse af blackbox) består af samt, hvordan systemet er bygget op efter trelagsmodellen.\\
+Yderligere er der en applikationsmodel, som giver samlet overblik over systemet. Denne model består af en domænemodel, hvor alle aktiviteterne i systemet er beskrevet samt tilhørende klassediagrammer med metoder fra sekvensdiagrammer. SD beskriver systemets virkning, og hvordan de enkelte dele interagerer, hvilket er specifikt for hver enkelt use case.\\ 
+Softwaren er beskrevet gennem metoden UML, helt specifikt ved et UML klassediagram. Klassediagrammet viser, hvilke klasser og metoder al softwaren (med undtagelse af blackbox) består af, samt hvordan systemet er bygget op efter trelagsmodellen.\\
 Baggrundsafsnittet, afsnit 3, er udarbejdet ved tekstanalyse og kildekritik, ud fra sundhedsvidenskabelige bøger.\\ \\
 Af benyttede arbejdsredskaber er der først og fremmest brugt en fælles arbejdsplatform, GitHub. GitHub er en online platform, hvor der er mulighed for at foretage ændringer samtidigt, og gemme i en fælles mappe. Yderligere er der mulighed for en detaljeret versionshistorik.\\
-Alle SysML- og UML-diagrammer er udarbejdet i programmet Visio. Koden er skrevet i sproget c\#, i programmet Visual Studio. Visual Studio spiller også sammen med programmet WaveForms generator, i forbindelse med simulering af EKG-signalet. Selve rapporten, mødereferater, logbog og dokumentationen er udformet i tekstprogrammet LaTex. Yderligere er Facebook brugt til mødeindkaldelse og generel kommunikation.
+Alle SysML- og UML-diagrammer er udarbejdet i programmet Visio. Koden er skrevet i sproget C\# i programmet Visual Studio. Visual Studio spiller også sammen med programmet WaveForms Generator, i forbindelse med simulering af EKG-signalet. Selve rapporten, mødereferater, logbog og dokumentationen er udformet i tekstprogrammet LaTex. Yderligere er Facebook brugt til mødeindkaldelse og generel kommunikation.
 
 
 
 \section{Specifikation og analyse}
 
-\textbf{Forklar hele afsnittet!!}
 I udarbejdelsen af analysen var der mange komplikationer. Dette skyldes primært, at atrieflimren ikke nødvendigvis påvirker et EKG-signal på samme måde hver gang.\\ \\
-Først var der tiltænkt en analyse, som skulle tage udgangspunkt i definition for atrieflimren, hvor der forekommer 220-300 små udsving/minut på baselinen. Måden hvorpå dette skulle foregå, var ved at tage et gennemsnit \textbf{WHAT, hvad betyder det helt præcis} af baseline, og derefter detektere hvor mange gange der skete en svingning over baseline. Her skulle der så tjekkes, om svingningerne overtrådte en tærskel. Denne tærskel skulle vurderes ud fra den patofysiologiske baggrund for sygdommen. Efter visualisering af reelle målinger, blev denne metode dog afskrevet, da baseline ikke bliver repræsenteret ved en regulær linje i reelle signaler. \\ \\ 
-Derefter blev der udtænkt en metode med en dynamisk baseline. Denne metode viste sig meget tideligt i udviklingsprocessen, til ikke at være kompatibel. Den største komplikation ved denne metode var at finde en algoritme, der kunne udelukke de kendte takker, som karakteriserer et EKG-signal. Hvis denne algoritme ikke blev fundet, ville den dynamiske baseline altid ligge et stykke over den reelle baseline, grundet de høje R-takker. \\ \\
-De to første metoder blev aldrig færdiggjort, da problemerne opstod efter pseudokoden begyndte at blive udarbejdet. Herefter gik gruppen til vejleder for at finde en alternativ løsning til analysen. Vejleder fik herefter input fra en anden professionel, og kunne derefter hjælpe med at udarbejde en analyse, som virkede.\\ \\
-Vejleder kunne oplyse, at atrieflimren har specifikke kendetegn, hvis der bliver analyseret på EKG-signalets amplituder inden for specifikke frekvenser, og det er ud fra denne information, at den endelige analyse blev udarbejdet. 
+Først var der tiltænkt en analyse, som skulle tage udgangspunkt i definition for atrieflimren, hvor der forekommer 220-300 små udsving/minut på baselinen. Baseline er et udtryk for den linje, som svingningerne centrerer sig omkring. Måden hvorpå dette skulle foregå, var ved at tage et gennemsnit af baselinens støj, altså de stykker af EKG-signalet, som ikke udgør P-, Q-, R,- S, og T-takkerne. Derefter detekteres hvor mange gange der skete en svingning over baselinen. Her skulle der så tjekkes, om svingningerne overtrådte en tærskel. Denne tærskel skulle vurderes ud fra den patofysiologiske baggrund for sygdommen. Efter visualisering af reelle målinger, blev denne metode dog afskrevet, da baseline ikke bliver repræsenteret ved en regulær linje i reelle signaler. \\ \\ 
+Derefter blev der udtænkt en metode med en dynamisk baseline. Denne metode viste sig meget tidligt i udviklingsprocessen ikke at være kompatibel. Den største komplikation ved denne metode var at udarbejde en analyse, der kunne udelukke de kendte takker, som karakteriserer et EKG-signal. Hvis denne analyse ikke blev fundet, ville den dynamiske baseline altid ligge et stykke over den reelle baseline, grundet de høje R-takker. \\ \\
+De to første metoder blev aldrig færdiggjort, da problemerne opstod efter pseudokoden blev udarbejdet. Herefter gik gruppen til vejleder for at finde en alternativ løsning til analysen. Vejleder fik herefter input fra en anden professionel, og kunne derefter hjælpe med at udarbejde en analyse, som virkede.\\
+Vejleder kunne oplyse, at atrieflimren har specifikke kendetegn, hvis der bliver analyseret på EKG-signalets amplituder inden for specifikke frekvenser. Det er ud fra denne information, at den endelige analyse blev udarbejdet. 
 
 \section{Arkitektur}
 Softwaren er bygget op i henhold til trelagsmodellen, hvor GUI’erne fungerer som programmets brugerinterface, med et login-vindue, et CPR-vindue og et EKG-vindue. Her fungerer EKG-vinduet, som det primære vindue, hvor EKG-signaler kan vises, analyseres og gemmes. Præsentationslaget er yderligere beskrevet i dokumentationen 3.3.1, men kan også visualiseres ud fra figur 6.2 nedenfor.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{Figurer/Snip20150512_9}
+	\includegraphics[width=0.9\textwidth]{Figurer/Snip20150512_9}
 	\caption{UML-klassediagram}
 \end{figure}
  
 Logiklaget kan ses som kernen i softwaren. Det er her alt data bliver behandlet fra datalaget samt videresender data fra målingerne til datalaget. Det er blandt andet her analysen af målingen sker, og hvor indtastede oplysninger bliver valideret. Logiklaget fungerer som bindeleddet mellem de data, der kommer fra datalaget og GUI’erne. \\ \\
-Datalaget er til for primært at håndtere forbindelsen til hardwaren og databaserne. I denne klasse bliver der skabt forbindelse til både SQL og DAQ. Datalaget henter data fra den private database, som logiklaget bruger til validering. Denne klasse gemmer også data givet fra logiklaget i både den private- og offentlige database. Klassen "logiklag" og "datalag" er beskrevet yderligere i dokumentationen 3.3.2. \\ \\
+Datalaget er til for primært at håndtere forbindelsen til hardwaren og databaserne. I denne klasse bliver der skabt forbindelse til både SQL og DAQ. Datalaget henter data fra den private database, som logiklaget bruger til validering. Denne klasse gemmer også data givet fra logiklaget i både den private- og offentlige database. Klassen "logiklag"\  og "datalag" er beskrevet yderligere i dokumentationen 3.3.2. \\ \\
 For at beskrive koden yderligere, er der lavet en domænemodel. Domænemodellen repræsenterer hele koden, altså hvordan flowet imellem klasserne går, og hvilken overordnet kommunikation, der foregår. Alle vinduerne repræsenterer GUI’er og alle tabeller er tabellerne i den private- og/eller offentlige database. Domænemodellen kan ses på figur 6.3. 
 
 \begin{figure}[H]
@@ -54,15 +53,15 @@ For at beskrive koden yderligere, er der lavet en domænemodel. Domænemodellen 
 
 
 \subsection{Design}
-Alle tanker omkring, hvordan koden skulle være bygget op, bunder i trelagsmodellen. Der er derfor sørget for, at der ikke er noget kode, som kommunikerer med et lag, som de ikke har tilladelse til. Der kan læses mere om trelagsmodellen i dokumentationen 3.3.\\ \\
+Alle tanker omkring, hvordan koden skulle være bygget op bunder i trelagsmodellen. Der er derfor sørget for, at der ikke er noget kode, som kommunikerer med et lag, som koden ikke har tilladelse til. Der kan læses mere om trelagsmodellen i dokumentationen 3.3.\\ \\
 I dette projekt har der i slutfasen været fokuseret meget på brugervenlighed og feedback til brugeren. Tideligt i projektet var det ikke tydeligt, hvornår der blev foretaget en måling. Dette er blevet tydeliggjort, ved at musen bliver til en cirkel i bevægelse, alt imens der foretages en måling. Der er også lavet et pop-up vindue, som bekræfter, at en måling er blevet gemt.\\ \\
-Der er desuden, lavet en feature, som viser grid-lines på grafen. I gruppen blev der besluttet, at der skulle være to typer af grids. En lille og en stor type.  De store grids, repræsenterer hver 0,2 sekunder og de små, svarer til 0,04 sekunder. Disse intervaller er fastlagt, ud fra standarder for professionelle EKG-displays.  Dette blev herefter implementeret i koden.\\ \\
-En anden ting, som har været meget dominerende i overvejelserne, er sikkerhed. Da det er personfølsomme oplysninger, som skal detekteres i dette program, er det derfor vigtigt, at det ikke er alle og enhver, som kan få adgang til oplysningerne. Derfor er der et vindue, som beder brugeren om at logge ind, med et gyldigt brugernavn og kodeord. Login-funktionen validere, om denne bruger har rettigheder til at få adgang til systemet.\\ \\
-Yderligere er der lavet et patient identifikationsvindue, hvor der skal indtastes et CPR-nummer. Dette CPR-nummer er koblet op til en patient, hvis oplysningen ligger lagret i den private database. Når CPR-nummeret indtastes og EKG-vinduet fremkommer, har programmet været ned i den private database og hentet patienten navn, der stemmer overens med CPR-nummeret. Dette gør det muligt, at få udskrevet navnet i EKG-vinduet. Se eventuelt figur 3.5 i dokumentationen.   
+Der er desuden lavet en feature, som viser grid-lines på grafen. I gruppen blev der besluttet, at der skulle være to typer af grids. En lille og en stor type.  De store grids, repræsenterer hver 0,2 sekunder, og de små svarer til 0,04 sekunder. Disse intervaller er fastlagt ud fra standarder for professionelle EKG-displays.  Dette blev herefter implementeret i koden.\\ \\
+En anden ting, som har været meget dominerende i overvejelserne, er sikkerhed. Da det er personfølsomme oplysninger, som skal detekteres i dette program, er det vigtigt, at det ikke er alle og enhver, som kan få adgang til oplysningerne. Derfor er der et vindue, som beder brugeren om at logge ind, med et gyldigt brugernavn og kodeord. Login-funktionen validerer, i databasen,  om denne bruger har rettigheder til at få adgang til systemet.\\ \\
+Yderligere er der lavet et patient identifikationsvindue, hvor der skal indtastes et CPR-nummer. Dette CPR-nummer er koblet op til en patient, hvis oplysningen ligger lagret i den private database. Når CPR-nummeret indtastes og EKG-vinduet fremkommer, har programmet været nede i den private database og hentet patientens navn, der stemmer overens med CPR-nummeret. Dette gør det muligt, at få udskrevet navnet i EKG-vinduet. Se eventuelt figur 3.5 i dokumentationen.   
 
 \subsection{Implementering}
-Analysen er det essentielle i implementeringen. Hvis ikke der er en analyse, der fungerer, så er programmet obsolet.\\
-Analysen er bygget op omkring tre for-løkker, som identificerer forhøjede amplituder inden for et specielt frekvensspektrum. Ved hjælp af matematikbiblioteket alglibnet2, bliver signalet først konverteret til et komplekst Furier-transformeret array, som indeholder koordinater repræsenterende vektorer for amplituden i signalet. Denne konvertering, ses på figur 6.4. \textbf{WHAT, hvad mener du? + figur henvisning} 
+Analysen er det essentielle i implementeringen. Hvis ikke der er en analyse, der fungerer, så lever programmet ikke op til de stillede krav.\\
+Analysen er bygget op omkring tre for-løkker, som identificerer forhøjede amplituder inden for et specielt frekvensspektrum. Ved hjælp af matematikbiblioteket alglibnet2, bliver signalet først konverteret til et komplekst og Furier-transformeret array, som indeholder koordinater som repræsenter vektorer. Vektorernes længde udgør amplituderne i signalet. Denne konvertering, ses på figur 6.4. 
 
 \begin{figure}[H]
 	\centering
@@ -94,7 +93,7 @@ Disse værdier bliver derefter tjekket for, om de indeholder en amplitude, som l
 	\caption{Kode udsnit af analyse implementering}
 \end{figure}
 
-Tærskelværdien er blev fundet ud fra testprogrammet, som der kan læses yderligere om i dokumentationen 3.4.3. Der kan desuden også læses yderligere specifikation omkring implementeringen i dokumentationen 3.4. 
+Tærskelværdien er blev fundet ud fra testprogrammet, som der kan læses yderligere om i dokumentationen 3.4.3. Tærskelværdien er vurderet, i dette tilfælde, til at være 5,6 V. Der kan desuden også læses yderligere specifikation omkring implementeringen i dokumentationen 3.4. 
 
 
 \subsection{Test}
