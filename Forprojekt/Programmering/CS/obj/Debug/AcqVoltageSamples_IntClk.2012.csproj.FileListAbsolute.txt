@@ -59,3 +59,5 @@ C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\Acq
 C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.pdb
 C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\NationalInstruments.Common.dll
 C:\Users\Bana\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\bin\Debug\NationalInstruments.Common.xml
+C:\Users\Sara\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.exe
+C:\Users\Sara\Desktop\Semesterprojekt2\Forprojekt\Programmering\CS\obj\Debug\AcqVoltageSamples_IntClk.pdb
