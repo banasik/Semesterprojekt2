@@ -247,6 +247,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EKG";
             this.Text = "EKG";
+            this.Load += new System.EventHandler(this.EKG_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

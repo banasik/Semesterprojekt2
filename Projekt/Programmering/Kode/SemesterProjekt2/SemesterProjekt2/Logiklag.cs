@@ -78,12 +78,12 @@ namespace SemesterProjekt2
             specifikamplitude = new List<double>(); 
             alglib.complex[] array;                                             //bruger nyt bibliotek
             alglib.fftr1d(datacollector.currentVoltageSeqArray, out array);     //laver vores signal om til et komplekst array. Får alle de harmoniske svingninger (Fourier trans) 
-            thresh = 5.60; 
+            thresh = 5.60; //tærskel for atrieflimren
 
             for (int i = 0; i < array.Length; i++)
             {
                 double amp = (Math.Sqrt(Math.Pow(array[i].x, 2)+Math.Pow(array[i].y, 2)));
-                amplitude.Add(amp);
+                amplitude.Add(amp);      
             }
 
             for (int i = 600; i < 802; i++)

@@ -12,14 +12,14 @@ namespace SemesterProjekt2
 {
    public partial class EKG : Form
    {
-       private Login Login;
-       private Logiklag logik;
-       private List<double> liste;
-       private Gem_måling gem;
+       private Login Login;         //login objekt bruges til at kunne logge ud
+       private Logiklag logik;      //Bruges til at hente metoder fra logiklag
+       private List<double> liste;  //liste som bruges til at holde data om måling
+       private Gem_måling gem;      //bruges til at hente formen "gem måling"
 
               
        //"Datamodel"
-       private Person p;
+       private Person p;            //DTO - indeholder info om person
        
 
       //Variabler til tabellen EKGData i offentlig database
@@ -78,8 +78,8 @@ namespace SemesterProjekt2
          {
              chart1.Series["EKG"].Points.AddXY((double)i * 0.004, liste[i]);  //tilføjer punkter i grafen -- 0.004 * samples = sekunder
          }
-                      
-         logik.analyseSig(); //metoden analyseSig()
+
+         logik.analyseSig(); //analyse af EKG signal
          if(logik.analyseSig() == true) //resultatet fra analysen
           {
               textBox5.Text = "Tjek for Atrieflimmer!!"; 
@@ -109,6 +109,11 @@ namespace SemesterProjekt2
           gem = new Gem_måling();   //atributten gem sættes til at være et nyt gem vindue
 
           gem.ShowDialog();         //vindue "gem måling" vises
+      }
+
+      private void EKG_Load(object sender, EventArgs e)
+      {
+
       }
 
         
