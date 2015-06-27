@@ -51,3 +51,6 @@ C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProj
 C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.application
 C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\SemesterProjekt2.exe.manifest
 C:\Users\Martin\Desktop\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\SemesterProjekt2.application
+\\psf\Home\Google Drev\2.Semester\2. semesterprojekt\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\bin\Debug\SemesterProjekt2.exe.config
+\\psf\Home\Google Drev\2.Semester\2. semesterprojekt\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.exe
+\\psf\Home\Google Drev\2.Semester\2. semesterprojekt\Semesterprojekt2\Projekt\Programmering\Kode\SemesterProjekt2\SemesterProjekt2\obj\Debug\SemesterProjekt2.pdb
