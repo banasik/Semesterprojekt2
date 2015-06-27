@@ -79,7 +79,7 @@ namespace SemesterProjekt2
              chart1.Series["EKG"].Points.AddXY((double)i * 0.004, liste[i]);  //tilføjer punkter i grafen -- 0.004 * samples = sekunder
          }
 
-         logik.analyseSig(); //analyse af EKG signal
+         //logik.analyseSig(); //analyse af EKG signal
          if(logik.analyseSig() == true) //resultatet fra analysen
           {
               textBox5.Text = "Tjek for Atrieflimmer!!"; 
