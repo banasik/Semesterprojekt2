@@ -44,5 +44,10 @@ namespace SemesterProjekt2
           tjekCPR(textBox1.Text);
       }
 
+      private void CPR_nummer_Load(object sender, EventArgs e)
+      {
+
+      }
+
    }
 }
